@@ -14,6 +14,11 @@ body {
     background: linear-gradient(0deg, rgba(26,147,215,1) 0%, rgba(111,184,230,1) 35%, rgba(251,255,250,1) 100%);
 }
 
+/* label color on forms */
+.input-field label {
+    color: #0d47a1;
+}
+
 /* ---------------------------------------- Body */
 
 body {
@@ -44,6 +49,42 @@ main {
 .nav-link {
     font-family: Graduate;
 }
+
+/* ---------------------------------------- Home Page */
+
+.home-tagline {
+    font-weight: 500;
+}
+
+/* ---------------------------------------- Parks Page */
+
+.add-park-btn {
+    margin: 2rem;
+}
+
+/* ---------------------------------------- Add Parks Page */
+
+.add_park_form {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+label {
+    font-weight: 700;
+    font-size: 1.2rem !important;
+}
+
+.submit-button {
+    border-radius: 10px;
+    margin: 3rem;
+    font-family: Englebert;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+/* ---------------------------------------- Rides Page */
+
+/* ---------------------------------------- Restaurant Page */
 
 /* ---------------------------------------- Footer */
 
