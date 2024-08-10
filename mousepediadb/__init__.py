@@ -15,4 +15,4 @@ app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")
 # assigning SQLAlchemy class instance to variable
 db = SQLAlchemy(app)
 
-from mousepedia import routes
+from mousepediadb import routes

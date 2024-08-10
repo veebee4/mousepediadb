@@ -1,6 +1,6 @@
 # import modules
 import os
-from mousepedia import app
+from mousepediadb import app
 
 if __name__ == "__main__":
     app.run(
