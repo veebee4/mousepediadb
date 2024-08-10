@@ -6,4 +6,4 @@ from mousepediadb.models import Park, Restaurant, Ride
 
 @app.route("/")
 def home():
-    return render_template("base.html")
+    return render_template("home.html")

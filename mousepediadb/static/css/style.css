@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Englebert&family=Graduate&display=swap');
 
+/* ---------------------------------------- Special headings/paddings/margins/text */
+
+.page-heading {
+    font-family: Graduate;
+    font-weight: 900;
+}
+
+/*-------------------------------------------- Colors*/
+
+body {
+    background: rgb(26,147,215);
+    background: linear-gradient(0deg, rgba(26,147,215,1) 0%, rgba(111,184,230,1) 35%, rgba(251,255,250,1) 100%);
+}
+
 /* ---------------------------------------- Body */
 
 body {
