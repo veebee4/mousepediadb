@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Englebert&family=Graduate&display=swap');
+
+/* ---------------------------------------- Body */
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: Englebert;
+}
+
+/*-------------------------------------------- Header & Nav */
+
+main {
+    flex: 1 0 auto;
+}
+
+.brand-logo {
+    font-family: Graduate;
+}
+
+#nav-logo {
+    height: 5rem;
+    width: 5rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.nav-link {
+    font-family: Graduate;
+}
+
+/* ---------------------------------------- Footer */
+
+.footer-heading {
+    font-family: Graduate;
+}
+
+.row {
+    margin-bottom: 0;
+}
+
+.fa-book-open {
+    font-size: 2.5rem;
+}
+
+.footer-icon {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.links-heading {
+    font-family: Graduate;
+}
+
+.links {
+    font-size: 1.5rem;
+}
