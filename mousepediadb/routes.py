@@ -11,7 +11,8 @@ def home():
 
 @app.route("/parks")
 def parks():
-        return render_template("parks.html")
+        parks = Park.query.order_by(Park.park_name).all()
+        return render_template("parks.html", parks=parks)
 
 
 @app.route("/add_park", methods=["GET", "POST"])
@@ -28,7 +29,7 @@ def add_park():
         entertainment = request.form.get("entertainment")
         special_features = request.form.get("special_features")
         transport_between_parks = request.form.get("transport_between_parks")
-        
+
         park = Park(
             park_name=park_name,
             park_address=park_address,
