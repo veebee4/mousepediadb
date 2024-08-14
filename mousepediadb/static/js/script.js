@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // initialises the time picker for time_open & time_closed on the add_park form
     let openingTimes = document.querySelectorAll('.timepicker');
     M.Timepicker.init(openingTimes, {
-      format: 'HH:mm', // Time format for 24-hour clock
-      twelveHour: true, // Set to true for 12-hour clock with AM/PM
+      format: 'HH:mm', // changing format of how time is displayed
+      twelveHour: true, // displaying AM/PM instead of 24hour clock for user ease
     });
   });
