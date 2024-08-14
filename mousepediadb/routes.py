@@ -6,7 +6,8 @@ from mousepediadb.models import Park, Restaurant, Ride
 
 @app.route("/")
 def home():
-    return render_template("home.html")
+    parks = Park.query.order_by(Park.park_name).all()
+    return render_template("home.html", parks=parks)
 
 
 @app.route("/parks")

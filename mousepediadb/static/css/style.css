@@ -19,8 +19,8 @@ body {
     color: #0d47a1;
 }
 
-.card-label, .card-title {
-    color: #0d47a1;
+.card-label, .card-title, .carousel-item {
+    color: #0d47a1 !important;
 }
 
 /* ---------------------------------------- Body */
@@ -58,6 +58,12 @@ main {
 
 .home-tagline {
     font-weight: 500;
+}
+
+.carousel-item {
+    font-family: Graduate;
+    font-weight: 800;
+    font-size: 2rem;
 }
 
 /* ---------------------------------------- Parks Page */

@@ -20,3 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
       twelveHour: true, // displaying AM/PM instead of 24hour clock for user ease
     });
   });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    let parkDisplay = document.querySelectorAll('.carousel');
+    M.Carousel.init(parkDisplay);
+  });
