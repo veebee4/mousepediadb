@@ -30,6 +30,7 @@ def add_park():
         entertainment = request.form.get("entertainment")
         special_features = request.form.get("special_features")
         transport_between_parks = request.form.get("transport_between_parks")
+        image_url = request.form.get("image_url")
 
         park = Park(
             park_name=park_name,
@@ -42,7 +43,8 @@ def add_park():
             num_rides=num_rides,
             entertainment=entertainment,
             special_features=special_features,
-            transport_between_parks=transport_between_parks
+            transport_between_parks=transport_between_parks,
+            image_url=image_url,
         )
         db.session.add(park)
         db.session.commit()

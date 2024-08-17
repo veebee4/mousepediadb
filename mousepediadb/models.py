@@ -57,6 +57,7 @@ class Park(db.Model):
     entertainment = db.Column(db.Text, nullable=False)
     special_features = db.Column(db.Text, nullable=False)
     transport_between_parks = db.Column(db.Text, nullable=False)
+    image_url = db.Column(db.String(255), nullable=True)
 
     def __repr__(self):
         # returns chosen fields from the above schema
