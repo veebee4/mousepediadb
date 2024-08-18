@@ -50,3 +50,23 @@ def add_park():
         db.session.commit()
         return redirect(url_for("parks"))
     return render_template("add_park.html")
+
+@app.route("/edit_park/<int:park_id>", methods=["GET", "POST"])
+def edit_park(park_id):
+    park = Park.query.get_or_404(park_id)
+    if request.method == "POST":
+        park.park_name = request.form.get("park_name")
+        park.park_address = request.form.get("park_address")
+        park.park_description = request.form.get("park_description")
+        park.date_opened = request.form.get("date_opened")
+        park.time_open = request.form.get("time_open")  
+        park.time_closed = request.form.get("time_closed")  
+        park.num_restaurants = request.form.get("num_restaurants")
+        park.num_rides = request.form.get("num_rides")
+        park.entertainment = request.form.get("entertainment")
+        park.special_features = request.form.get("special_features")
+        park.transport_between_parks = request.form.get("transport_between_parks")
+        park.image_url = request.form.get("image_url")
+        db.session.commit()
+        return redirect(url_for("parks"))
+    return render_template("edit_park.html", park=park)
