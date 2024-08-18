@@ -83,22 +83,37 @@ def delete_park(park_id):
 
 @app.route("/rides")
 def rides():
-        return render_template("rides.html")
+    rides = Ride.query.order_by(Ride.ride_name).all()
+    return render_template("rides.html", rides=rides)
 
 
 @app.route("/add_ride", methods=["GET", "POST"])
 def add_ride():
     if request.method == "POST":
-        ride_name = request.form.get("ride_name")
-        ride_location = request.form.get("ride_location")
-        ride_description = request.form.get("ride_description")
+        try:
+            ride_name = request.form.get("ride_name")
+            park_id = request.form.get("park_id")
+            ride_location = request.form.get("ride_location")
+            ride_description = request.form.get("ride_description")
 
-        ride = Ride(
-            ride_name=ride_name,
-            ride_location=ride_location,
-            ride_description=ride_description,
-        )
-        db.session.add(ride)
-        db.session.commit()
-        return redirect(url_for("rides"))
+            # Check if the park_id exists
+            park = Park.query.get(park_id)
+            if not park:
+                flash("Invalid park ID. Please select a valid park.", "error")
+                return redirect(url_for("add_ride"))
+
+            ride = Ride(
+                park_id=park_id,
+                ride_name=ride_name,
+                ride_location=ride_location,
+                ride_description=ride_description,
+            )
+            db.session.add(ride)
+            db.session.commit()
+            return redirect(url_for("rides"))
+
+        except Exception as e:
+            db.session.rollback()
+            return redirect(url_for("add_ride"))
+    parks = Park.query.all()
     return render_template("add_ride.html")

@@ -1,13 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="blue-text text-darken-4 center-align page-heading"><i class="fa-solid fa-wand-sparkles blue-text text-lighten-3"></i> Add a Ride <i class="fa-solid fa-wand-sparkles blue-text text-lighten-3"></i></h1>
+<h1 class="blue-text text-darken-4 center-align page-heading"><i class="fa-solid fa-rocket blue-text text-lighten-3"></i> Add a Ride <i class="fa-solid fa-rocket blue-text text-lighten-3"></i></h1>
 <h6 class="blue-text text-darken-4 center-align">Here you can add a new ride to your collection.</h6>
 
 <!-- Form to add a ride to the database -->
 <div class="container add_form">
     <div class="row">
         <form class="col s12" method="POST" action="{{ url_for('add_ride') }}">
+            <!-- park_id -->
+            <div class="row">
+                <div class="input-field col s12 label-alt-colour">
+                    <i class="fa-solid fa-rocket blue-text text-darken-4 prefix"></i>
+                    <input id="park_id" name="park_id" minlength="1" type="number" class="validate" required>
+                    <label for="park_id">Park ID</label>
+                </div>
+            </div>
             <!-- ride_name -->
             <div class="row">
                 <div class="input-field col s12 label-alt-colour">
