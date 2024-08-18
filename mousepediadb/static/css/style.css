@@ -139,7 +139,9 @@ main {
 
 /* ---------------------------------------- Add Parks Page */
 
-.add_park_form {
+/* ---------------------------------------- Forms */
+
+.add_form {
     margin-top: 4rem;
     margin-bottom: 4rem;
 }

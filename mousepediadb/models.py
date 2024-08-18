@@ -58,6 +58,8 @@ class Park(db.Model):
     special_features = db.Column(db.Text, nullable=False)
     transport_between_parks = db.Column(db.Text, nullable=False)
     image_url = db.Column(db.String(255), nullable=True)
+    ride = db.relationship("Ride", backref=db.backref("parks", cascade="all, delete", lazy=True))
+    restaurant = db.relationship("Restaurant", backref=db.backref("parks", cascade="all, delete", lazy=True))
 
     def __repr__(self):
         # returns chosen fields from the above schema
