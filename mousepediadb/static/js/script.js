@@ -38,3 +38,11 @@
     M.Tooltip.init(parkCard);
   });
 
+  document.addEventListener('DOMContentLoaded', function() {
+    // initialises modal to confirm whether user is sure to delete the record
+    let deleteModal = document.querySelectorAll('.modal');
+    M.Modal.init(deleteModal, {
+      opacity: 0.8,
+    });
+  });
+

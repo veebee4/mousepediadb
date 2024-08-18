@@ -117,6 +117,26 @@ main {
     padding: 0.5rem;
 }
 
+.modal {
+    height: 22.5rem;
+    width: 35rem;
+    color:#0d47a1;
+}
+
+.modal-header, .modal-text {
+    text-align: center;
+    font-weight: 800;
+}
+
+.modal-text {
+    font-size: 1.5rem;
+}
+
+.modal-delete-btn, .modal-cancel-btn {
+    display: flex;
+    flex-direction: column;
+}
+
 /* ---------------------------------------- Add Parks Page */
 
 .add_park_form {

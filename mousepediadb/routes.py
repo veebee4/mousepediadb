@@ -70,3 +70,10 @@ def edit_park(park_id):
         db.session.commit()
         return redirect(url_for("parks"))
     return render_template("edit_park.html", park=park)
+
+@app.route("/delete_park/<int:park_id>")
+def delete_park(park_id):
+    park = Park.query.get_or_404(park_id)
+    db.session.delete(park)
+    db.session.commit()
+    return redirect(url_for("parks"))
