@@ -51,6 +51,7 @@ def add_park():
         return redirect(url_for("parks"))
     return render_template("add_park.html")
 
+
 @app.route("/edit_park/<int:park_id>", methods=["GET", "POST"])
 def edit_park(park_id):
     park = Park.query.get_or_404(park_id)
@@ -71,9 +72,33 @@ def edit_park(park_id):
         return redirect(url_for("parks"))
     return render_template("edit_park.html", park=park)
 
+
 @app.route("/delete_park/<int:park_id>")
 def delete_park(park_id):
     park = Park.query.get_or_404(park_id)
     db.session.delete(park)
     db.session.commit()
     return redirect(url_for("parks"))
+
+
+@app.route("/rides")
+def rides():
+        return render_template("rides.html")
+
+
+@app.route("/add_ride", methods=["GET", "POST"])
+def add_ride():
+    if request.method == "POST":
+        ride_name = request.form.get("ride_name")
+        ride_location = request.form.get("ride_location")
+        ride_description = request.form.get("ride_description")
+
+        ride = Ride(
+            ride_name=ride_name,
+            ride_location=ride_location,
+            ride_description=ride_description,
+        )
+        db.session.add(ride)
+        db.session.commit()
+        return redirect(url_for("rides"))
+    return render_template("add_ride.html")
