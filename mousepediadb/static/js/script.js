@@ -46,3 +46,9 @@
     });
   });
 
+  document.addEventListener('DOMContentLoaded', function() {
+    // initialises tabs on ride and restaurant records
+    let cardTabs = document.querySelectorAll('.tabs');
+    M.Tabs.init(cardTabs);
+});
+

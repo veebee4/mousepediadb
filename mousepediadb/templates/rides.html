@@ -23,11 +23,11 @@
                 <ul class="tabs tabs-fixed-width">
                     <li class="tab"><a href="#tab1" class="active">Park</a></li>
                     <li class="tab"><a href="#tab2">Description</a></li>
-                    <li class="tab"><a href="#tab3">Location In Park</a></li>
+                    <li class="tab"><a href="#tab3">Location</a></li>
                 </ul>
             </div>
             <div class="card-content grey lighten-4">
-                <div id="tab1">{{ ride.park_name }}</div>
+                <div id="tab1">{{ ride.park.park_name }}</div>
                 <div id="tab2">{{ ride.ride_description }}</div>
                 <div id="tab3">{{ ride.ride_location }}</div>
             </div>
