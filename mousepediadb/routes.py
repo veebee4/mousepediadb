@@ -137,3 +137,45 @@ def delete_ride(ride_id):
     db.session.delete(ride)
     db.session.commit()
     return redirect(url_for("rides"))
+
+
+@app.route("/restaurants")
+def restaurants():
+    restaurants = Restaurant.query.order_by(Restaurant.restaurant_name).all()
+    return render_template("restaurants.html", restaurants=restaurants)
+
+
+@app.route("/add_restaurant", methods=["GET", "POST"])
+def add_restaurant():
+    if request.method == "POST":
+        try:
+            restaurant_name = request.form.get("restaurant_name")
+            park_id = request.form.get("park_id")
+            restaurant_location = request.form.get("restaurant_location")
+            restaurant_description = request.form.get("restaurant_description")
+            dine_or_quick_service = request.form.get("dine_or_quick_service")
+            food_type = request.form.get("food_type")
+
+            # Check if the park_id exists
+            park = Park.query.get(park_id)
+            if not park:
+                flash("Invalid park ID. Please select a valid park.", "error")
+                return redirect(url_for("add_restaurant"))
+
+            restaurant = Restaurant(
+                park_id=park_id,
+                restaurant_name=restaurant_name,
+                restaurant_location=restaurant_location,
+                restaurant_description=restaurant_description,
+                dine_or_quick_service=dine_or_quick_service,
+                food_type=food_type,
+            )
+            db.session.add(restaurant)
+            db.session.commit()
+            return redirect(url_for("restaurants"))
+
+        except Exception as e:
+            db.session.rollback()
+            return redirect(url_for("add_restaurant"))
+    parks = Park.query.all()
+    return render_template("add_restaurant.html")
