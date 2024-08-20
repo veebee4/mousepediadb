@@ -52,3 +52,9 @@
     M.Tabs.init(cardTabs);
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  // initialises drop down list of parks on forms
+  let parkList = document.querySelectorAll('select');
+  M.FormSelect.init(parkList);
+});
+

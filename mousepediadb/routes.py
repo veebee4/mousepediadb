@@ -178,4 +178,4 @@ def add_restaurant():
             db.session.rollback()
             return redirect(url_for("add_restaurant"))
     parks = Park.query.all()
-    return render_template("add_restaurant.html")
+    return render_template("add_restaurant.html", parks=parks)
