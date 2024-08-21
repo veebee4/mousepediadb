@@ -122,13 +122,18 @@ def add_ride():
 @app.route("/edit_ride/<int:ride_id>", methods=["GET", "POST"])
 def edit_ride(ride_id):
     ride = Ride.query.get_or_404(ride_id)
+
     if request.method == "POST":
+        ride.park_id = request.form.get("park_id")
         ride.ride_name = request.form.get("ride_name")
         ride.ride_description = request.form.get("ride_description")
         ride.ride_location = request.form.get("ride_location")
+
         db.session.commit()
         return redirect(url_for("rides"))
-    return render_template("edit_ride.html", ride=ride)
+
+    parks = Park.query.all()
+    return render_template("edit_ride.html", ride=ride, parks=parks)
 
 
 @app.route("/delete_ride/<int:ride_id>")
