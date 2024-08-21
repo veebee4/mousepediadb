@@ -9,7 +9,7 @@ class Restaurant(db.Model):
     dine_or_quick_service = db.Column(db.Boolean, default=False, nullable=False)
     food_type = db.Column(db.String(30), nullable=False)
     restaurant_description = db.Column(db.Text, nullable=False)
-    park = db.relationship("Park", backref=db.backref("restaurants", cascade="all, delete", lazy=True))
+    park = db.relationship("Park", backref=db.backref("restaurants", lazy=True))
 
     def __repr__(self):
         # returns chosen fields from the above schema
@@ -30,7 +30,7 @@ class Ride(db.Model):
     park_id = db.Column(db.Integer, db.ForeignKey("park.id", ondelete="CASCADE"), nullable=False)
     ride_location = db.Column(db.String(50), nullable=False)
     ride_description = db.Column(db.Text, nullable=False)
-    park = db.relationship("Park", backref=db.backref("rides", cascade="all, delete", lazy=True))
+    park = db.relationship("Park", backref=db.backref("rides", lazy=True))
 
     def __repr__(self):
         # returns chosen fields from the above schema

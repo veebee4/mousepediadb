@@ -10,10 +10,15 @@
         <form class="col s12" method="POST" action="{{ url_for('edit_ride', ride_id=ride.id) }}">
             <!-- park_id -->
             <div class="row">
-                <div class="input-field col s12 label-alt-colour">
-                    <i class="fa-solid fa-rocket blue-text text-darken-4 prefix"></i>
-                    <input id="park_id" name="park_id" minlength="1" type="number" value="{{ ride.ride_id }}" class="validate" required>
-                    <label for="park_id">Park ID</label>
+                <div class="input-field col s12">
+                    <i class="fa-solid fa-hat-wizard blue-text text-darken-4 prefix"></i>
+                    <select name="park_id" required>
+                      <option value="" disabled selected>Select A Park</option>
+                      {% for park in parks %}
+                      <option value="{{ park.id }}">{{ park.park_name }}</option>
+                      {% endfor %}
+                    </select>
+                    <label for="park_id">Choose Park</label>
                 </div>
             </div>
             <!-- ride_name -->

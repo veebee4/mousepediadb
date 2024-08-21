@@ -4,7 +4,7 @@
 <h1 class="blue-text text-darken-4 center-align page-heading"><i class="fa-solid fa-utensils blue-text text-lighten-3"></i> Add a Restaurant <i class="fa-solid fa-utensils blue-text text-lighten-3"></i></h1>
 <h6 class="blue-text text-darken-4 center-align">Here you can add a new restaurant to your collection.</h6>
 
-<!-- Form to add a restaurant to the database -->
+<!-- Form to add a ride to the database -->
 <div class="container add_form">
     <div class="row">
         <form class="col s12" method="POST" action="{{ url_for('add_restaurant') }}">
@@ -24,7 +24,7 @@
             <!-- restaurant_name -->
             <div class="row">
                 <div class="input-field col s12 label-alt-colour">
-                    <i class="fa-solid fa-utensils blue-text text-darken-4 prefix"></i>
+                    <i class="fa-solid fa-rocket blue-text text-darken-4 prefix"></i>
                     <input id="restaurant_name" name="restaurant_name" minlength="5" maxlength="50" type="text" class="validate" required>
                     <label for="restaurant_name">Restaurant Name</label>
                 </div>
@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-location-dot blue-text text-darken-4 prefix"></i>
-                    <input id="restaurant_location" name="restaurant_location" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <input id="restaurant_location" name="restaurant_location" minlength="3" maxlength="50" type="text" class="validate" required>
                     <label for="restaurant_location">Restaurant Location In Park</label>
                 </div>
             </div>
@@ -47,12 +47,11 @@
             </div>
             <!-- dine_or_quick_service -->
             <div class="row">
-                <div class="col s12">
-                    <i class="fa-solid fa-wine-glass blue-text text-darken-4 prefix"></i>
-                    <i class="fa-solid fa-burger blue-text text-darken-4 prefix"></i>
+                <div class="col s12">                    
                     <!-- switch component to select either dine in or quick service-->
                     <div class="switch">
-                        <label>Dine In
+                        <i class="fa-solid fa-burger blue-text text-darken-4 prefix"></i>
+                        <label class="dine_quick_service_label">Dine In
                             <input type="checkbox" id="dine_or_quick_service" name="dine_or_quick_service" required>
                             <span class="lever"></span>
                         Quick Service
@@ -64,11 +63,10 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-pizza-slice blue-text text-darken-4 prefix"></i>
-                    <i class="fa-solid fa-fish blue-text text-darken-4 prefix"></i>
                     <textarea id="food_type" name="food_type" minlength="5" maxlength="500" class="materialize-textarea validate" required></textarea>
                     <label for="food_type">Food Type</label>
                 </div>
-            </div>  
+            </div>
             <!-- Submit button for form -->
             <div class="row">
                 <div class="col s12 center-align">

@@ -116,7 +116,7 @@ def add_ride():
             db.session.rollback()
             return redirect(url_for("add_ride"))
     parks = Park.query.all()
-    return render_template("add_ride.html")
+    return render_template("add_ride.html", parks=parks)
 
 
 @app.route("/edit_ride/<int:ride_id>", methods=["GET", "POST"])
@@ -148,12 +148,11 @@ def restaurants():
 @app.route("/add_restaurant", methods=["GET", "POST"])
 def add_restaurant():
     if request.method == "POST":
-        try:
             restaurant_name = request.form.get("restaurant_name")
             park_id = request.form.get("park_id")
             restaurant_location = request.form.get("restaurant_location")
             restaurant_description = request.form.get("restaurant_description")
-            dine_or_quick_service = request.form.get("dine_or_quick_service")
+            dine_or_quick_service = request.form.get("dine_or_quick_service") == 'on'
             food_type = request.form.get("food_type")
 
             # Check if the park_id exists
@@ -170,12 +169,10 @@ def add_restaurant():
                 dine_or_quick_service=dine_or_quick_service,
                 food_type=food_type,
             )
+
             db.session.add(restaurant)
             db.session.commit()
             return redirect(url_for("restaurants"))
 
-        except Exception as e:
-            db.session.rollback()
-            return redirect(url_for("add_restaurant"))
     parks = Park.query.all()
     return render_template("add_restaurant.html", parks=parks)

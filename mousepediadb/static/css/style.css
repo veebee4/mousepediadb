@@ -175,7 +175,15 @@ label {
 
 /* ---------------------------------------- Rides Page */
 
-/* ---------------------------------------- Restaurant Page */
+/* ---------------------------------------- Restaurant/Add Restaurant Page */
+
+.fa-burger {
+    font-size: 2rem;
+}
+
+.dine_quick_service_label {
+    color: #0d47a1;
+}
 
 /* ---------------------------------------- Footer */
 
