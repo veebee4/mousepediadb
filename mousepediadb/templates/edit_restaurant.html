@@ -1,45 +1,73 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="blue-text text-darken-4 center-align page-heading"><i class="fa-solid fa-wand-sparkles blue-text text-lighten-3"></i> Edit Ride <i class="fa-solid fa-wand-sparkles blue-text text-lighten-3"></i></h1>
-<h6 class="blue-text text-darken-4 center-align">Here you can edit a Ride in your collection.</h6>
+<h1 class="blue-text text-darken-4 center-align page-heading"><i class="fa-solid fa-wand-sparkles blue-text text-lighten-3"></i> Edit Restaurant <i class="fa-solid fa-wand-sparkles blue-text text-lighten-3"></i></h1>
+<h6 class="blue-text text-darken-4 center-align">Here you can edit a Restaurant in your collection.</h6>
 
-<!-- Form to edit a ride in the database -->
+<!-- Form to edit a restaurant in the database -->
 <div class="container add_form">
     <div class="row">
-        <form class="col s12" method="POST" action="{{ url_for('edit_ride', ride_id=ride.id) }}">
+        <form class="col s12" method="POST" action="{{ url_for('edit_restaurant', restaurant_id=restaurant.id) }}">
             <!-- park_id -->
+            <div class="input-field col s12">
+                <i class="fa-solid fa-hat-wizard blue-text text-darken-4 prefix"></i>
+                <select id="park_id" name="park_id" required>
+                    <option value="" disabled selected>Select A Park</option>
+                    {% for park in parks %}
+                        <option value="{{ park.id }}" {% if park.id == restaurant.park_id %} selected {% endif %}>
+                        {{ park.park_name }}
+                        </option>
+                    {% endfor %}
+                </select>
+                <label for="park_id">Park</label>
+                </div>
+            </div>
+            <!-- restaurant_name -->
             <div class="row">
                 <div class="input-field col s12 label-alt-colour">
                     <i class="fa-solid fa-rocket blue-text text-darken-4 prefix"></i>
-                    <input id="park_id" name="park_id" minlength="1" type="number" value="{{ ride.ride_id }}" class="validate" required>
-                    <label for="park_id">Park ID</label>
+                    <input id="restaurant_name" name="restaurant_name" minlength="5" maxlength="50" type="text" value="{{ restaurant.restaurant_name }}" class="validate" required>
+                    <label for="restaurant_name">Restaurant Name</label>
                 </div>
             </div>
-            <!-- ride_name -->
-            <div class="row">
-                <div class="input-field col s12 label-alt-colour">
-                    <i class="fa-solid fa-rocket blue-text text-darken-4 prefix"></i>
-                    <input id="ride_name" name="ride_name" minlength="5" maxlength="50" type="text" value="{{ ride.ride_name }}" class="validate" required>
-                    <label for="ride_name">Ride Name</label>
-                </div>
-            </div>
-            <!-- ride_location -->
+            <!-- restaurant_location -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-location-dot blue-text text-darken-4 prefix"></i>
-                    <input id="ride_location" name="ride_location" minlength="5" maxlength="50" type="text" value="{{ ride.ride_location }}" class="validate" required>
-                    <label for="ride_location">Ride Location In Park</label>
+                    <input id="restaurant_location" name="restaurant_location" minlength="5" maxlength="50" type="text" value="{{ restaurant.restaurant_location }}" class="validate" required>
+                    <label for="restaurant_location">Restaurant Location In Park</label>
                 </div>
             </div>
-            <!-- ride_description -->
+            <!-- restaurant_description -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-pencil blue-text text-darken-4 prefix"></i>
-                    <textarea id="ride_description" name="ride_description" minlength="5" maxlength="500" class="materialize-textarea validate" value="{{ ride.ride_description }}" required></textarea>
-                    <label for="ride_description">Description</label>
+                    <textarea id="restaurant_description" name="restaurant_description" minlength="5" maxlength="500" class="materialize-textarea validate" value="{{ restaurant.restaurant_description }}" required></textarea>
+                    <label for="restaurant_description">Description</label>
                 </div>
-            </div>    
+            </div>
+            <!-- dine_or_quick_service -->
+            <div class="row">
+                <div class="col s12">                    
+                    <!-- switch component to select either dine in or quick service-->
+                    <div class="switch">
+                        <i class="fa-solid fa-burger blue-text text-darken-4 prefix"></i>
+                        <label class="dine_quick_service_label">Dine In
+                            <input type="checkbox" id="dine_or_quick_service" name="dine_or_quick_service" value="{{ restaurant.dine_or_quick_service }}" required>
+                            <span class="lever"></span>
+                            Quick Service
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- food_type -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fa-solid fa-pizza-slice blue-text text-darken-4 prefix"></i>
+                    <textarea id="food_type" name="food_type" minlength="5" maxlength="500" class="materialize-textarea validate" value="{{ restaurant.food_type }}" required></textarea>
+                    <label for="food_type">Food Type</label>
+                </div>
+            </div>
             <!-- Submit button for form -->
             <div class="row">
                 <div class="col s12 center-align">

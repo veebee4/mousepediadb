@@ -181,3 +181,30 @@ def add_restaurant():
 
     parks = Park.query.all()
     return render_template("add_restaurant.html", parks=parks)
+
+
+@app.route("/edit_restaurant/<int:restaurant_id>", methods=["GET", "POST"])
+def edit_restaurant(restaurant_id):
+    restaurant = Restaurant.query.get_or_404(restaurant_id)
+
+    if request.method == "POST":
+        restaurant.park_id = request.form.get("park_id")
+        restaurant.restaurant_name = request.form.get("restaurant_name")
+        restaurant.restaurant_description = request.form.get("restaurant_description")
+        restaurant.restaurant_location = request.form.get("restaurant_location")
+        restaurant.dine_or_quick_service = request.form.get("dine_or_quick_service")
+        restaurant.food_type = request.form.get("food_type")
+
+        db.session.commit()
+        return redirect(url_for("restaurants"))
+
+    parks = Park.query.all()
+    return render_template("edit_restaurant.html", restaurant=restaurant, parks=parks)
+
+
+@app.route("/delete_restaurant/<int:restaurant_id>")
+def delete_restaurant(restaurant_id):
+    restaurant = Restaurant.query.get_or_404(restaurant_id)
+    db.session.delete(restaurant)
+    db.session.commit()
+    return redirect(url_for("restaurants"))
