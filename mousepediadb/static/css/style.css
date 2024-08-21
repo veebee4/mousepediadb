@@ -43,6 +43,11 @@ body {
     color: #0d47a1;
 }
 
+/* text colour for delete modal */
+.modal {
+    color:#0d47a1;
+}
+
 /* ---------------------------------------- Body */
 
 body {
@@ -129,7 +134,6 @@ main {
 .modal {
     height: 25rem;
     width: 35rem;
-    color:#0d47a1;
 }
 
 .modal-header, .modal-text {

@@ -1,14 +1,14 @@
 # Mousepedia
 
+![Welcome to Mousepedia](documentation/images/welcome-to-mousepedia.png)
+
 ### All things Disney...
 
-![]()
+![Responsive Screenshot]()
 
-___
+Mousepedia was created for my 3rd Milestone project for Code Institute's Level 5 Diploma in Web Application Development.
 
-
-
-Link to live site - []()
+Link to deployed site - []()
 
 ## CONTENTS
 
@@ -56,21 +56,19 @@ ___
 
 ## Site Objectives
 
-<!-- Design and create a blog site to demonstrate an increasing understanding of the libraries and frameworks available to developers.
+Design and create a database that holds records for detailing Disney Theme Parks, rides and restaurants, and displays these records on the frontend.
 
-My three main objectives were:
+- ### Create a clear, readable and intuitive front end display
 
-- ### Create a readable, clean and responsive front end
-
-  I wanted to make the site easily accessible and intuitively navigated for the users. Django and Bootstrap were used to create and style the front end.
+  I wanted the point of the website to be easily understood from the home page and for the user to be able to easily navigate the website where they can add, edit and delete the records that they have entered onto the database.
 
 - ### Make use of available backend functionality
 
-  The use of the backend framework allows users to create a profile, comment on any of the blog posts on the site, as well as deleting their own comments should they wish to.
+  The use of the backend framework allows users to create, edit and delete records of their choosing.
 
 - ### Store data on an external cloud database
 
-  I used Code Institute's Postgres database server to store the PostgreSQL database for this project. -->
+  I used Code Institute's Postgres database server to store the PostgreSQL database for this project.
 
 ___
 
@@ -78,21 +76,23 @@ ___
 
 ## Target Audience
 
-- 
+- The target audience for Mousepedia is Disney fans who are planning a trip to the Disney parks in Florida, or if they purely want to collect and organise information about the Disney parks.
 
 ## User Stories
 
 ### New Visitor Goals
 
-- 
-- 
-- 
+<h4>As a first time user, I want to be able to:</h4>
+- Understand the concept of the website and how to use it.
+- Create an account.
 
-### Existing Visitor Goals
+### Returning Visitor Goals
 
-- 
-- 
-- 
+<h4>As a returning user, I want to be able to:</h4>
+- Login to my account.
+- To create, edit and delete records.
+- Find the existing Disney park information easily.
+- See which rides and restaurants are in each park.
 
 ___
 
@@ -101,6 +101,9 @@ ___
 ## Colour Scheme
 
 The colour scheme used for this project was based on the colors from the Disney Parks website, but in conjunction with the choice provided by the Materialize framework. This provides the user with some familiarity whilst providing enough contrast between the website elements and text.
+
+For the background of all pages, I created a gradient using the below:
+
 
 ## Typography
 
