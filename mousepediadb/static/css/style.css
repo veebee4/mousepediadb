@@ -85,14 +85,27 @@ main {
     font-weight: 500;
 }
 
-.carousel-item {
+.carousel {
+    height: 500px;
+}
+
+.carousel .carousel-item {
     font-family: Graduate;
     font-weight: 800;
+    width: 400px;
+}
+
+.carousel-item img {
+    height: 20rem;
 }
 
 .carousel-text {
     font-weight: 800;
     padding: 2rem;
+}
+
+.carousel .indicators {
+    margin: -2rem;
 }
 
 /* ---------------------------------------- Parks Page */

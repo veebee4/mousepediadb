@@ -26,14 +26,14 @@
     let parkDisplay = document.querySelectorAll('.carousel');
     M.Carousel.init(parkDisplay, {
       indicators: true,
-      dist: 60,
-      shift: -10,
+      dist: -20,
+      shift: 30,
       duration: 150,
     });
   });
 
   document.addEventListener('DOMContentLoaded', function() {
-    // initialises textual hint for card reveal
+    // initialises textual hint for card reveal on parks cards
     let parkCard = document.querySelectorAll('.tooltipped');
     M.Tooltip.init(parkCard);
   });

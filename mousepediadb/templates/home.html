@@ -6,7 +6,9 @@
 
   <div class="carousel">
     {% for park in parks %}
-    <a class="carousel-item" href="{{ url_for('parks') }}"><img src="{{ park.image_url if park.image_url else url_for('static', filename='images/default_image.jpg') }}" class="park-image">{{ park.park_name }}</a>
+    <a class="carousel-item" href="{{ url_for('parks') }}">
+      <img src="{{ park.image_url if park.image_url else url_for('static', filename='images/default_image.jpg') }}" class="park-image">{{ park.park_name }}
+    </a>
     {% endfor %}
   </div>
 
