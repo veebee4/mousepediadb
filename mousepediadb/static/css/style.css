@@ -82,6 +82,30 @@ span.park-card-heading {
     color: white;
 }
 
+/* -------------------------------------------- Rides page Colors*/
+
+/* background colour of ride card */
+.ride-card {
+    background-color: #0d47a1;
+}
+
+/* colours for tabs & underline in all states */
+.tabs .tab a {
+    color: #0d47a1;
+}
+
+.tabs .tab a.active {
+    color: #0d47a1;
+}
+
+.tabs .tab a:hover {
+    color: #16356b;
+}
+
+.tabs .indicator {
+    background-color: #0d47a1;
+}
+
 /* -------------------------------------------- Form Colors*/
 
 /* label colour on forms */
@@ -227,6 +251,15 @@ main {
 
 .ride-title {
     font-size: 1.5rem;
+    color: white;
+}
+
+.tabs .tab a:hover {
+    font-weight: bold;
+}
+
+.ride-edit, .ride-delete {
+    border: 2px solid black;
 }
 
 /* ---------------------------------------------------------------------------------------------------------- Restaurant/Add Restaurant Page */

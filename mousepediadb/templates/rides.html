@@ -14,9 +14,9 @@
 <div class="row">
     {% for ride in rides %}
     <div class="col s12 m6 l3">
-        <div class="card">
+        <div class="card ride-card">
             <div class="card-content">
-                <i class="fa-solid fa-rocket blue-text text-darken-4 ride-icon"></i>
+                <i class="fa-solid fa-rocket blue-text ride-icon"></i>
                 <h3 class="ride-title">{{ ride.ride_name }}</h3>
             </div>
             <div class="card-tabs">
@@ -32,9 +32,9 @@
                 <div id="tab{{ ride.id }}-3">{{ ride.ride_location }}</div>
             </div>
             <div class="card-action">
-                <a href="{{ url_for('edit_ride', ride_id=ride.id) }}">Edit</a>
+                <a href="{{ url_for('edit_ride', ride_id=ride.id) }}" class="edit-btn btn-large blue darken-4 ride-edit">Edit</a>
                 <!-- Triggers modal for delete button to ensure user is sure-->
-                <a href="#modal-{{ ride.id }}" class="modal-trigger delete-btn btn-large blue darken-4">Delete</a>
+                <a href="#modal-{{ ride.id }}" class="modal-trigger delete-btn btn-large blue darken-4 ride-delete">Delete</a>
 
                 <!-- Modal Structure -->
                 <div id="modal-{{ ride.id }}" class="modal">
