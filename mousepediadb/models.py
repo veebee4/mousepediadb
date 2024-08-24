@@ -76,3 +76,8 @@ class Park(db.Model):
             f"  Special Features        : {self.special_features}\n"
             f"  Transport Between Parks : {self.transport_between_parks}\n"
         )
+
+
+class User(UserMixin):
+    def __init__(self, email):
+        self.id = email
