@@ -9,9 +9,39 @@
 
 /*-------------------------------------------- Colors*/
 
+/* gradient colour for background on all pages */
 body {
     background: rgb(26,147,215);
     background: linear-gradient(0deg, rgba(26,147,215,1) 0%, rgba(111,184,230,1) 35%, rgba(251,255,250,1) 100%);
+}
+
+/* colour for hover over nav links */
+.nav-link:hover {
+    background-color: #16356b;
+}
+
+/* colour for active nav link */
+nav ul li.active {
+    background-color: #16356b;
+}
+
+/* background colour for side nav menu for smaller screens */
+.sidenav {
+    background-color: #a2d7f7;
+}
+
+/* colour for text links on side nav */
+.sidenav li a {
+    color: #16356b;
+}
+
+/* colour for side nav links when hovered over */
+.sidenav li a:hover {
+    background-color: #1A93D7 !important;
+}
+
+.sidenav li.active {
+    background-color: #1A93D7 !important;
 }
 
 /* label colour on forms */
@@ -34,8 +64,9 @@ body {
     background-color: #1A93D7;
 }
 
+/* colour for submit button on forms when hovering */
 .submit-button:hover {
-    background-color: #1A93D7;
+    background-color: #1A93D7 !important;
 }
 
 /* colour for information on park card reveal */
@@ -79,8 +110,9 @@ main {
     font-family: Graduate;
 }
 
-.nav-link:hover {
-    background-color: #16356b;
+.sidenav li a {
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 /* ---------------------------------------- Home Page */
