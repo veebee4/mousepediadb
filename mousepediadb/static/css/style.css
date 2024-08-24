@@ -56,7 +56,7 @@ nav ul li.active {
     color: #0d47a1 !important;
 }
 
-/* -------------------------------------------- Parks page Colors*/
+/* -------------------------------------------- Parks & Add Parks page Colors*/
 
 /* tooltip (textual hint box) colour */
 .material-tooltip {
@@ -80,6 +80,11 @@ span.park-card-heading {
 
 .park-card-info {
     color: white;
+}
+
+/* colour of side bar on datepicker on add park form */
+.datepicker-date-display {
+    background-color: #0d47a1;
 }
 
 /* -------------------------------------------- Rides & Restaurants page Colors*/
@@ -126,7 +131,7 @@ span.park-card-heading {
 /* -------------------------------------------- Modal Colors*/
 
 /* text colour for delete modal */
-.modal {
+.delete-modal {
     color:#0d47a1;
 }
 
@@ -248,6 +253,8 @@ main {
 
 /* ---------------------------------------------------------------------------------------------------------- Add Parks Page */
 
+
+
 /* ---------------------------------------------------------------------------------------------------------- Rides Page */
 
 .ride-icon {
@@ -287,11 +294,6 @@ main {
     font-size: 1.5rem;
 }
 
-/* .restaurant-tabs {
-    display: flex;
-    flex-direction: column;
-} */
-
 /* ---------------------------------------------------------------------------------------------------------- Add Restaurant Page */
 
 .fa-burger {
@@ -304,7 +306,7 @@ main {
 
 /* ---------------------------------------------------------------------------------------------------------- Delete Record Modal */
 
-.modal {
+.delete-modal {
     height: 25rem;
     width: 35rem;
 }

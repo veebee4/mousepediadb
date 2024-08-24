@@ -8,7 +8,8 @@
     // initialises the date picker for date_opened on the add_park form 
     let dateOpened = document.querySelectorAll('.datepicker');
     M.Datepicker.init(dateOpened, {
-      format: 'dd/mm/yyyy' // displaying date in UK format
+      format: 'dd-mm-yyyy', // displaying date in UK format
+      yearRange: 60,
     });
   });
   
