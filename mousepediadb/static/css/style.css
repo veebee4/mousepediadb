@@ -40,6 +40,7 @@ nav ul li.active {
     background-color: #1A93D7 !important;
 }
 
+/* colour for side nav links when active */
 .sidenav li.active {
     background-color: #1A93D7 !important;
 }
@@ -122,13 +123,13 @@ main {
 }
 
 .carousel {
-    height: 500px;
+    height: 31rem;
 }
 
 .carousel .carousel-item {
     font-family: Graduate;
     font-weight: 800;
-    width: 400px;
+    width: 25rem;
 }
 
 .carousel-item img {
@@ -141,13 +142,27 @@ main {
 }
 
 .carousel .indicators {
-    margin: -2rem;
+    margin: -2.1rem;
 }
 
 /* ---------------------------------------- Parks Page */
 
 .add-park-btn {
     margin: 2rem;
+}
+
+.card {
+    height: 32rem;
+}
+
+.card-image img {
+    height: 18rem;
+}
+
+.card .card-content .card-title {
+    font-size: 1.5rem !important;
+    text-align: center;
+    padding-bottom: 1rem;
 }
 
 .park-card-heading {
@@ -159,7 +174,7 @@ main {
 .park-card-label {
     font-family: Graduate;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .park-card-info {
@@ -168,7 +183,11 @@ main {
 }
 
 .edit-btn, .delete-btn {
-    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    font-size: 2rem;
+    font-family: Graduate;
 }
 
 .material-tooltip {
