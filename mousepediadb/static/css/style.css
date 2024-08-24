@@ -79,6 +79,10 @@ main {
     font-family: Graduate;
 }
 
+.nav-link:hover {
+    background-color: #16356b;
+}
+
 /* ---------------------------------------- Home Page */
 
 .home-tagline {

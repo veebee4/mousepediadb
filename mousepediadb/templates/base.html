@@ -20,20 +20,20 @@
                 <a href="{{ url_for('home') }}" class="brand-logo white-text text-align-center">Mousepedia</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-circle-chevron-down light-blue-text text-lighten-4"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li class="nav-link"><a href="{{ url_for('home') }}">Home</a></li>
-                    <li class="nav-link"><a href="{{ url_for('parks') }}">Parks</a></li>
-                    <li class="nav-link"><a href="{{ url_for('rides') }}">Rides</a></li>
-                    <li class="nav-link"><a href="{{ url_for('restaurants') }}">Restaurants</a></li>
+                    <li class="nav-link {% if request.path == url_for('home') %}active{% endif %}"><a href="{{ url_for('home') }}">Home</a></li>
+                    <li class="nav-link {% if request.path == url_for('parks') %}active{% endif %}"><a href="{{ url_for('parks') }}">Parks</a></li>
+                    <li class="nav-link {% if request.path == url_for('rides') %}active{% endif %}"><a href="{{ url_for('rides') }}">Rides</a></li>
+                    <li class="nav-link {% if request.path == url_for('restaurants') %}active{% endif %}"><a href="{{ url_for('restaurants') }}">Restaurants</a></li>
                 </ul>
             </div>
         </nav>
         
         <!-- mobile nav bar -->
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('parks') }}">Parks</a></li>
-            <li><a href="{{ url_for('rides') }}">Rides</a></li>
-            <li><a href="{{ url_for('restaurants') }}">Restaurants</a></li>
+            <li class="{% if request.path == url_for('home') %}active{% endif %}"><a href="{{ url_for('home') }}">Home</a></li>
+            <li class="{% if request.path == url_for('parks') %}active{% endif %}"><a href="{{ url_for('parks') }}">Parks</a></li>
+            <li class="{% if request.path == url_for('rides') %}active{% endif %}"><a href="{{ url_for('rides') }}">Rides</a></li>
+            <li class="{% if request.path == url_for('restaurants') %}active{% endif %}"><a href="{{ url_for('restaurants') }}">Restaurants</a></li>
         </ul>
     </header>
 
