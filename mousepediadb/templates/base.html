@@ -25,6 +25,8 @@
                     <li class="nav-link {% if request.path == url_for('rides') %}active{% endif %}"><a href="{{ url_for('rides') }}">Rides</a></li>
                     <li class="nav-link {% if request.path == url_for('restaurants') %}active{% endif %}"><a href="{{ url_for('restaurants') }}">Restaurants</a></li>
                     <li class="nav-link {% if request.path == url_for('login') %}active{% endif %}"><a href="{{ url_for('login') }}">Login</a></li>
+                    <li class="nav-link {% if request.path == url_for('logout') %}active{% endif %}"><a href="{{ url_for('logout') }}">Log Out</a></li>
+                    <li class="nav-link {% if request.path == url_for('register') %}active{% endif %}"><a href="{{ url_for('register') }}">Register</a></li>
                 </ul>
             </div>
         </nav>
@@ -36,6 +38,8 @@
             <li class="{% if request.path == url_for('rides') %}active{% endif %}"><a href="{{ url_for('rides') }}">Rides</a></li>
             <li class="{% if request.path == url_for('restaurants') %}active{% endif %}"><a href="{{ url_for('restaurants') }}">Restaurants</a></li>
             <li class="nav-link {% if request.path == url_for('login') %}active{% endif %}"><a href="{{ url_for('login') }}">Login</a></li>
+            <li class="nav-link {% if request.path == url_for('logout') %}active{% endif %}"><a href="{{ url_for('logout') }}">Log Out</a></li>
+            <li class="nav-link {% if request.path == url_for('register') %}active{% endif %}"><a href="{{ url_for('register') }}">Register</a></li>
         </ul>
     </header>
 
