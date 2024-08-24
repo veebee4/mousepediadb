@@ -15,11 +15,11 @@
 <div class="row">
     {% for park in parks %}
     <div class="col s12 m6 l3">
-        <div class="card">
+        <div class="park-card card">
             <div class="card-image">
               <img class="activator tooltipped" data-position="bottom" data-tooltip="Click Me!" src="{{ park.image_url if park.image_url else url_for('static', filename='images/default_image.jpg') }}" alt="{{ park.park_name }}">
             </div>
-            <div class="card-content">
+            <div class="park-card-content">
               <span class="card-title park-card-heading activator blue-text text-darken-4">{{ park.park_name }}</span>
               <a href="{{ url_for('edit_park', park_id=park.id) }}" class="edit-btn blue darken-4 btn-large">Edit</a>
               <!-- Triggers modal for delete button to ensure user is sure-->
@@ -38,27 +38,27 @@
               </div>
             </div>
             <div class="card-reveal">
-              <span class="card-title park-card-heading blue-text text-darken-4 center-align">{{ park.park_name }}<i class="fa-solid fa-xmark right"></i></span>
+              <span class="park-card-heading center-align">{{ park.park_name }}<i class="fa-solid fa-xmark right"></i></span>
               <p>
-                <span class="card-label park-card-label">Park ID:</span>
+                <span class="park-card-label">Park ID:</span>
                 <p class="park-card-info">{{ park.id }}</p>
-                <span class="card-label park-card-label">Address:</span>
+                <span class="park-card-label">Address:</span>
                 <p class="park-card-info">{{ park.park_address }}</p>
-                <span class="card-label park-card-label">Description:</span>
+                <span class="park-card-label">Description:</span>
                 <p class="park-card-info">{{ park.park_description }}</p>
-                <span class="card-label park-card-label">Date Opened:</span>
+                <span class="park-card-label">Date Opened:</span>
                 <p class="park-card-info">{{ park.date_opened }}</p>
-                <span class="card-label park-card-label">Opening Hours:</span>
+                <span class="park-card-label">Opening Hours:</span>
                 <p class="park-card-info">{{ park.time_open }} - {{ park.time_closed }}</p>
-                <span class="card-label park-card-label">Number of Restaurants: </span>
+                <span class="park-card-label">Number of Restaurants: </span>
                 <p class="park-card-info"> {{ park.num_restaurants }}</p>
-                <br><span class="card-label park-card-label">Number of Rides: </span>
+                <br><span class="park-card-label">Number of Rides: </span>
                 <p class="park-card-info"> {{ park.num_rides }}</p>
-                <br><span class="card-label park-card-label">Entertainment: </span>
+                <br><span class="park-card-label">Entertainment: </span>
                 <p class="park-card-info">{{ park.entertainment }}</p>
-                <span class="card-label park-card-label">Special Features:</span>
+                <span class="park-card-label">Special Features:</span>
                 <p class="park-card-info">{{ park.special_features }}</p>
-                <span class="card-label park-card-label">Modes of Transport to Other Parks:</span>
+                <span class="park-card-label">Modes of Transport to Other Parks:</span>
                 <p class="park-card-info">{{ park.transport_between_parks }}</p>
               </p>
             </div>

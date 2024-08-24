@@ -14,10 +14,10 @@
 <div class="row">
     {% for ride in rides %}
     <div class="col s12 m6 l3">
-        <div class="card medium">
+        <div class="card">
             <div class="card-content">
-                <i class="fa-solid fa-rocket blue-text text-darken-4"></i>
-                <h3>{{ ride.ride_name }}</h3>
+                <i class="fa-solid fa-rocket blue-text text-darken-4 ride-icon"></i>
+                <h3 class="ride-title">{{ ride.ride_name }}</h3>
             </div>
             <div class="card-tabs">
                 <ul class="tabs tabs-fixed-width">

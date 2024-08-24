@@ -7,13 +7,16 @@
     font-weight: 900;
 }
 
-/*-------------------------------------------- Colors*/
+/* ---------------------------------------------------------------------------------------------------------- Colors*/
+/* -------------------------------------------- Body & General Colors*/
 
 /* gradient colour for background on all pages */
 body {
     background: rgb(26,147,215);
     background: linear-gradient(0deg, rgba(26,147,215,1) 0%, rgba(111,184,230,1) 35%, rgba(251,255,250,1) 100%);
 }
+
+/* -------------------------------------------- Nav Colors*/
 
 /* colour for hover over nav links */
 .nav-link:hover {
@@ -45,24 +48,45 @@ nav ul li.active {
     background-color: #1A93D7 !important;
 }
 
-/* label colour on forms */
-.input-field label {
-    color: #0d47a1;
-}
+
+/* -------------------------------------------- Home page Colors*/
 
 /* colour for text on cards and carousel */
 .card-label, .card-title, .carousel-item {
     color: #0d47a1 !important;
 }
 
+/* -------------------------------------------- Parks page Colors*/
+
 /* tooltip (textual hint box) colour */
 .material-tooltip {
     background-color: #0d47a1;
 }
 
-/* file upload button hover colour on add_park form */
-.file-upload-btn:hover {
-    background-color: #1A93D7;
+/* background colour for card reveal*/
+div.card-reveal {
+    background-color: #0d47a1 !important;
+}
+
+/* text colour card reveal heading */
+span.park-card-heading {
+    color: white !important;
+}
+
+/* colour for labels & information on park card reveal */
+.park-card-label {
+    color: white !important;
+}
+
+.park-card-info {
+    color: white;
+}
+
+/* -------------------------------------------- Form Colors*/
+
+/* label colour on forms */
+.input-field label {
+    color: #0d47a1;
 }
 
 /* colour for submit button on forms when hovering */
@@ -70,17 +94,14 @@ nav ul li.active {
     background-color: #1A93D7 !important;
 }
 
-/* colour for information on park card reveal */
-.park-card-info {
-    color: #0d47a1;
-}
+/* -------------------------------------------- Modal Colors*/
 
 /* text colour for delete modal */
 .modal {
     color:#0d47a1;
 }
 
-/* ---------------------------------------- Body */
+/* ---------------------------------------------------------------------------------------------------------- Body */
 
 body {
     display: flex;
@@ -89,7 +110,7 @@ body {
     font-family: Englebert;
 }
 
-/*-------------------------------------------- Header & Nav */
+/* ---------------------------------------------------------------------------------------------------------- Header & Nav */
 
 main {
     flex: 1 0 auto;
@@ -116,7 +137,7 @@ main {
     font-weight: 600;
 }
 
-/* ---------------------------------------- Home Page */
+/* ---------------------------------------------------------------------------------------------------------- Home Page */
 
 .home-tagline {
     font-weight: 500;
@@ -145,13 +166,13 @@ main {
     margin: -2.1rem;
 }
 
-/* ---------------------------------------- Parks Page */
+/* ---------------------------------------------------------------------------------------------------------- Parks Page */
 
 .add-park-btn {
     margin: 2rem;
 }
 
-.card {
+.park-card {
     height: 32rem;
 }
 
@@ -159,10 +180,9 @@ main {
     height: 18rem;
 }
 
-.card .card-content .card-title {
-    font-size: 1.5rem !important;
+.park-card .park-card-content {
     text-align: center;
-    padding-bottom: 1rem;
+    font-size: 3rem;
 }
 
 .park-card-heading {
@@ -174,11 +194,11 @@ main {
 .park-card-label {
     font-family: Graduate;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .park-card-info {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1.3rem;
 }
 
@@ -197,7 +217,29 @@ main {
     padding: 0.5rem;
 }
 
-/* ---------------------------------------- Delete Record Modal */
+/* ---------------------------------------------------------------------------------------------------------- Add Parks Page */
+
+/* ---------------------------------------------------------------------------------------------------------- Rides Page */
+
+.ride-icon {
+    font-size: 3rem;
+}
+
+.ride-title {
+    font-size: 1.5rem;
+}
+
+/* ---------------------------------------------------------------------------------------------------------- Restaurant/Add Restaurant Page */
+
+.fa-burger {
+    font-size: 2rem;
+}
+
+.dine_quick_service_label {
+    color: #0d47a1;
+}
+
+/* ---------------------------------------------------------------------------------------------------------- Delete Record Modal */
 
 .modal {
     height: 25rem;
@@ -218,9 +260,7 @@ main {
     flex-direction: column;
 }
 
-/* ---------------------------------------- Add Parks Page */
-
-/* ---------------------------------------- Forms */
+/* ---------------------------------------------------------------------------------------------------------- Forms */
 
 .add_form {
     margin-top: 4rem;
@@ -245,19 +285,7 @@ label {
     font-weight: 800;
 }
 
-/* ---------------------------------------- Rides Page */
-
-/* ---------------------------------------- Restaurant/Add Restaurant Page */
-
-.fa-burger {
-    font-size: 2rem;
-}
-
-.dine_quick_service_label {
-    color: #0d47a1;
-}
-
-/* ---------------------------------------- Footer */
+/* ---------------------------------------------------------------------------------------------------------- Footer */
 
 .footer-heading {
     font-family: Graduate;
