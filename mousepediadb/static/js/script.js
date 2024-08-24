@@ -9,7 +9,7 @@
     let dateOpened = document.querySelectorAll('.datepicker');
     M.Datepicker.init(dateOpened, {
       format: 'dd-mm-yyyy', // displaying date in UK format
-      yearRange: 60,
+      yearRange: 70,
     });
   });
   
@@ -17,8 +17,7 @@
     // initialises the time picker for time_open & time_closed on the add_park form
     let openingTimes = document.querySelectorAll('.timepicker');
     M.Timepicker.init(openingTimes, {
-      format: 'HH:mm', // changing format of how time is displayed
-      twelveHour: true, // displaying AM/PM instead of 24hour clock for user ease
+      format: 'HH-mm', // changing format of how time is displayed
     });
   });
 

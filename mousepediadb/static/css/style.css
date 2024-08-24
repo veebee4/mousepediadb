@@ -82,8 +82,8 @@ span.park-card-heading {
     color: white;
 }
 
-/* colour of side bar on datepicker on add park form */
-.datepicker-date-display {
+/* colour of side bar on datepicker & time pickers on add park form */
+.datepicker-date-display, .timepicker-digital-display {
     background-color: #0d47a1;
 }
 
