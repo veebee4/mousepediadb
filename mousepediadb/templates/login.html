@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 class="blue-text text-darken-4 center-align page-heading"><i class="fa-solid fa-wand-sparkles blue-text text-lighten-3"></i> Login <i class="fa-solid fa-wand-sparkles blue-text text-lighten-3"></i></h1>
+
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="fa-solid fa-circle-user prefix"></i></i>
+          <input id="username" type="text" class="validate">
+          <label for="username">Username</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="fa-solid fa-lock prefix"></i></i>
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+    </form>
+  </div>
+
+{% endblock %}
