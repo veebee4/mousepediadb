@@ -82,11 +82,16 @@ span.park-card-heading {
     color: white;
 }
 
-/* -------------------------------------------- Rides page Colors*/
+/* -------------------------------------------- Rides & Restaurants page Colors*/
 
-/* background colour of ride card */
-.ride-card {
+/* background colour of ride & restaurant card */
+.ride-card, .restaurant-card {
     background-color: #0d47a1;
+}
+
+/* text colour for title of ride card */
+.ride-title, .restaurant-title {
+    color: white;
 }
 
 /* colours for tabs & underline in all states */
@@ -251,18 +256,43 @@ main {
 
 .ride-title {
     font-size: 1.5rem;
-    color: white;
 }
 
 .tabs .tab a:hover {
     font-weight: bold;
 }
 
-.ride-edit, .ride-delete {
+/* edit and delete buttons on ride and restaurant page */
+.ride-rest-edit, .ride-rest-delete {
     border: 2px solid black;
 }
 
-/* ---------------------------------------------------------------------------------------------------------- Restaurant/Add Restaurant Page */
+/* ---------------------------------------------------------------------------------------------------------- Add Rides Page */
+
+/* ---------------------------------------------------------------------------------------------------------- Restaurant */
+
+.restaurant-information .card {
+    margin-bottom: 2rem;
+}
+
+.restaurant-card {
+    width: 100%;
+}
+
+.restaurant-icon {
+    font-size: 3rem;
+}
+
+.restaurant-title {
+    font-size: 1.5rem;
+}
+
+/* .restaurant-tabs {
+    display: flex;
+    flex-direction: column;
+} */
+
+/* ---------------------------------------------------------------------------------------------------------- Add Restaurant Page */
 
 .fa-burger {
     font-size: 2rem;
@@ -324,7 +354,7 @@ label {
     font-family: Graduate;
 }
 
-.row {
+.footer-row {
     margin-bottom: 0;
 }
 
