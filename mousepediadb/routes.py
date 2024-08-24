@@ -208,3 +208,8 @@ def delete_restaurant(restaurant_id):
     db.session.delete(restaurant)
     db.session.commit()
     return redirect(url_for("restaurants"))
+
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    return render_template("register.html")

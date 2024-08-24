@@ -1,6 +1,8 @@
 # import modules
 import os
 from mousepediadb import app
+from werkzeug.security import generate_password_hash, check_password_hash
+
 
 if __name__ == "__main__":
     app.run(
