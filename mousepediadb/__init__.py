@@ -15,7 +15,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-# assigning SQLAlchemy class instance to variable
+# assigning SQLAlchemy class instance to variable & migrate to update models
 db = SQLAlchemy(app)
 
 from mousepediadb import routes
