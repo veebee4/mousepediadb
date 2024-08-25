@@ -167,7 +167,10 @@ def add_restaurant():
             quick_service = request.form.get("quick_service")
             food_type = request.form.get("food_type")
 
-            # Check if the park_id exists
+            # collects the selected service types (dine in/quick service)
+            service_types = request.form.getlist("service_type")
+
+            # check if the park_id exists
             park = Park.query.get(park_id)
             if not park:
                 flash("Invalid park ID. Please select a valid park.", "error")
@@ -182,6 +185,10 @@ def add_restaurant():
                 quick_service=quick_service,
                 food_type=food_type,
             )
+
+             # save the selected service types
+            restaurant.dine_in = 'dine_in' in service_types
+            restaurant.quick_service = 'quick_service' in service_types
 
             db.session.add(restaurant)
             db.session.commit()
@@ -204,6 +211,13 @@ def edit_restaurant(restaurant_id):
         restaurant.dine_in = request.form.get("dine_in")
         restaurant.quick_service = request.form.get("quick_service")
         restaurant.food_type = request.form.get("food_type")
+
+        # collect the selected service types
+        service_types = request.form.getlist("service_type")
+        
+        # Update the service types
+        restaurant.dine_in = 'dine_in' in service_types
+        restaurant.quick_service = 'quick_service' in service_types
 
         db.session.commit()
         flash("Restaurant edited successfully!", "success")
