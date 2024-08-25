@@ -1,5 +1,5 @@
 # import modules and functions
-from flask import render_template, session, request, redirect, url_for
+from flask import render_template, session, request, redirect, url_for, flash
 from mousepediadb import app, db
 from mousepediadb.models import Park, Restaurant, Ride
 
@@ -48,6 +48,7 @@ def add_park():
         )
         db.session.add(park)
         db.session.commit()
+        flash("Park added successfully!", "success")
         return redirect(url_for("parks"))
     return render_template("add_park.html")
 
@@ -69,6 +70,7 @@ def edit_park(park_id):
         park.transport_between_parks = request.form.get("transport_between_parks")
         park.image_url = request.form.get("image_url")
         db.session.commit()
+        flash("Park edited successfully!", "success")
         return redirect(url_for("parks"))
     return render_template("edit_park.html", park=park)
 
@@ -78,6 +80,7 @@ def delete_park(park_id):
     park = Park.query.get_or_404(park_id)
     db.session.delete(park)
     db.session.commit()
+    flash("Park deleted successfully!", "success")
     return redirect(url_for("parks"))
 
 
@@ -110,6 +113,7 @@ def add_ride():
             )
             db.session.add(ride)
             db.session.commit()
+            flash("Ride added successfully!", "success")
             return redirect(url_for("rides"))
 
         except Exception as e:
@@ -130,6 +134,7 @@ def edit_ride(ride_id):
         ride.ride_location = request.form.get("ride_location")
 
         db.session.commit()
+        flash("Ride edited successfully!", "success")
         return redirect(url_for("rides"))
 
     parks = Park.query.all()
@@ -141,6 +146,7 @@ def delete_ride(ride_id):
     ride = Ride.query.get_or_404(ride_id)
     db.session.delete(ride)
     db.session.commit()
+    flash("Ride deleted successfully!", "success")
     return redirect(url_for("rides"))
 
 
@@ -177,6 +183,7 @@ def add_restaurant():
 
             db.session.add(restaurant)
             db.session.commit()
+            flash("Restaurant added successfully!", "success")
             return redirect(url_for("restaurants"))
 
     parks = Park.query.all()
@@ -196,6 +203,7 @@ def edit_restaurant(restaurant_id):
         restaurant.food_type = request.form.get("food_type")
 
         db.session.commit()
+        flash("Restaurant edited successfully!", "success")
         return redirect(url_for("restaurants"))
 
     parks = Park.query.all()
@@ -207,9 +215,5 @@ def delete_restaurant(restaurant_id):
     restaurant = Restaurant.query.get_or_404(restaurant_id)
     db.session.delete(restaurant)
     db.session.commit()
+    flash("Restaurant deleted successfully!", "success")
     return redirect(url_for("restaurants"))
-
-
-@app.route("/register", methods=["GET", "POST"])
-def register():
-    return render_template("register.html")
