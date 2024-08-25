@@ -24,23 +24,23 @@ Link to deployed site - []()
   - [Colour Scheme](#colour-scheme)
   - [Typography](#typography)
   - [Logo and Favicon](#logo-and-favicon)
+- [Database Schema & User Journey](#database-schema--user-journey)
   - [Wireframes](#wireframes)
   - [Flow Diagram](#flow-diagram)
   - [Database Plan](#database-plan)
 - [Features](#features)
-  - [Registration](#registration)
-  - [Future Features](#future-features)
-  - [Features Not Included](#features-not-included)
+  - [Future Implementations](#future-implementations)
+  - [Accessibility](#accessibility)
 - [Technologies Used](#technologies-used)
 - [Programming Languages, Frameworks and Libraries Used](#programming-languages-frameworks-and-libraries-used)
-- [Agile](#agile)
+- [Defensive Programming](#defensive-programming)
 - [Testing](#testing)
   - [Manual Testing](#manual-testing)
   - [User](#user)
   - [Bugs](#bugs)
   - [Lighthouse](#lighthouse)
   - [Validation Testing](#validation-testing)
-    - [HTML \& CSS](#html--css)
+    - [HTML & CSS](#html--css)
   - [Python Testing](#python-testing)
   - [Deployment](#deployment)
     - [Github Deployment](#github-deployment)
@@ -54,9 +54,9 @@ Link to deployed site - []()
 
 ___
 
-## Site Objectives
+## Project Goals
 
-Design and create a database that holds records for detailing Disney Theme Parks, rides and restaurants, and displays these records on the frontend.
+Design and create a database that holds records for detailing Disney Theme Parks, rides and restaurants, and displays these records on the frontend. This project was created as I am a big fan of Disney and the Disney parks and thought it would fulfil a need of having all the information you require in one place with the ability for it to be completely customised for the user.
 
 - ### Create a clear, readable and intuitive front end display
 
@@ -104,42 +104,117 @@ The colour scheme used for this project was based on the colors from the Disney 
 
 For the background of all pages, I created a gradient using the below:
 
+![Gradient Background Colour](documentation/images/gradient-colours.png)
+
+The rest of the elements used the above colours and some details were just slightly different to the below, but the main colours used are below:
+
+![Colour Palette](documentation/images/colour-palette.png)
 
 ## Typography
 
-For the main logo featured on the navbar, I used the google font 'Graduate' and for the body of the page, I used Englebert.
+Google fonts were used to import fonts for use in the project.
+
+For the main logo featured on the navbar and titles throughout the pages, I used the google font 'Graduate'. I used this as it was clear, easy to read and had a varsity style, which reminds me of Disney and has also been used on a large amount of recent merchandise.
+
+![Graduate Font Example](documentation/images/graduate-example.png)
+
+For the body of the page, I used Englebert which again, is clear and easy to read. I also felt the cartoonish nature of the font, reminded me of Disney.
+
+![Englebert Font Example](documentation/images/englebert-example.png)
 
 ## Logo and Favicon
 
+The logo was made by myself in procreate, using the Graduate font for the M to link to Mousepedia but that steers away from any copyright infringement. The favicon I used was obtained from [Favicon.io](https://favicon.io/), generated using the following graphics from Twitter Twemoji:
 
+- Graphics Title: 1f3f0.svg
+- Graphics Author: Copyright 2020 Twitter, Inc and other contributors (https://github.com/twitter/twemoji)
+- Graphics Source: https://github.com/twitter/twemoji/blob/master/assets/svg/1f3f0.svg
+- Graphics License: CC-BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
 
 ## Wireframes
 
+- Home page
+  - [Desktop](documentation/wireframes/home-page.png)
+  - [Mobile](documentation/wireframes/home-mobile.png)
 
-## Flow Diagram
+- Parks page
+  This shows the park records displayed as cards and the card reveal on the last card for when the card is clicked (desktop example only).
+  - [Desktop](documentation/wireframes/park-page.png)
+  - [Mobile](documentation/wireframes/park-mobile.png)
 
-Here is a diagram showing the possible flow through the site.
+- Rides/Restaurants page
+  - [Desktop](documentation/wireframes/ride-rest-page.png)
+  - [Tablet](documentation/wireframes/ride-rest-tablet.png)
+
+- Add/Edit page
+  Only shown one example as the add/edit layout is very similar across the pages.
+  - [Desktop](documentation/wireframes/add-edit-rest-form.png)
+  - [Mobile](documentation/wireframes/add-edit-rest-form-mobile.png)
+
+- Delete Modal
+  If user decides to click delete on any records, this modal will appear to confirm the choice. Also, note the flash message that appears at the top of the page to feedback to user that the add/edit/delete has been successful.
+  - [Desktop](documentation/wireframes/delete-modal.png)
+  - [Mobile](documentation/wireframes/delete-modal-mobile.png)
+
+## Database Schema & User Journey
+
+### Flow Diagram
+
+Here is a diagram showing the possible flow/user journey through the site.
 
 ![Site Flow Diagram]()
 
-## Database Plan
+## Database Schema
 
-The database plan is fairly simple, but it shows the information that is stored within the database, the type of data and if it is logged as a Primary or Foreign key where applicable.
+The database schema/plan is fairly simple, but it shows the information that is stored within the database, the type of data and if it is logged as a Primary or Foreign key where applicable.
 
-![Database plan]()
+![Database plan](documentation/images/database-diagram.png)
 
 # Features
 
+This website consists of 10 pages, all of which are extended from the base page.
 
-## Future Features
+- Home page
+- Parks page
+- Rides page
+- Restaurant page
+- Add Park page
+- Add Ride page
+- Add Restaurant page
+- Edit Park page
+- Edit Ride page
+- Edit Restaurant page
 
-- 
-- 
+### General features across all pages
+  - Favicon: Created at [Favicon.io](https://favicon.io/), I chose the image of the castle to represent the parks, which are most known for the Cinderella Castle.
+  - Navbar & Footer: Features on all pages, the nav bar is comprised of an image logo with text title which is a clickable link back to the homepage and four interactive links; Home, Parks, Rides and Restaurants, the background of each link will change to a darker colour when hovered over and the current page is the same colour but constant to show the user what page they are on and where they are hovering over with the cursor.
+                      The footer has a small amount of text about the site, along with some useful links and copyright year and information.
+    ![Navbar](documentation/images/navbar.png)
+    ![Nav Interactive Links](documentation/images/interactive-nav-links.png)
+    ![Footer](documentation/images/footer.png)
+    ![Footer Interactive Links](documentation/images/footer-interactive-links.png)
+  - Responsive across all devices, using Materialize framework.
+    ![Responsive Screenshot]()
+  - User feedback on buttons to show when they are hovered over.
+    ![Button Feedback](documentation/images/button-feedback.png)
+  - Feedback for user if no records exist (on parks, rides and restaurants page)
+    ![No Record Feedback](documentation/images/no-record-feedback.png)
 
-## Features Not Included
 
-- 
+## Future Implementations
+  For future implementations, I would like to:
+- Add a login feature so that not all users to the site can add/edit/delete records. Due to time constraints, I was not able to implement this properly.
+- Add features to showcase all of the Disney parks globally, and other Disney properties, including all information about shopping areas such as Disney Springs and all information for Disney Hotels.
+- Add a feature to leave a review for any park/ride/restaurant record.
+- Add feature to include picture of ride/restaurant.
+- Add feature to upload your own pictures to appear on the front end record displays.
 
+## Accessibility
+
+I have kept accessibility in mind whilst building the project, to make sure it is accessible as possible.
+  - Using semantic HTML.
+  - Providing information for screen readers where there are icons used and no text.
+  - Ensuring that there is a sufficient colour contrast throughout the site.
 ___
 
 # Technologies Used
@@ -148,80 +223,82 @@ Here are the technologies used to build this project:
 
 - [Gitpod](https://www.gitpod.io/) To build and create this project
 - [Github](https://github.com) To host and store the data for the site.
+- [Git](https://git-scm.com/) The git command was used for version control via the terminal in Gitpod, to commit to Git and Push to GitHub.
 - [PEP8 Validator](https://pep8ci.herokuapp.com/) Used to check python code for errors
-- []() Used to store PostgreSQL database.
+- [PostgreSQL](https://www.postgresql.org/) Code Institute PostgreSQL Database Server was used to store PostgreSQL database.
 - [Heroku](https://id.heroku.com/) Used to deploy the project
+- [Google Fonts](https://fonts.google.com/) Used by importing the fonts Graduate & Englebert, into the style.css file which has been used on all pages within the project.
+- [Font Awesome](https://fontawesome.com/) Font Awesome was used to add icons for aesthetic purposes.
+- [Am I Responsive?](https://ui.dev/amiresponsive) To show the website image on a range of devices.
+- [Lucid Chart](https://www.lucidchart.com/) To create the database schema.
+- [Balsamiq](https://balsamiq.com/) Balsamiq was used to create wireframes.
+- [Google Developer Tools](https://developer.chrome.com/docs/) To troubleshoot and test features, solve issues with responsiveness and styling.
+- [Procreate](https://procreate.com/) Used to design the logo for the nav bar.
 
 # Programming Languages, Frameworks and Libraries Used
 
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+- [Materialize CSS](https://materializecss.com/)
+- [Flask](https://pypi.org/project/Flask/)
+- [SQLAlchemy](https://pypi.org/project/SQLAlchemy/)
+- [PIP](https://pypi.org/project/pip/) - Used to install packages
 
-
-# Testing
-
-<!-- As each section or Function/Model was built during this project, I was testing for functionality and styling issues that may have arisen (see table below), which were corrected or fixed before continuing. I also had friends test the site by signing up, adding and deleting comments using various devices on varying platforms (IOS, Android, Mobile, Tablet etc) and reporting back any issues they encountered with functionality or styling. -->
-
-## Manual Testing
-
-
-## Bugs
-
-
-
-## Lighthouse
-
-
-## Validation Testing
-
-### HTML & CSS
-
-
-
-## Python Testing
-
-<!-- Python pep8 validation was done via [Code Institute's Python Linter](https://pep8ci.herokuapp.com/)
-
-The only errors recieved here were where some lines of text exceeded the limit of 79 characters, but these have now been rectified.
-
-Python Files Tested:
-
-- models
-- forms
-- views
-- urls -->
-
+# Defensive Programming
+I have used defensive programming within my project by using a pop up modal for when a user tries to delete a record as it is the only process the user would not be able to come back from.
+When a user clicks the delete button on a record, a modal pops up asking "Are you sure you want to delete this park/ride/restaurant? This action cannot be undone", The delete button is in red to make sure it stands out while the safe option "cancel" is in green so this will more likely be pressed if a mistake is made.
 ___
 
 ## Deployment
 
 ### Github Deployment
 
-<!-- The website was stored using GitHub for storage of data and version control. To do this I did the following;
+The website was stored using GitHub for storage of data and version control. To do this I did the following;
 
-After each addition, change or removal of code, in the terminal within your IDE (I used codeanywhere for this project) type:
+After each addition, change or removal of code, in the terminal within your IDE type:
 
 - git add .
 - git commit -m "meaningful commit message"
 - git push
 
-The files are now available to view within your github repository. -->
+The files are now available to view within your github repository.
 
 ### Creating a Fork or Copying
 
-To clone/fork/copy the repository you click on the fork tab which is situated next to unwatch tab in the top right corner of the page
+To fork the repository:
+
+  1. Log in (or sign up) to Github.
+
+  2. Go to the repository for this project, [Mousepediadb](https://github.com/veebee4/mousepediadb).
+
+  3. Click the Fork button in the top right corner.
 
 ### Clone
 
-To create a clone you do the following;
+To clone the repository:
 
-1. Click on the code tab, left of the Gitpod tab
-2. To the right of the repository name, click the clipboard icon
-3. In the IED open GitBash
-4. Change the working directory to the location you prefer
-5. Add Git Clone with the copy of the repository name
-6. Clone has been created
+  1. Log in (or sign up) to GitHub.
+
+  2. Go to the repository for this project, [Mousepediadb](https://github.com/veebee4/mousepediadb).
+
+  3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
+
+  4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
+
+  5. Type the following command in the terminal (after the git clone you will need to paste the link you copied in step 3 above):
+
+  ```bash
+  git clone { & THE LINK FROM STEP 3 }
+  ```
+
+  6. Set up a virtual environment (this step is not required if you are using the Code Institute Template in GitPod as this will already be set up for you).
+
+  7. Install the packages from the requirements.txt file by running the following command in the Terminal:
+
+  ```bash
+    pip3 install -r requirements.txt
+    ```
 
 ### Repository deployment via Heroku
 
