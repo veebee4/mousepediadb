@@ -8,12 +8,16 @@
 }
 
 /* ---------------------------------------------------------------------------------------------------------- Colors*/
-/* -------------------------------------------- Body & General Colors*/
+/* -------------------------------------------- Body & Multiple page Colors*/
 
 /* gradient colour for background on all pages */
 body {
     background: rgb(26,147,215);
     background: linear-gradient(0deg, rgba(26,147,215,1) 0%, rgba(111,184,230,1) 35%, rgba(251,255,250,1) 100%);
+}
+
+.no-record-feedback {
+    color: #0d47a1;
 }
 
 /* -------------------------------------------- Nav Colors*/
@@ -172,11 +176,6 @@ main {
     font-weight: 600;
 }
 
-
-/* ---------------------------------------------------------------------------------------------------------- Register Page */
-
-
-
 /* ---------------------------------------------------------------------------------------------------------- Home Page */
 
 .home-tagline {
@@ -255,6 +254,13 @@ main {
     border-radius: 10px;
     box-shadow: 3px 3px rgba(187, 204, 246, 0.8);
     padding: 0.5rem;
+}
+
+/* styling for feedback message on parks, rides and restaurants page when no records exist */
+.no-record-feedback {
+    text-align: center;
+    font-weight: 700;
+    font-size: 3rem;
 }
 
 /* ---------------------------------------------------------------------------------------------------------- Add Parks Page */
