@@ -163,7 +163,8 @@ def add_restaurant():
             park_id = request.form.get("park_id")
             restaurant_location = request.form.get("restaurant_location")
             restaurant_description = request.form.get("restaurant_description")
-            dine_or_quick_service = request.form.get("dine_or_quick_service") == 'on'
+            dine_in = request.form.get("dine_in")
+            quick_service = request.form.get("quick_service")
             food_type = request.form.get("food_type")
 
             # Check if the park_id exists
@@ -177,7 +178,8 @@ def add_restaurant():
                 restaurant_name=restaurant_name,
                 restaurant_location=restaurant_location,
                 restaurant_description=restaurant_description,
-                dine_or_quick_service=dine_or_quick_service,
+                dine_in=dine_in,
+                quick_service=quick_service,
                 food_type=food_type,
             )
 
@@ -199,7 +201,8 @@ def edit_restaurant(restaurant_id):
         restaurant.restaurant_name = request.form.get("restaurant_name")
         restaurant.restaurant_description = request.form.get("restaurant_description")
         restaurant.restaurant_location = request.form.get("restaurant_location")
-        restaurant.dine_or_quick_service = request.form.get("dine_or_quick_service")
+        restaurant.dine_in = request.form.get("dine_in")
+        restaurant.quick_service = request.form.get("quick_service")
         restaurant.food_type = request.form.get("food_type")
 
         db.session.commit()
