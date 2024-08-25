@@ -133,8 +133,8 @@ span.park-card-heading {
     background-color: #1A93D7 !important;
 }
 
-/* colour for text on switch - restaurant form */
-.dine_quick_service_label {
+/* colour for text for checkboxes - restaurant form */
+.dine_in_label, .quick_service_label {
     color: #0d47a1;
 }
 
@@ -315,6 +315,20 @@ main {
 
 .fa-burger {
     font-size: 2rem;
+}
+
+.form-checkboxes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.restaurant-checkboxes {
+    margin-right: 10px;
+}
+
+.service-container label {
+    margin-right: 20px;
 }
 
 /* ---------------------------------------------------------------------------------------------------------- Flash Messages */
