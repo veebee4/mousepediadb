@@ -133,6 +133,11 @@ span.park-card-heading {
     background-color: #1A93D7 !important;
 }
 
+/* colour for text on switch - restaurant form */
+.dine_quick_service_label {
+    color: #0d47a1;
+}
+
 /* -------------------------------------------- Modal Colors*/
 
 /* text colour for delete modal */
@@ -312,8 +317,14 @@ main {
     font-size: 2rem;
 }
 
-.dine_quick_service_label {
-    color: #0d47a1;
+/* ---------------------------------------------------------------------------------------------------------- Flash Messages */
+
+.flash-message {
+    display: flex;
+    background-color: #1A93D7;
+    color: white;
+    font-size: 3rem;
+    justify-content: center;
 }
 
 /* ---------------------------------------------------------------------------------------------------------- Delete Record Modal */

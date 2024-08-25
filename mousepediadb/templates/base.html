@@ -37,16 +37,19 @@
         </ul>
     </header>
 
+    <div class="flash-message">
     {% with messages = get_flashed_messages() %}
     {% if messages %}
-    <ul class=flashes>
+      <ul class=flashes>
     {% for message in messages %}
-      <li>{{ message }}</li>
+        <li>{{ message }}</li>
     {% endfor %}
-    </ul>
+      </ul>
     {% endif %}
     {% endwith %}
-    {% block body %}{% endblock %}
+    {% block body %}
+    {% endblock %}
+    </div>
 
     <main class="container">
         {% block content %}
