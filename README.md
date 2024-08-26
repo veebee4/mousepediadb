@@ -8,7 +8,7 @@
 
 Mousepedia was created for my 3rd Milestone project for Code Institute's Level 5 Diploma in Web Application Development.
 
-Link to deployed site - []()
+Link to deployed site - [Mousepedia](https://mousepediadb-0e4030391623.herokuapp.com/parks)
 
 ## CONTENTS
 
@@ -159,7 +159,7 @@ The logo was made by myself in procreate, using the Graduate font for the M to l
 
 Here is a diagram showing the possible flow/user journey through the site.
 
-![Site Flow Diagram]()
+![Site Flow Diagram](documentation/images/flowchart.png)
 
 ## Database Schema
 
