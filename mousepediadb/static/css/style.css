@@ -121,6 +121,11 @@ span.park-card-heading {
     background-color: #0d47a1;
 }
 
+/* -------------------------------------------- 404 Error page Colors*/
+.error-header, .error-tag, .error-text {
+    color: #0d47a1;
+}
+
 /* -------------------------------------------- Form Colors*/
 
 /* label colour on forms */
@@ -323,6 +328,21 @@ main {
 
 .service-container label {
     margin-right: 20px;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------- 404 Error Page */
+
+.error-header {
+    padding: 4rem;
+}
+
+.error-tag {
+    padding-bottom: 4rem;
+}
+
+.error-text {
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
 /* -------------------------------------------------------------------------------------------------------------------------------- Flash Messages */
