@@ -21,78 +21,81 @@
 
 <!-- Cards to display park records -->
 <div class="row">
-    {% for park in parks %}
-    <div class="col s12 m6 l3">
-        <div class="park-card card">
-            <div class="card-image">
-              <img class="activator tooltipped" data-position="bottom" data-tooltip="Click Me!" 
-              src="{{ park.image_url if park.image_url else url_for('static', filename='images/default_image.jpg') }}" 
-              alt="{{ park.park_name }}">
-            </div>
-            <div class="park-card-content">
-              <span class="card-title park-card-heading activator blue-text text-darken-4">
-                {{ park.park_name }}
-              </span>
-              <a href="{{ url_for('edit_park', park_id=park.id) }}" 
-              class="edit-btn blue darken-4 btn-large">
-                Edit
-              </a>
-              <!-- Triggers modal for delete button for warning message -->
-              <a href="#modal-{{ park.id }}" 
-              class="modal-trigger delete-btn btn-large blue darken-4">
-                Delete
-              </a>
+  {% for park in parks %}
+  <div class="col s12 m6 l3">
+      <div class="park-card card">
+          <div class="card-image">
+            <img class="activator tooltipped" data-position="bottom" data-tooltip="Click Me!" 
+            src="{{ park.image_url if park.image_url else url_for('static', filename='images/default_image.jpg') }}" 
+            alt="{{ park.park_name }}">
+          </div>
+          <div class="park-card-content">
+            <span class="card-title park-card-heading activator blue-text text-darken-4">
+              {{ park.park_name }}
+            </span>
+            <a href="{{ url_for('edit_park', park_id=park.id) }}" 
+            class="edit-btn blue darken-4 btn-large">
+              Edit
+            </a>
 
-              <!-- Modal Structure -->
-              <div id="modal-{{ park.id }}" class="delete-modal modal">
-                <div class="modal-content">
-                  <h4 class="modal-header">Are you sure you want to delete this park?</h4>
-                  <p class="modal-text">
-                    This action cannot be undone, all information will be lost!
-                  </p>
-                </div>
-                <div class="modal-footer">
-                  <a href="{{ url_for('delete_park', park_id=park.id) }}" 
-                  class="btn-large red darken-4 modal-delete-btn">
-                    Delete
-                  </a>
-                  <a href="#!" class="modal-close btn-large accent-4 modal-cancel-btn">Cancel</a>
-                </div>
+            <!-- Triggers modal for delete button for warning message -->
+            <a href="#modal-{{ park.id }}" 
+            class="modal-trigger delete-btn btn-large blue darken-4">
+              Delete
+            </a>
+
+            <!-- Modal Structure -->
+            <div id="modal-{{ park.id }}" class="delete-modal modal">
+              <div class="modal-content">
+                <h4 class="modal-header">Are you sure you want to delete this park?</h4>
+                <p class="modal-text">
+                  This action cannot be undone, all information will be lost!
+                </p>
+              </div>
+              <div class="modal-footer">
+                <a href="{{ url_for('delete_park', park_id=park.id) }}" 
+                class="btn-large red darken-4 modal-delete-btn">
+                  Delete
+                </a>
+                <a href="#!" class="modal-close btn-large accent-4 modal-cancel-btn">Cancel</a>
               </div>
             </div>
-            <div class="card-reveal">
-              <span class="park-card-heading center-align">{{ park.park_name }}
-                <i class="fa-solid fa-xmark right"></i>
-              </span>
-              <p>
-                <span class="park-card-label">Park ID:</span>
-                <p class="park-card-info">{{ park.id }}</p>
-                <span class="park-card-label">Address:</span>
-                <p class="park-card-info">{{ park.park_address }}</p>
-                <span class="park-card-label">Description:</span>
-                <p class="park-card-info">{{ park.park_description }}</p>
-                <span class="park-card-label">Date Opened:</span>
-                <p class="park-card-info">{{ park.date_opened }}</p>
-                <span class="park-card-label">Opening Hours:</span>
-                <p class="park-card-info">{{ park.time_open }} - {{ park.time_closed }}</p>
-                <span class="park-card-label">Number of Restaurants: </span>
-                <p class="park-card-info"> {{ park.num_restaurants }}</p>
-                <br><span class="park-card-label">Number of Rides: </span>
-                <p class="park-card-info"> {{ park.num_rides }}</p>
-                <br><span class="park-card-label">Entertainment: </span>
-                <p class="park-card-info">{{ park.entertainment }}</p>
-                <span class="park-card-label">Special Features:</span>
-                <p class="park-card-info">{{ park.special_features }}</p>
-                <span class="park-card-label">Modes of Transport to Other Parks:</span>
-                <p class="park-card-info">{{ park.transport_between_parks }}</p>
-              </p>
-            </div>
           </div>
-    </div>
-    {% else %}
-    <!-- Message appears if no records exist -->
-    <p class="no-record-feedback">No park records found</p>
-    {% endfor %}
+
+        <div class="card-reveal">
+          <span class="park-card-heading center-align">
+            <i class="fa-solid fa-xmark right"></i>
+            {{ park.park_name }}
+          </span>
+          <p>
+            <span class="park-card-label">Park ID:</span>
+            <p class="park-card-info">{{ park.id }}</p>
+            <span class="park-card-label">Address:</span>
+            <p class="park-card-info">{{ park.park_address }}</p>
+            <span class="park-card-label">Description:</span>
+            <p class="park-card-info">{{ park.park_description }}</p>
+            <span class="park-card-label">Date Opened:</span>
+            <p class="park-card-info">{{ park.date_opened }}</p>
+            <span class="park-card-label">Opening Hours:</span>
+            <p class="park-card-info">{{ park.time_open }} - {{ park.time_closed }}</p>
+            <span class="park-card-label">Number of Restaurants: </span>
+            <p class="park-card-info"> {{ park.num_restaurants }}</p>
+            <br><span class="park-card-label">Number of Rides: </span>
+            <p class="park-card-info"> {{ park.num_rides }}</p>
+            <br><span class="park-card-label">Entertainment: </span>
+            <p class="park-card-info">{{ park.entertainment }}</p>
+            <span class="park-card-label">Special Features:</span>
+            <p class="park-card-info">{{ park.special_features }}</p>
+            <span class="park-card-label">Modes of Transport to Other Parks:</span>
+            <p class="park-card-info">{{ park.transport_between_parks }}</p>
+          </p>
+        </div>
+      </div>
+  </div>
+  {% else %}
+  <!-- Message appears if no records exist -->
+  <p class="no-record-feedback">No park records found</p>
+  {% endfor %}
 </div>
 
 {% endblock %}

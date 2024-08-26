@@ -232,6 +232,7 @@ main {
 .park-card-heading {
     font-family: Graduate;
     font-weight: 700 !important;
+    font-size: 2rem;
 }
 
 .park-card-label {

@@ -5,6 +5,17 @@
   });
 
   document.addEventListener('DOMContentLoaded', function() {
+    // initialises the carousel to display park records on home page
+    let parkDisplay = document.querySelectorAll('.carousel');
+    M.Carousel.init(parkDisplay, {
+      indicators: true,
+      dist: -20,
+      shift: 30,
+      duration: 150,
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
     // initialises the date picker for date_opened on the add_park form 
     let dateOpened = document.querySelectorAll('.datepicker');
     M.Datepicker.init(dateOpened, {
@@ -18,17 +29,6 @@
     let openingTimes = document.querySelectorAll('.timepicker');
     M.Timepicker.init(openingTimes, {
       format: 'HH-mm', // changing format of how time is displayed
-    });
-  });
-
-  document.addEventListener('DOMContentLoaded', function() {
-    // initialises the carousel to display park records on home page
-    let parkDisplay = document.querySelectorAll('.carousel');
-    M.Carousel.init(parkDisplay, {
-      indicators: true,
-      dist: -20,
-      shift: 30,
-      duration: 150,
     });
   });
 
@@ -56,5 +56,12 @@ document.addEventListener('DOMContentLoaded', function() {
   // initialises drop down list of parks on forms
   let parkList = document.querySelectorAll('select');
   M.FormSelect.init(parkList);
+});
+
+document.querySelectorAll('.fa-xmark').forEach(function(elem) {
+  // Manually initialising close of card reveal on parks records
+  elem.addEventListener('click', function() {
+    elem.closest('.card-reveal').style.display = 'none';
+  });
 });
 
