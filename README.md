@@ -83,16 +83,18 @@ ___
 ### New Visitor Goals
 
 <h4>As a first time user, I want to be able to:</h4>
-- Understand the concept of the website and how to use it.
-- Create an account.
+
+  - Understand the concept of the website and how to use it.
+  - Create an account.
 
 ### Returning Visitor Goals
 
 <h4>As a returning user, I want to be able to:</h4>
-- Login to my account.
-- To create, edit and delete records.
-- Find the existing Disney park information easily.
-- See which rides and restaurants are in each park.
+
+  - Login to my account.
+  - To create, edit and delete records.
+  - Find the existing Disney park information easily.
+  - See which rides and restaurants are in each park.
 
 ___
 
@@ -102,11 +104,11 @@ ___
 
 The colour scheme used for this project was based on the colors from the Disney Parks website, but in conjunction with the choice provided by the Materialize framework. This provides the user with some familiarity whilst providing enough contrast between the website elements and text.
 
-For the background of all pages, I created a gradient obtained from https://cssgradient.io/, using the below colours:
+For the background of all pages, I created a gradient obtained from [CSS Gradient](https://cssgradient.io/), using the below colours:
 
 ![Gradient Background Colour](documentation/images/gradient-colours.png)
 
-The rest of the elements used the above colours and some details were just slightly different to the below, but the main colours used are below:
+The rest of the elements use the above colours and some colours for small details were slightly different shades to the below, but the main colours used are below:
 
 ![Colour Palette](documentation/images/colour-palette.png)
 
@@ -134,27 +136,22 @@ The logo was made by myself in procreate, using the Graduate font for the M to l
 ## Wireframes
 
 - Home page
-  - [Desktop](documentation/wireframes/home-page.png)
-  - [Mobile](documentation/wireframes/home-mobile.png)
+    ![Home page Wireframes](documentation/wireframes/home-page-wireframes.png)
 
 - Parks page
   This shows the park records displayed as cards and the card reveal on the last card for when the card is clicked (desktop example only).
-  - [Desktop](documentation/wireframes/park-page.png)
-  - [Mobile](documentation/wireframes/park-mobile.png)
+    ![Parks page Wireframes](documentation/wireframes/parks-page-wireframes.png)
 
 - Rides/Restaurants page
-  - [Desktop](documentation/wireframes/ride-rest-page.png)
-  - [Tablet](documentation/wireframes/ride-rest-tablet.png)
+    ![Rides page Wireframes](documentation/wireframes/ride-rest-wireframes.png)
 
 - Add/Edit page
   Only shown one example as the add/edit layout is very similar across the pages.
-  - [Desktop](documentation/wireframes/add-edit-rest-form.png)
-  - [Mobile](documentation/wireframes/add-edit-rest-form-mobile.png)
+    ![Add/Edit page Wireframes](documentation/wireframes/add-edit-wireframes.png)
 
 - Delete Modal
   If user decides to click delete on any records, this modal will appear to confirm the choice. Also, note the flash message that appears at the top of the page to feedback to user that the add/edit/delete has been successful.
-  - [Desktop](documentation/wireframes/delete-modal.png)
-  - [Mobile](documentation/wireframes/delete-modal-mobile.png)
+    ![Delete Modal Wireframes](documentation/wireframes/delete-modal-wireframes.png)
 
 ## Database Schema & User Journey
 
@@ -168,11 +165,11 @@ Here is a diagram showing the possible flow/user journey through the site.
 
 The database schema/plan is fairly simple, but it shows the information that is stored within the database, the type of data and if it is logged as a Primary or Foreign key where applicable.
 
-![Database plan](documentation/images/database-diagram.png)
+![Original Database plan](documentation/images/database-diagram.png)
 
 # Features
 
-This website consists of 10 pages, all of which are extended from the base page.
+This website consists of 11 pages, all of which are extended from the base page.
 
 - Home page
 - Parks page
@@ -184,22 +181,69 @@ This website consists of 10 pages, all of which are extended from the base page.
 - Edit Park page
 - Edit Ride page
 - Edit Restaurant page
+- 404 Error Page
 
 ### General features across all pages
   - Favicon: Created at [Favicon.io](https://favicon.io/), I chose the image of the castle to represent the parks, which are most known for the Cinderella Castle.
   - Navbar & Footer: Features on all pages, the nav bar is comprised of an image logo with text title which is a clickable link back to the homepage and four interactive links; Home, Parks, Rides and Restaurants, the background of each link will change to a darker colour when hovered over and the current page is the same colour but constant to show the user what page they are on and where they are hovering over with the cursor.
   The footer has a small amount of text about the site, along with some useful links and copyright year and information.
+
     ![Navbar](documentation/images/navbar.png)
+
     ![Nav Interactive Links](documentation/images/interactive-nav-links.png)
+
     ![Footer](documentation/images/footer.png)
+
     ![Footer Interactive Links](documentation/images/footer-interactive-links.png)
+
   - Responsive across all devices, using Materialize framework.
     ![Responsive Screenshot]()
+
   - User feedback on buttons to show when they are hovered over.
     ![Button Feedback](documentation/images/button-feedback.png)
+
   - Feedback for user if no records exist (on parks, rides and restaurants page)
     ![No Record Feedback](documentation/images/no-record-feedback.png)
 
+  - Tooltip appears on parks card to encourage user to click on card to display park information.
+    ![Tooltip Park Card](documentation/images/tooltip-park-card.png)
+
+---
+
+## Home page
+  ![Home page](documentation/images/home-page.png)
+
+## Parks page
+  ![Parks page](documentation/images/parks-page.png)
+
+## Rides page
+  ![Rides page](documentation/images/rides-page.png)
+
+## Restaurants page
+  ![Restaurants page](documentation/images/restaurants-page.png)
+
+## Add Parks page
+  ![Add Parks page](documentation/images/add-park-page.png)
+
+## Edit Parks page
+  ![Edit Parks page](documentation/images/edit-park-page.png)
+
+## Add Rides page
+  ![Add Rides page](documentation/images/add-ride-page.png)
+
+## Edit Rides page
+  ![Edit Rides page](documentation/images/edit-ride-page.png)
+
+## Add Restaurants page
+  ![Add Restaurants page](documentation/images/add-rest-page.png)
+
+## Edit Restaurants page
+  ![Edit Restaurants page](documentation/images/edit-rest-page.png)
+
+## 404 Error page
+  ![404 Error page](documentation/images/error-page.png)
+
+----
 
 ## Future Implementations
   For future implementations, I would like to:
@@ -248,6 +292,8 @@ Here are the technologies used to build this project:
 # Defensive Programming
 I have used defensive programming within my project by using a pop up modal for when a user tries to delete a record as it is the only process the user would not be able to come back from.
 When a user clicks the delete button on a record, a modal pops up asking "Are you sure you want to delete this park/ride/restaurant? This action cannot be undone", The delete button is in red to make sure it stands out while the safe option "cancel" is in green so this will more likely be pressed if a mistake is made.
+
+![Delete Modal]()
 ___
 
 ## Deployment
