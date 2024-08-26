@@ -15,25 +15,47 @@
         <!-- Navbar at top of page -->
         <nav class="blue darken-4">
             <div class="nav-wrapper">
-                <img src="{{ url_for('static', filename='images/mousepedia-logo.png') }}" id="nav-logo">
-                
-                <a href="{{ url_for('home') }}" class="brand-logo white-text text-align-center">Mousepedia</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-circle-chevron-down light-blue-text text-lighten-4"></i></a>
+                <a href="{{ url_for('home') }}">
+                  <img src="{{ url_for('static', filename='images/mousepedia-logo.png') }}" 
+                  id="nav-logo">
+                </a>
+                <a href="{{ url_for('home') }}" class="brand-logo white-text text-align-center">
+                  Mousepedia
+                </a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                  <i class="fa-solid fa-circle-chevron-down light-blue-text text-lighten-4"></i>
+                </a>
                 <ul class="right hide-on-med-and-down">
-                    <li class="nav-link {% if request.path == url_for('home') %}active{% endif %}"><a href="{{ url_for('home') }}">Home</a></li>
-                    <li class="nav-link {% if request.path == url_for('parks') %}active{% endif %}"><a href="{{ url_for('parks') }}">Parks</a></li>
-                    <li class="nav-link {% if request.path == url_for('rides') %}active{% endif %}"><a href="{{ url_for('rides') }}">Rides</a></li>
-                    <li class="nav-link {% if request.path == url_for('restaurants') %}active{% endif %}"><a href="{{ url_for('restaurants') }}">Restaurants</a></li>
+                    <li class="nav-link {% if request.path == url_for('home') %}active{% endif %}">
+                      <a href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li class="nav-link {% if request.path == url_for('parks') %}active{% endif %}">
+                      <a href="{{ url_for('parks') }}">Parks</a>
+                    </li>
+                    <li class="nav-link {% if request.path == url_for('rides') %}active{% endif %}">
+                      <a href="{{ url_for('rides') }}">Rides</a>
+                    </li>
+                    <li class="nav-link {% if request.path == url_for('restaurants') %}active{% endif %}">
+                      <a href="{{ url_for('restaurants') }}">Restaurants</a>
+                    </li>
                 </ul>
             </div>
         </nav>
         
         <!-- mobile nav bar -->
         <ul class="sidenav" id="mobile-demo">
-            <li class="{% if request.path == url_for('home') %}active{% endif %}"><a href="{{ url_for('home') }}">Home</a></li>
-            <li class="{% if request.path == url_for('parks') %}active{% endif %}"><a href="{{ url_for('parks') }}">Parks</a></li>
-            <li class="{% if request.path == url_for('rides') %}active{% endif %}"><a href="{{ url_for('rides') }}">Rides</a></li>
-            <li class="{% if request.path == url_for('restaurants') %}active{% endif %}"><a href="{{ url_for('restaurants') }}">Restaurants</a></li>
+            <li class="{% if request.path == url_for('home') %}active{% endif %}">
+              <a href="{{ url_for('home') }}">Home</a>
+            </li>
+            <li class="{% if request.path == url_for('parks') %}active{% endif %}">
+              <a href="{{ url_for('parks') }}">Parks</a>
+            </li>
+            <li class="{% if request.path == url_for('rides') %}active{% endif %}">
+              <a href="{{ url_for('rides') }}">Rides</a>
+            </li>
+            <li class="{% if request.path == url_for('restaurants') %}active{% endif %}">
+              <a href="{{ url_for('restaurants') }}">Restaurants</a>
+            </li>
         </ul>
     </header>
 
@@ -60,15 +82,41 @@
         <div class="container footer-container">
           <div class="row footer-row">
             <div class="col l6 s12">
-              <h4 class="white-text footer-heading"><i class="fa-solid fa-book-open"></i> Mousepedia <i class="fa-solid fa-book-open"></i></h4>
-              <h6 class="white-text">Your go-to website for comprehensive information on the Disney Parks in Florida, USA. Explore detailed information on the parks, rides, restaurants and customise to make your visit magical.</h6>
+              <h4 class="white-text footer-heading">
+                <i class="fa-solid fa-book-open"></i> 
+                Mousepedia 
+                <i class="fa-solid fa-book-open"></i>
+              </h4>
+              <h6 class="white-text">
+                Your go-to website for comprehensive information on the Disney Parks in Florida, USA. 
+                Explore detailed information on the parks, rides, restaurants and customise to make your visit magical.
+              </h6>
             </div>
             <div class="col l4 offset-l2 s12">
-                <h5 class="white-text right-align links-heading"><i class="fa-solid fa-link"></i> Useful Links <i class="fa-solid fa-link"></i></h5>
+                <h5 class="white-text right-align links-heading">
+                  <i class="fa-solid fa-link"></i> 
+                  Useful Links 
+                  <i class="fa-solid fa-link"></i>
+                </h5>
                 <ul class="right-align">
-                  <li class="links"><a class="white-text" href="https://www.disneyworld.co.uk/destinations/">Disney Parks Website <i class="fa-solid fa-earth-americas footer-icon"></i></a></li>
-                  <li class="links"><a class="white-text" href="https://www.disneystore.co.uk/">Disney Store <i class="fa-solid fa-bag-shopping footer-icon"></i></a></li>
-                  <li class="links"><a class="white-text" href="https://www.visitflorida.com/">Florida Information <i class="fa-solid fa-circle-info footer-icon"></i></a></li>
+                  <li class="links">
+                    <a class="white-text" href="https://www.disneyworld.co.uk/destinations/">
+                      Disney Parks Website 
+                      <i class="fa-solid fa-earth-americas footer-icon"></i>
+                    </a>
+                  </li>
+                  <li class="links">
+                    <a class="white-text" href="https://www.disneystore.co.uk/">
+                      Disney Store 
+                      <i class="fa-solid fa-bag-shopping footer-icon"></i>
+                    </a>
+                  </li>
+                  <li class="links">
+                    <a class="white-text" href="https://www.visitflorida.com/">
+                      Florida Information 
+                      <i class="fa-solid fa-circle-info footer-icon"></i>
+                    </a>
+                  </li>
                 </ul>
               </div>
           </div>

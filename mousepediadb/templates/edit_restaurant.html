@@ -1,20 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="blue-text text-darken-4 center-align page-heading"><i class="fa-solid fa-wand-sparkles blue-text text-lighten-3"></i> Edit Restaurant <i class="fa-solid fa-wand-sparkles blue-text text-lighten-3"></i></h1>
-<h6 class="blue-text text-darken-4 center-align">Here you can edit a Restaurant in your collection.</h6>
+<!-- Page title -->
+<h1 class="blue-text text-darken-4 center-align page-heading">
+    <i class="fa-solid fa-wand-sparkles blue-text text-lighten-3"></i> 
+    Edit Restaurant 
+    <i class="fa-solid fa-wand-sparkles blue-text text-lighten-3"></i>
+</h1>
+<!-- Page tagline -->
+<h6 class="blue-text text-darken-4 center-align">
+    Here you can edit a Restaurant in your collection.
+</h6>
 
 <!-- Form to edit a restaurant in the database -->
 <div class="container add_form">
     <div class="row">
-        <form class="col s12" method="POST" action="{{ url_for('edit_restaurant', restaurant_id=restaurant.id) }}">
+        <form class="col s12" method="POST" 
+        action="{{ url_for('edit_restaurant', restaurant_id=restaurant.id) }}">
             <!-- park_id -->
             <div class="input-field col s12">
                 <i class="fa-solid fa-hat-wizard blue-text text-darken-4 prefix"></i>
                 <select id="park_id" name="park_id" required>
                     <option value="" disabled selected>Select A Park</option>
                     {% for park in parks %}
-                        <option value="{{ park.id }}" {% if park.id == restaurant.park_id %} selected {% endif %}>
+                        <option value="{{ park.id }}" 
+                        {% if park.id == restaurant.park_id %} selected {% endif %}>
                         {{ park.park_name }}
                         </option>
                     {% endfor %}
@@ -26,7 +36,9 @@
             <div class="row">
                 <div class="input-field col s12 label-alt-colour">
                     <i class="fa-solid fa-rocket blue-text text-darken-4 prefix"></i>
-                    <input id="restaurant_name" name="restaurant_name" minlength="5" maxlength="50" type="text" value="{{ restaurant.restaurant_name }}" class="validate" required>
+                    <input id="restaurant_name" name="restaurant_name" minlength="5" maxlength="50" 
+                    type="text" value="{{ restaurant.restaurant_name }}" class="validate" 
+                    required pattern=".*\S+.*">
                     <label for="restaurant_name">Restaurant Name</label>
                 </div>
             </div>
@@ -34,7 +46,9 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-location-dot blue-text text-darken-4 prefix"></i>
-                    <input id="restaurant_location" name="restaurant_location" minlength="5" maxlength="50" type="text" value="{{ restaurant.restaurant_location }}" class="validate" required>
+                    <input id="restaurant_location" name="restaurant_location" minlength="5" 
+                    maxlength="50" type="text" value="{{ restaurant.restaurant_location }}" 
+                    class="validate" required pattern=".*\S+.*">
                     <label for="restaurant_location">Restaurant Location In Park</label>
                 </div>
             </div>
@@ -42,7 +56,10 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-pencil blue-text text-darken-4 prefix"></i>
-                    <textarea id="restaurant_description" name="restaurant_description" minlength="5" maxlength="500" class="materialize-textarea validate" value="{{ restaurant.restaurant_description }}" required></textarea>
+                    <textarea id="restaurant_description" name="restaurant_description" minlength="5" 
+                    maxlength="500" class="materialize-textarea validate" 
+                    value="{{ restaurant.restaurant_description }}" required pattern=".*\S+.*">
+                    </textarea>
                     <label for="restaurant_description">Description</label>
                 </div>
             </div>
@@ -53,13 +70,15 @@
                             <!-- check boxes to select dine in, quick service or both -->
                             <p class="restaurant-checkboxes">
                                 <label class="dine_in_label">
-                                    <input type="checkbox" name="service_type" value="dine_in" {% if 'dine_in' in services %}checked{% endif %}/>
+                                    <input type="checkbox" name="service_type" 
+                                    value="dine_in" {% if 'dine_in' in services %}checked{% endif %}/>
                                     <span>Dine In</span>
                                 </label>
                             </p>
                             <p class="restaurant-checkboxes">
                                 <label class="quick_service_label">
-                                    <input type="checkbox" name="service_type" value="quick_service" {% if 'quick_service' in services %}checked{% endif %} />
+                                    <input type="checkbox" name="service_type" 
+                                    value="quick_service" {% if 'quick_service' in services %}checked{% endif %} />
                                     <span>Quick Service</span>
                                 </label>
                             </p>
@@ -69,7 +88,10 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-pizza-slice blue-text text-darken-4 prefix"></i>
-                    <textarea id="food_type" name="food_type" minlength="5" maxlength="500" class="materialize-textarea validate" value="{{ restaurant.food_type }}" required></textarea>
+                    <textarea id="food_type" name="food_type" minlength="5" maxlength="500" 
+                    class="materialize-textarea validate" value="{{ restaurant.food_type }}" 
+                    required pattern=".*\S+.*">
+                    </textarea>
                     <label for="food_type">Food Type</label>
                 </div>
             </div>

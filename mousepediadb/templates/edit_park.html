@@ -1,8 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="blue-text text-darken-4 center-align page-heading"><i class="fa-solid fa-wand-sparkles blue-text text-lighten-3"></i> Edit Park <i class="fa-solid fa-wand-sparkles blue-text text-lighten-3"></i></h1>
-<h6 class="blue-text text-darken-4 center-align">Here you can edit a Park in your collection.</h6>
+<!-- Page title -->
+<h1 class="blue-text text-darken-4 center-align page-heading">
+    <i class="fa-solid fa-wand-sparkles blue-text text-lighten-3"></i> 
+    Edit Park 
+    <i class="fa-solid fa-wand-sparkles blue-text text-lighten-3"></i>
+</h1>
+<!-- Page tagline -->
+<h6 class="blue-text text-darken-4 center-align">
+    Here you can edit a Park in your collection.
+</h6>
 
 <!-- Form to edit a park in the database -->
 <div class="container add_form">
@@ -12,7 +20,8 @@
             <div class="row">
                 <div class="input-field col s12 label-alt-colour">
                     <i class="fa-solid fa-hat-wizard blue-text text-darken-4 prefix"></i>
-                    <input id="park_name" name="park_name" value="{{ park.park_name }}" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <input id="park_name" name="park_name" value="{{ park.park_name }}" minlength="5" 
+                    maxlength="50" type="text" class="validate" required pattern=".*\S+.*">
                     <label for="park_name">Park Name</label>
                 </div>
             </div>
@@ -20,7 +29,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-location-dot blue-text text-darken-4 prefix"></i>
-                    <input id="park_address" name="park_address" value="{{ park.park_address }}" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <input id="park_address" name="park_address" value="{{ park.park_address }}" 
+                    minlength="5" maxlength="50" type="text" class="validate" required pattern=".*\S+.*">
                     <label for="park_address">Address</label>
                 </div>
             </div>
@@ -28,7 +38,9 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-pencil blue-text text-darken-4 prefix"></i>
-                    <textarea id="park_description" name="park_description" minlength="5" maxlength="500" class="materialize-textarea validate" required>{{ park.park_description }}</textarea>
+                    <textarea id="park_description" name="park_description" minlength="5" maxlength="500" 
+                    class="materialize-textarea validate" required pattern=".*\S+.*">{{ park.park_description }}
+                    </textarea>
                     <label for="park_description">Description</label>
                 </div>
             </div>
@@ -36,7 +48,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-calendar-days blue-text text-darken-4 prefix"></i>
-                    <input type="text" name="date_opened" class="datepicker validate" value="{{ park.date_opened }}" required>
+                    <input type="text" name="date_opened" class="datepicker validate" 
+                    value="{{ park.date_opened }}" required>
                     <label for="date_opened">Date Opened</label>
                 </div>
             </div>
@@ -44,12 +57,14 @@
             <div class="row">
                 <div class="input-field col s6">
                     <i class="fa-solid fa-clock blue-text text-darken-4 prefix"></i>
-                    <input type="text" class="timepicker validate" name="time_open" value="{{ park.time_open }}" required>
+                    <input type="text" class="timepicker validate" name="time_open" 
+                    value="{{ park.time_open }}" required>
                     <label for="time_open">Time park opens</label>
                 </div>
                 <div class="input-field col s6">
                     <i class="fa-solid fa-clock blue-text text-darken-4 prefix"></i>
-                    <input type="text" class="timepicker validate" name="time_closed" value="{{ park.time_closed}}" required>
+                    <input type="text" class="timepicker validate" name="time_closed" 
+                    value="{{ park.time_closed}}" required>
                     <label for="time_closed">Time park closes</label>
                 </div>
             </div>
@@ -57,7 +72,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-utensils blue-text text-darken-4 prefix"></i>
-                    <input id="num_restaurants" name="num_restaurants" type="number" class="validate" value="{{ park.num_restaurants }}" required>
+                    <input id="num_restaurants" name="num_restaurants" type="number" class="validate" 
+                    value="{{ park.num_restaurants }}" required>
                     <label for="num_restaurants">How many restaurants are at this park?</label>
                 </div>
             </div>
@@ -65,7 +81,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-rocket blue-text text-darken-4 prefix"></i>
-                    <input id="num_rides" name="num_rides" type="number" class="validate" value="{{ park.num_rides }}" required>
+                    <input id="num_rides" name="num_rides" type="number" class="validate" 
+                    value="{{ park.num_rides }}" required>
                     <label for="num_rides">How many rides are at this park?</label>
                 </div>
             </div>
@@ -73,7 +90,10 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-masks-theater blue-text text-darken-4 prefix"></i>
-                    <textarea id="entertainment" name="entertainment" minlength="5" maxlength="500" class="materialize-textarea validate" required>{{ park.park_entertainment }}</textarea>
+                    <textarea id="entertainment" name="entertainment" minlength="5" maxlength="500" 
+                    class="materialize-textarea validate" required pattern=".*\S+.*">
+                    {{ park.park_entertainment }}
+                    </textarea>
                     <label for="entertainment">What entertainment/shows does this park have?</label>
                 </div>
             </div>
@@ -81,7 +101,10 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-star blue-text text-darken-4 prefix"></i>
-                    <textarea id="special_features" name="special_features" minlength="5" maxlength="500" class="materialize-textarea validate" required>{{ park.special_features }}</textarea>
+                    <textarea id="special_features" name="special_features" minlength="5" maxlength="500" 
+                    class="materialize-textarea validate" required pattern=".*\S+.*">
+                    {{ park.special_features }}
+                    </textarea>
                     <label for="special_features">Does this park have any special features?</label>
                 </div>
             </div>
@@ -89,7 +112,10 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-broom blue-text text-darken-4 prefix"></i>
-                    <textarea id="transport_between_parks" name="transport_between_parks" minlength="5" maxlength="500" class="materialize-textarea validate" required>{{ park.transport_between_parks }}</textarea>
+                    <textarea id="transport_between_parks" name="transport_between_parks" minlength="5" 
+                    maxlength="500" class="materialize-textarea validate" required pattern=".*\S+.*">
+                    {{ park.transport_between_parks }}
+                    </textarea>
                     <label for="transport_between_parks">Does this park have transport to other Disney Parks?</label>
                 </div>
             </div>

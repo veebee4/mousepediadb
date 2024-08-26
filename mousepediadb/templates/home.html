@@ -1,17 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="blue-text text-darken-4 center-align page-heading"><i class="fa-solid fa-hat-wizard blue-text text-lighten-3"></i> Welcome to Mousepedia <i class="fa-solid fa-hat-wizard blue-text text-lighten-3"></i></h1>
-<h5 class="blue-text text-darken-4 center-align home-tagline">The Ultimate Customisable Guide for All Things at Disney, Florida</h5>
+<!-- Page title -->
+<h1 class="blue-text text-darken-4 center-align page-heading">
+  <i class="fa-solid fa-hat-wizard blue-text text-lighten-3"></i> 
+  Welcome to Mousepedia 
+  <i class="fa-solid fa-hat-wizard blue-text text-lighten-3"></i>
+</h1>
+<!-- Page tagline -->
+<h5 class="blue-text text-darken-4 center-align home-tagline">
+  The Ultimate Customisable Guide for All Things at Disney, Florida
+</h5>
 
   <div class="carousel">
     {% for park in parks %}
     <a class="carousel-item" href="{{ url_for('parks') }}">
-      <img src="{{ park.image_url if park.image_url else url_for('static', filename='images/default_image.jpg') }}" class="park-image">{{ park.park_name }}
+      <img src="{{ park.image_url if park.image_url else url_for('static', filename='images/default_image.jpg') }}" 
+      class="park-image">{{ park.park_name }}
     </a>
+    {% else %}
+    <!-- Message appears if no records exist -->
+    <p class="no-record-feedback">No records found</p>
     {% endfor %}
   </div>
 
-  <h6 class="center-align blue-text text-darken-4 carousel-text">Click above to go to the Parks page and view more information.</h6>
+  <h6 class="center-align blue-text text-darken-4 carousel-text">
+    Click above to go to the Parks page and view more information.
+  </h6>
 
 {% endblock %}

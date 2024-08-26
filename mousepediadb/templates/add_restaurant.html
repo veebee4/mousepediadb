@@ -1,8 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="blue-text text-darken-4 center-align page-heading"><i class="fa-solid fa-utensils blue-text text-lighten-3"></i> Add a Restaurant <i class="fa-solid fa-utensils blue-text text-lighten-3"></i></h1>
-<h6 class="blue-text text-darken-4 center-align">Here you can add a new restaurant to your collection.</h6>
+<!-- Page title -->
+<h1 class="blue-text text-darken-4 center-align page-heading">
+    <i class="fa-solid fa-utensils blue-text text-lighten-3"></i> 
+    Add a Restaurant 
+    <i class="fa-solid fa-utensils blue-text text-lighten-3"></i>
+</h1>
+<!-- Page tagline -->
+<h6 class="blue-text text-darken-4 center-align">
+    Here you can add a new restaurant to your collection.
+</h6>
 
 <!-- Form to add a ride to the database -->
 <div class="container add_form">
@@ -25,7 +33,8 @@
             <div class="row">
                 <div class="input-field col s12 label-alt-colour">
                     <i class="fa-solid fa-rocket blue-text text-darken-4 prefix"></i>
-                    <input id="restaurant_name" name="restaurant_name" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <input id="restaurant_name" name="restaurant_name" minlength="5" 
+                    maxlength="50" type="text" class="validate" required pattern=".*\S+.*">
                     <label for="restaurant_name">Restaurant Name</label>
                 </div>
             </div>
@@ -33,7 +42,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-location-dot blue-text text-darken-4 prefix"></i>
-                    <input id="restaurant_location" name="restaurant_location" minlength="3" maxlength="50" type="text" class="validate" required>
+                    <input id="restaurant_location" name="restaurant_location" minlength="3" 
+                    maxlength="50" type="text" class="validate" required pattern=".*\S+.*">
                     <label for="restaurant_location">Restaurant Location In Park</label>
                 </div>
             </div>
@@ -41,7 +51,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-pencil blue-text text-darken-4 prefix"></i>
-                    <textarea id="restaurant_description" name="restaurant_description" minlength="5" maxlength="500" class="materialize-textarea validate" required></textarea>
+                    <textarea id="restaurant_description" name="restaurant_description" minlength="5" 
+                    maxlength="500" class="materialize-textarea validate" required pattern=".*\S+.*"></textarea>
                     <label for="restaurant_description">Description</label>
                 </div>
             </div>
@@ -51,13 +62,15 @@
                     <i class="fa-solid fa-burger blue-text text-darken-4 prefix"></i>
                     <p>
                         <label class="dine_in_label">
-                            <input type="checkbox" name="service_type" value="dine_in" {% if 'dine_in' in services %}checked{% endif %}/>
+                            <input type="checkbox" name="service_type" 
+                            value="dine_in" {% if 'dine_in' in services %}checked{% endif %}/>
                             <span>Dine In</span>
                         </label>
                     </p>
                     <p>
                         <label class="quick_service_label">
-                            <input type="checkbox" name="service_type" value="quick_service" {% if 'quick_service' in services %}checked{% endif %} />
+                            <input type="checkbox" name="service_type" 
+                            value="quick_service" {% if 'quick_service' in services %}checked{% endif %} />
                             <span>Quick Service</span>
                         </label>
                     </p>               
@@ -67,7 +80,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-pizza-slice blue-text text-darken-4 prefix"></i>
-                    <textarea id="food_type" name="food_type" minlength="5" maxlength="500" class="materialize-textarea validate" required></textarea>
+                    <textarea id="food_type" name="food_type" minlength="5" maxlength="500" 
+                    class="materialize-textarea validate" required pattern=".*\S+.*"></textarea>
                     <label for="food_type">Food Type</label>
                 </div>
             </div>
