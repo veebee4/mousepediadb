@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Page title-->
+<h1 class="blue-text text-darken-4 center-align page-heading">
+    <i class="fa-solid fa-triangle-exclamation blue-text text-lighten-3"></i>
+        OH BOY!
+    <i class="fa-solid fa-triangle-exclamation blue-text text-lighten-3"></i>
+</h1>
+
+<h2 class="center-align">404 - Page not found</h2>
+
+<h4 class="center-align">Looks like something has gone wrong!</h4>
+<p class="center-align">
+    Use the nav bar to get back home or click 
+    <a href="{{ url_for('home') }}">HERE</a>
+</p>
+
+{% endblock %}
