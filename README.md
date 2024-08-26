@@ -349,15 +349,63 @@ To clone the repository:
 
 ### Repository deployment via Heroku
 
-- On the [Heroku Dashboard](https://dashboard.heroku.com) page, click New and then select Create New App from the drop-down menu.
-- When the next page loads insert the App name and Choose a region. Then click 'Create app'
-- In the settings tab click on Reveal Config Vars and add the key Port and the value 8000. The credentials for this app were:
+The site is deployed using Heroku. To deploy to Heroku:
+  - To successfully deploy on Heroku we first need to create some files, if not already existing: a requirements.txt file and a Procfile.
 
-1. Cloudinary URL
-2. Postgres Database URL
-3. Port (8000)
+  - The requirements.txt file contains all the applications and dependencies that are required to run the app. To create the requirements.txt file run the following command in the terminal:
 
-- Below this click Add buildpack and choose python and nodejs in that order.
+```bash
+pip3 freeze --local > requirements.txt
+```
+
+  - The Procfile tells Heroku which files run the app and how to run it. To create the Procfile run the following command in the terminal:
+
+```bash
+echo web: python app.py > Procfile
+```
+
+NOTE: The Procfile uses a capital P and doesn't have a file extension on the end.
+
+If you have successfully created the Procfile you will see the Heroku logo next to the file name. Check the Procfile contents, as sometimes on creation, a blank line will be added at the end of the file. This can sometimes cause problems when deploying to Heroku, so if the file contains a blank line at the end, delete this and save the file. Make sure to save both these files and then add, commit and push them to GitHub.
+
+1. Login (or sign up) to Heroku.com.
+
+2. Click the new button and then click create new app.
+
+3. You will then be asked to give your app a name (must be unique) and select a region. Once these are completed click create app.
+
+4. You will now need to connect the Heroku app to the GitHub repository for the site. Select GitHub in the deployment section, find the correct repository for the project and then click connect.
+
+5. Once the repository is connected, you will need to provide Heroku some config variables it needs to build the app. Click on the settings tab and then click reveal config vars button. You will now need to add the environment key/value variables that were used in the env.py file:
+
+    | KEY | VALUE |
+    | :-- | :-- |
+    | IP | 0.0.0.0 |
+    | PORT | 5000 |
+    | SECRET_KEY| YOUR_SECRET_KEY* |
+    | DEBUG | TRUE** |
+    | DEVELOPMENT | TRUE** |
+    | DB_URL | TRUE* |
+
+    *Denotes a value that is specific to your app.
+
+    **Delete this config var once you are done with debugging.
+
+6. You're now ready to click the enable automatic deploys and create button. Heroku will start building the app.
+
+7. As this project utilises a relational database, there are a few more steps to set this up:
+  * On the heroku dashboard go to resources tab and then select add-ons. You will need to search for and select heroku postgres. For this project the hobby dev free tier is fine.
+  * Go back into settings and reveal config vars. You should now see a new key called DATABASE_UL and the value should have been pre-populated.
+  * We will now need to go the more button on the dashboard and select run console. This is where we will set up the tables in the database we have just created.
+  * Type python3 and then once the python interpreter opens, we can run the following:
+
+  ```bash
+  from mousepediadb import db
+  db.create_all()
+  exit()
+  ```
+
+8. Now that the relational database has been set up and the tables created, we can now click open app and the mousepedia application should now open in a new tab.
 
 ### Deployment of the app
 
