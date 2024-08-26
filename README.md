@@ -374,7 +374,7 @@ If you have successfully created the Procfile you will see the Heroku logo next 
 
 3. You will then be asked to give your app a name (must be unique) and select a region. Once these are completed click create app.
 
-4. You will now need to connect the Heroku app to the GitHub repository for the site. Select GitHub in the deployment section, find the correct repository for the project and then click connect.
+4. You will now need to connect the Heroku app to the GitHub repository for the site. Select GitHub in the deployment section, find the correct repository for the project and then click connect. A choice is offered between manual or automatic deployment whereby the app is updated when changes are pushed to GitHub.
 
 5. Once the repository is connected, you will need to provide Heroku some config variables it needs to build the app. Click on the settings tab and then click reveal config vars button. You will now need to add the environment key/value variables except Development and DB_URL that were used in the env.py file:
 
@@ -393,8 +393,7 @@ If you have successfully created the Procfile you will see the Heroku logo next 
 6. You're now ready to click the enable automatic deploys and create button. Heroku will start building the app.
 
 7. As this project utilises a relational database, there are a few more steps to set this up:
-  * On the heroku dashboard go to resources tab and then select add-ons. You will need to search for and select heroku postgres. For this project the hobby dev free tier is fine.
-  * Go back into settings and reveal config vars. You should now see a new key called DATABASE_UL and the value should have been pre-populated.
+  * On the heroku dashboard go to resources tab and then select add-ons. You will need to search for and select heroku postgres. Select the lowest tier.
   * We will now need to go the more button on the dashboard and select run console. This is where we will set up the tables in the database we have just created.
   * Type python3 and then once the python interpreter opens, we can run the following:
 
@@ -405,14 +404,6 @@ If you have successfully created the Procfile you will see the Heroku logo next 
   ```
 
 8. Now that the relational database has been set up and the tables created, we can now click open app and the mousepedia application should now open in a new tab.
-
-### Deployment of the app
-
-- Click on the Deploy tab and select Github-Connect to Github.
-- Enter the repository name and click Search.
-- Choose the repository that holds the correct files and click Connect.
-- A choice is offered between manual or automatic deployment whereby the app is updated when changes are pushed to GitHub.
-- Once the deployment method has been chosen the app will be built and can be launched by clicking the Open app button which should appear below the build information window, alternatively, there is another button located in the top right of the page.
 
 ___
 
