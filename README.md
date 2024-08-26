@@ -293,7 +293,8 @@ Here are the technologies used to build this project:
 I have used defensive programming within my project by using a pop up modal for when a user tries to delete a record as it is the only process the user would not be able to come back from.
 When a user clicks the delete button on a record, a modal pops up asking "Are you sure you want to delete this park/ride/restaurant? This action cannot be undone", The delete button is in red to make sure it stands out while the safe option "cancel" is in green so this will more likely be pressed if a mistake is made.
 
-![Delete Modal]()
+![Delete Modal Fullscreen](documentation/images/delete-modal-parks.png)
+![Delete Modal Restaurant & Ride](documentation/images/delete-modal-ride-rest.png)
 ___
 
 ## Deployment
@@ -344,7 +345,7 @@ To clone the repository:
 
   ```bash
     pip3 install -r requirements.txt
-    ```
+  ```
 
 ### Repository deployment via Heroku
 

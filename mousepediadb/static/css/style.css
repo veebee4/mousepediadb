@@ -424,3 +424,57 @@ label {
 .links {
     font-size: 1.5rem;
 }
+
+/* -------------------------------------------------------------------------------------------------------------------------------- Media Queries */
+
+@media screen and (min-width: 320px) and (max-width: 430px) {
+    /* Home page */
+    .brand-logo {
+        margin-left: 4rem;
+    }
+    
+    h1.page-heading {
+        font-size: 1.5rem;
+    }
+
+    /* Parks Page */
+    .add-park-btn {
+        font-size: 0.8rem;
+    }
+
+    /* Forms */
+    input[type="text"] + label {
+        font-size: 1rem !important;
+    }
+
+    /* labels & submit button on restaurant form */
+    label[for="time_open"],
+    label[for="time_closed"],
+    label[for="num_restaurants"],
+    label[for="num_rides"],
+    label[for="entertainment"],
+    label[for="special_features"],
+    label[for="transport_between_parks"],
+    label[for="image_url"] {
+        font-size: 0.8rem !important;
+    }
+
+    .rest-button {
+        font-size: 1.7rem;
+    }
+
+    /* edit button on all edit pages */
+    .edit-button {
+        font-size: 2rem;
+    }
+
+    /* delete modal */
+    .delete-modal {
+        height: 24rem;
+        width: 25rem;
+    }
+
+    .modal-header, .modal-text {
+        font-size: 1.5rem;
+    }
+}
