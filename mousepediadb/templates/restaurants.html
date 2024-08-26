@@ -42,7 +42,7 @@
                 <div id="tab{{ restaurant.id }}-1">{{ restaurant.park.park_name }}</div>
                 <div id="tab{{ restaurant.id }}-2">{{ restaurant.restaurant_description }}</div>
                 <div id="tab{{ restaurant.id }}-3">{{ restaurant.restaurant_location }}</div>
-                <div id="tab{{ restaurant.id }}-4">{{ restaurant.dine_or_quick_service }}</div>
+                <div id="tab{{ restaurant.id }}-4">{{ restaurant.dine_in, restaurant.quick_service }}</div>
                 <div id="tab{{ restaurant.id }}-5">{{ restaurant.food_type }}</div>
             </div>
             <div class="card-action">
@@ -59,7 +59,7 @@
                 <!-- Modal Structure -->
                 <div id="modal-{{ restaurant.id }}" class="modal">
                     <div class="modal-content">
-                        <h4 class="modal-header">Are you sure you want to delete this ride?</h4>
+                        <h4 class="modal-header">Are you sure you want to delete this restaurant?</h4>
                         <p class="modal-text">
                             This action cannot be undone, all information will be lost!
                         </p>
