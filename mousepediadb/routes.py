@@ -234,3 +234,8 @@ def delete_restaurant(restaurant_id):
     db.session.commit()
     flash("Restaurant deleted successfully!", "success")
     return redirect(url_for("restaurants"))
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404

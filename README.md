@@ -324,8 +324,9 @@ ___
 
 ## Credits
 
-This project was created using the Code Institute walkthrough taskmanager project. From this base I customised the layout and styling with Materialize and custom CSS. 
+### Code Used
 
+This project was created using the Code Institute walkthrough taskmanager project. From this base I customised the layout and styling with Materialize and custom CSS.
 
 
 
