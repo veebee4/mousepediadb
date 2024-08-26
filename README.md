@@ -376,20 +376,19 @@ If you have successfully created the Procfile you will see the Heroku logo next 
 
 4. You will now need to connect the Heroku app to the GitHub repository for the site. Select GitHub in the deployment section, find the correct repository for the project and then click connect.
 
-5. Once the repository is connected, you will need to provide Heroku some config variables it needs to build the app. Click on the settings tab and then click reveal config vars button. You will now need to add the environment key/value variables that were used in the env.py file:
+5. Once the repository is connected, you will need to provide Heroku some config variables it needs to build the app. Click on the settings tab and then click reveal config vars button. You will now need to add the environment key/value variables except Development and DB_URL that were used in the env.py file:
 
     | KEY | VALUE |
     | :-- | :-- |
+    | DATABASE_URL | database_url* |
     | IP | 0.0.0.0 |
     | PORT | 5000 |
-    | SECRET_KEY| YOUR_SECRET_KEY* |
+    | SECRET_KEY| your_secret_key* |
     | DEBUG | TRUE** |
-    | DEVELOPMENT | TRUE** |
-    | DB_URL | TRUE* |
 
     *Denotes a value that is specific to your app.
 
-    **Delete this config var once you are done with debugging.
+    **Delete this config var once you are done with debugging, as this causes issues and must not be used in the submitted project/production.
 
 6. You're now ready to click the enable automatic deploys and create button. Heroku will start building the app.
 
