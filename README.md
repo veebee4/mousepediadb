@@ -102,7 +102,7 @@ ___
 
 The colour scheme used for this project was based on the colors from the Disney Parks website, but in conjunction with the choice provided by the Materialize framework. This provides the user with some familiarity whilst providing enough contrast between the website elements and text.
 
-For the background of all pages, I created a gradient using the below:
+For the background of all pages, I created a gradient obtained from https://cssgradient.io/, using the below colours:
 
 ![Gradient Background Colour](documentation/images/gradient-colours.png)
 
@@ -188,7 +188,7 @@ This website consists of 10 pages, all of which are extended from the base page.
 ### General features across all pages
   - Favicon: Created at [Favicon.io](https://favicon.io/), I chose the image of the castle to represent the parks, which are most known for the Cinderella Castle.
   - Navbar & Footer: Features on all pages, the nav bar is comprised of an image logo with text title which is a clickable link back to the homepage and four interactive links; Home, Parks, Rides and Restaurants, the background of each link will change to a darker colour when hovered over and the current page is the same colour but constant to show the user what page they are on and where they are hovering over with the cursor.
-                      The footer has a small amount of text about the site, along with some useful links and copyright year and information.
+  The footer has a small amount of text about the site, along with some useful links and copyright year and information.
     ![Navbar](documentation/images/navbar.png)
     ![Nav Interactive Links](documentation/images/interactive-nav-links.png)
     ![Footer](documentation/images/footer.png)
@@ -326,20 +326,40 @@ ___
 
 ### Code Used
 
-This project was created using the Code Institute walkthrough taskmanager project. From this base I customised the layout and styling with Materialize and custom CSS.
+This project was created using the Code Institute walkthrough taskmanager project. From this base I customised the layout and styling with the Materialize framework and custom CSS.
 
+To create my 404 error page and route, I followed [this](https://www.youtube.com/watch?app=desktop&v=50N7K4oDF4g) tutorial.
+To add flash messages for feedback to the user, I used [this](https://flask.palletsprojects.com/en/2.3.x/patterns/flashing/) documentation.
+In order to get the nav links to show as active, I used [this](https://craftcms.stackexchange.com/questions/4234/how-to-add-active-class-to-homepage-nav-list-item) stack exchange question.
+To make colour gradient stretch the whole page, I used [this](https://stackoverflow.com/questions/16841323/making-gradient-background-fill-page-with-css) tutorial.
 
-
-<!-- Once complete, the readme file was passed through a spelling and grammar check via [Grammarly](https://www.grammarly.com/) -->
+Once complete, the readme file was passed through a spelling and grammar check via [Grammarly](https://www.grammarly.com/)
 
 ___
 
 ## Media
 
-All other content and images are my own.
+Favicon, obtained from [Favicon.io](https://favicon.io/), generated using the following graphics from Twitter Twemoji:
+- Graphics Title: 1f3f0.svg
+- Graphics Author: Copyright 2020 Twitter, Inc and other contributors (https://github.com/twitter/twemoji)
+- Graphics Source: https://github.com/twitter/twemoji/blob/master/assets/svg/1f3f0.svg
+- Graphics License: CC-BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+
+Logo was created by me using the Procreate programme.
+All other images on the site are personal to the user, as they are links entered onto the forms and for personal use only. 
+The links I have used are from the Wikipedia pages for each park and can be attributed to the following people:
+- EPCOT : [Jedi94](https://commons.wikimedia.org/w/index.php?title=User:Jedi94&action=edit&redlink=1)
+- MAGIC KINGDOM : [Jedi94](https://commons.wikimedia.org/w/index.php?title=User:Jedi94&action=edit&redlink=1)
+- ANIMAL KINGDOM : [Jedi94](https://commons.wikimedia.org/w/index.php?title=User:Jedi94&action=edit&redlink=1)
+- HOLLYWOOD STUDIOS : [Alexf](https://commons.wikimedia.org/wiki/User:Alexf)
 
 ___
 
 ## Acknowledgments and Thanks
 
+I would like to acknowledge the following people for helping me to complete this project:
+  - My spouse who has provided support at home and while doing the project.
+  - My Code Institute Mentor Jubril Akolade, for providing helpful tips and guidance.
+  - My College Tutor, Rachel Furlong for always being so helpful and providing great guidance.
+  - Code Institute Tutor Support; Roman, Oisin, Holly and Roo who provided me with help a long the way.
 

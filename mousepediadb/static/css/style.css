@@ -318,16 +318,12 @@ main {
 
 .form-checkboxes {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 
-.restaurant-checkboxes {
-    margin-right: 10px;
-}
-
-.service-container label {
-    margin-right: 20px;
+p.restaurant-checkboxes {
+    margin-left: 3rem;
 }
 
 /* -------------------------------------------------------------------------------------------------------------------------------- 404 Error Page */

@@ -26,6 +26,7 @@
                   <i class="fa-solid fa-circle-chevron-down light-blue-text text-lighten-4"></i>
                 </a>
                 <ul class="right hide-on-med-and-down">
+                    <!-- request.path jinja templating taken from tutorial on Stack Exchange -->
                     <li class="nav-link {% if request.path == url_for('home') %}active{% endif %}">
                       <a href="{{ url_for('home') }}">Home</a>
                     </li>

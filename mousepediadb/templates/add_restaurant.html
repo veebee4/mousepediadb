@@ -58,20 +58,20 @@
             </div>
             <!-- dine_or_quick_service -->
             <div class="row">
-                <div class="col s12">
+                <div class="col s12 form-checkboxes">
                     <i class="fa-solid fa-burger blue-text text-darken-4 prefix"></i>
-                    <p>
+                    <p class="restaurant-checkboxes">
                         <label class="dine_in_label">
                             <input type="checkbox" name="service_type" 
                             value="dine_in" {% if 'dine_in' in services %}checked{% endif %}/>
-                            <span>Dine In</span>
+                            <span class="service-label">Dine In</span>
                         </label>
                     </p>
-                    <p>
+                    <p class="restaurant-checkboxes">
                         <label class="quick_service_label">
                             <input type="checkbox" name="service_type" 
                             value="quick_service" {% if 'quick_service' in services %}checked{% endif %} />
-                            <span>Quick Service</span>
+                            <span class="service-label">Quick Service</span>
                         </label>
                     </p>               
                 </div>
