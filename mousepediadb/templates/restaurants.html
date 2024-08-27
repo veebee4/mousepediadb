@@ -42,7 +42,7 @@
                 <div id="tab{{ restaurant.id }}-1">{{ restaurant.park.park_name }}</div>
                 <div id="tab{{ restaurant.id }}-2">{{ restaurant.restaurant_description }}</div>
                 <div id="tab{{ restaurant.id }}-3">{{ restaurant.restaurant_location }}</div>
-                <div id="tab{{ restaurant.id }}-4">{{ restaurant.dine_in, restaurant.quick_service }}</div>
+                <div id="tab{{ restaurant.id }}-4">Dine In: {{ 'Yes' if restaurant.dine_in else 'No' }} / Quick Service: {{ 'Yes' if restaurant.quick_service else 'No' }}</div>
                 <div id="tab{{ restaurant.id }}-5">{{ restaurant.food_type }}</div>
             </div>
             <div class="card-action">

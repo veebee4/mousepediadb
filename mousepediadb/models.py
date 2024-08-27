@@ -4,7 +4,7 @@ class Restaurant(db.Model):
     # Schema for the Restaurants model
     id = db.Column(db.Integer, primary_key=True)
     restaurant_name = db.Column(db.String(50), unique=True, nullable=False)
-    park_id = db.Column(db.Integer, db.ForeignKey("park.id"), nullable=False)
+    park_id = db.Column(db.Integer, db.ForeignKey("park.id", ondelete="CASCADE"), nullable=False)
     restaurant_location = db.Column(db.Text, nullable=False)
     dine_in = db.Column(db.Boolean, default=False, nullable=False)
     quick_service = db.Column(db.Boolean, default=False, nullable=False)
