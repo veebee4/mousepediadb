@@ -24,9 +24,7 @@
                     <option value="" disabled selected>Select A Park</option>
                     {% for park in parks %}
                         <option value="{{ park.id }}" {% if park.id == ride.park_id %} 
-                        selected {% endif %}>
-                        {{ park.park_name }}
-                        </option>
+                        selected {% endif %}>{{ park.park_name }}</option>
                     {% endfor %}
                 </select>
                 <label for="park_id">Park</label>
@@ -57,8 +55,7 @@
                     <i class="fa-solid fa-pencil blue-text text-darken-4 prefix"></i>
                     <textarea id="ride_description" name="ride_description" minlength="5" 
                     maxlength="500" class="materialize-textarea validate" 
-                    value="{{ ride.ride_description }}" required pattern=".*\S+.*">
-                    </textarea>
+                    value="{{ ride.ride_description }}" required pattern=".*\S+.*"></textarea>
                     <label for="ride_description">Description</label>
                 </div>
             </div>    
