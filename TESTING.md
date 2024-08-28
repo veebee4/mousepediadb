@@ -37,9 +37,25 @@ Visit the deployed website: [Mousepedia](https://mousepediadb-0e4030391623.herok
 
 ### Testing User Stories
 
-#### First Time Visitor
----
-#### Returning Visitor
+### New Visitor
+
+| Goals | How are they achieved? | Image |
+| :--- | :--- | :--- |
+| `First Time Visitors` |
+|  |  |  |
+| Understand the concept of the website and how to use it | A description of what the site is used for is present on the home page, the nav bar is intuitive and clear making it self explanatory | :--- |
+| View existing records, if any are available | Some records have been entered by myself. The user can view these straight away on the home page, clicking on the image will direct them straight to the parks page, or it can be selected on the nav bar from any page. To view the ride and restaurant records the user can navigate using the top menu. A message will appear saying "No park/ride/restaurant records found" if no records are available | :--- |
+| Add records if they do not already exist | There is a clear and easy to read button at the top of the page saying "Add a park/ride/restaurant to your collection" | :--- |
+
+### Returning Visitor
+
+|`Returning Visitors`|
+|  |  |  |
+| Find existing Disney Park information easily | The user can navigate to the appropriate page; The park records are revealed and replace the park picture when the user clicks on the park card, Ride & Restaurant information can be found by clicking through the tabs on the cards | :--- |
+| See which rides and restaurants are in each park | The tabs on the cards are clearly marked with appropriate titles, "Park" is the first one so the park that the record is allocated to will be the first piece of information displayed | :--- |
+| Edit existing records | When a user views the records on the Parks, Rides or Restaurants pages, the card displaying the record has a clearly marked edit button underneath all the information, pressing this button directs the user to a pre-populated form containing the existing information | :--- |
+| Delete existing records | When a user views the records on the Parks, Rides or Restaurants pages, the card displaying the record has a clearly marked delete button underneath all the information, pressing this button will trigger a modal to confirm if they would like to delete the record and to let the user know that the action cannot be undone. The user is also informed when deleting a park only, that this will delete all ride/restaurant records associated with that park | :--- |
+
 ---
 
 ### Full Testing
