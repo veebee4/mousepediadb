@@ -4,20 +4,20 @@ class Restaurant(db.Model):
     # Schema for the Restaurants model
     id = db.Column(db.Integer, primary_key=True)
     restaurant_name = db.Column(db.String(50), unique=True, nullable=False)
-    park_id = db.Column(db.Integer, db.ForeignKey("park.id", ondelete="CASCADE"), nullable=False)
+    park_id = db.Column(db.Integer, db.ForeignKey("park.id"), nullable=False)
     restaurant_location = db.Column(db.Text, nullable=False)
     dine_in = db.Column(db.Boolean, default=False, nullable=False)
     quick_service = db.Column(db.Boolean, default=False, nullable=False)
     food_type = db.Column(db.String(30), nullable=False)
     restaurant_description = db.Column(db.Text, nullable=False)
-    park = db.relationship("Park", backref=db.backref("restaurants", lazy=True))
+    park = db.relationship("Park", backref=db.backref("restaurants", cascade="all, delete-orphan", lazy=True))
 
     def __repr__(self):
         # returns chosen fields from the above schema
         return (
             f"  Restaurant Name        : {self.restaurant_name}\n"
             f"  Location               : {self.restaurant_location}\n"
-            f"  Type of Service        : {'Dine-in' if self.dine_or_quick_service else 'Quick Service'}\n"
+            f"  Type of Service        : {'Dine-in' if self.dine_in else ''}{' and Quick Service' if self.quick_service else ''}\n"
             f"  Food Type              : {self.food_type}\n"
             f"  Description            : {self.restaurant_description}\n"
             f"  Park Name              : {self.park.park_name if self.park else 'Unknown'}\n"
@@ -28,7 +28,7 @@ class Ride(db.Model):
     # Schema for the Rides model
     id = db.Column(db.Integer, primary_key=True)
     ride_name = db.Column(db.String(50), unique=True, nullable=False)
-    park_id = db.Column(db.Integer, db.ForeignKey("park.id", ondelete="CASCADE"), nullable=False)
+    park_id = db.Column(db.Integer, db.ForeignKey("park.id"), nullable=False)
     ride_location = db.Column(db.String(50), nullable=False)
     ride_description = db.Column(db.Text, nullable=False)
     park = db.relationship("Park", backref=db.backref("rides", lazy=True))
@@ -59,8 +59,8 @@ class Park(db.Model):
     special_features = db.Column(db.Text, nullable=False)
     transport_between_parks = db.Column(db.Text, nullable=False)
     image_url = db.Column(db.String(255), nullable=True)
-    ride = db.relationship("Ride", backref=db.backref("parks", cascade="all, delete", lazy=True))
-    restaurant = db.relationship("Restaurant", backref=db.backref("parks", cascade="all, delete", lazy=True))
+    ride = db.relationship("Ride", backref=db.backref("parks", lazy=True))
+    restaurant = db.relationship("Restaurant", backref=db.backref("parks", lazy=True))
 
     def __repr__(self):
         # returns chosen fields from the above schema

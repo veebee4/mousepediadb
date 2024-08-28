@@ -80,7 +80,7 @@ def delete_park(park_id):
     park = Park.query.get_or_404(park_id)
     db.session.delete(park)
     db.session.commit()
-    flash("Park deleted successfully!", "success")
+    flash("Park and associated ride/restaurant records deleted successfully!", "success")
     return redirect(url_for("parks"))
 
 
