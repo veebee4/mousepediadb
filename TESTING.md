@@ -82,22 +82,114 @@ Visit the deployed website: [Mousepedia](https://mousepediadb-0e4030391623.herok
 | Card Reveal Hint | Hint saying "Click Me!" Appears to encourage user to click to view park information | Hovered over card | A styled tooltip appears saying "Click Me!" | Pass |
 | Park Card Information Reveal | When card is clicked on, the park information is revealed | Clicked on each card | The card reveal replaces the front image with all the park information added on the add park form | Pass |
 | Park Card Reveal Close | On card reveal side, an 'X' appears in the top right corner to be able to close the information and return to the front of the card | Clicked on each card | The card reveal closes to reveal the front image again | Pass |
-| Edit Button | Button loads new page with a form to edit park information, which is pre-populated in the form | Clicked button | Button directs to edit park page with form, but one field has not pre-populated | Pass |
-| Delete Button | Button triggers a modal to ask user for confirmation to delete | Clicked button | Modal pops up in centre of the screen | Pass |
-| Delete Button on Modal | Button delete's park record and associated ride/restaurant records | Clicked button |  | Pass |
+| Edit Button | Button loads new page with a form to edit park information | Clicked button | Button directs to edit park page with form | Pass |
+| Delete Button | Button triggers a modal to ask user for confirmation to delete | Clicked button | Modal pops up in centre of the screen asking user "Are you sure you want to delete this park? This will also delete any associated ride/restaurant records! This action cannot be undone, all information will be lost!" with delete and cancel buttons | Pass |
+| Delete Button on Modal | Button delete's park record and associated ride/restaurant records | Clicked button | Park record and any ride/restaurant records assigned to that park are also deleted. Shows user a flash message that confirms these records have been deleted | Pass |
 | Cancel Button on Modal | Button closes modal and returns to park page | Clicked button | Modal disappears and user is back to park page | Pass |
+
+#### Add A Park Page
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Site Graphic & Text Logo | Link directs the user back to the home page | Clicked title | Home page reloads | Pass |
+| Navigation Links | Links direct user to appropriate page | Clicked each link | Each link takes user to correct page | Pass |
+| Footer links | Each link opens into a new tab | Click each link | Each website loads in a new tab | Pass |
+| Text Inputs | Field not allowed to be left empty or with whitespace added | Enter five spaces | Form accepts whitespaces as long as it meet the minimum character allowance and adds the record | Fail |
+| Date & Time Pickers | Clicking on line of input triggers the date/time picker | Clicked on line | Date/Time picker opens | Pass |
+| Number Inputs | Inputting a negative number shows an error message | Entered -1 on form | Error appears stating "Value must be greater than or equal to 0" | Pass |
+| Add Park Submit Button | Changes colour when hovered over | Hovered on button | Colour changes to lighter blue | Pass |
+| Add Park Submit Button | Submits valid entered information on form, adds to database and takes user to parks page | Entered all form information and clicked on Add Park button | User taken to parks page where the record is added and displayed on a card | Pass |
+
+#### Edit A Park Page
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Site Graphic & Text Logo | Link directs the user back to the home page | Clicked title | Home page reloads | Pass |
+| Navigation Links | Links direct user to appropriate page | Clicked each link | Each link takes user to correct page | Pass |
+| Footer links | Each link opens into a new tab | Click each link | Each website loads in a new tab | Pass |
+| Pre-populated fields | All fields pre-populated with existing information | Clicked edit on park record, form loads | All fields in form are pre-populated except for the entertainment field | Fail |
+| Text Inputs | Field not allowed to be left empty or with whitespace added | Enter five spaces | Form accepts whitespaces as long as it meet the minimum character allowance and updates record | Fail |
+| Date & Time Pickers | Clicking on line of input triggers the date/time picker | Clicked on line | Date/Time picker opens | Pass |
+| Number Inputs | Inputting a negative number shows an error message | Entered -1 on form | Error appears stating "Value must be greater than or equal to 0" | Pass |
+| Submit Edit Button | Changes colour when hovered over | Hovered on button | Colour changes to lighter blue | Pass |
+| Submit Edit Button | Submits valid entered information on form, updates database and takes user to parks page | Checked all form information and edited each input, and clicked on Submit Edit button | User taken to parks page where the record is updated and new information visible on park card | Pass |
+
+#### Ride Page
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Site Graphic & Text Logo | Link directs the user back to the home page | Clicked title | Home page reloads | Pass |
+| Navigation Links | Links direct user to appropriate page | Clicked each link | Each link takes user to correct page | Pass |
+| Footer links | Each link opens into a new tab | Click each link | Each website loads in a new tab | Pass |
+| Add Ride Button | Button loads new page with a form to enter ride information | Clicked button | Button directs to add ride page with form | Pass |
+| Card Tabs | Each tab displays appropriate information when clicked on | Clicked each tab | Correct information shown below tabs | Pass |
+| Edit Button | Button loads new page with a form to edit ride information | Clicked button | Button directs to edit ride page with form | Pass |
+| Delete Button | Button triggers a modal to ask user for confirmation to delete | Clicked button | Modal pops up in centre of the screen asking user "Are you sure you want to delete this ride? This action cannot be undone, all information will be lost!" with delete and cancel button | Pass |
+| Delete Button on Modal | Button delete's ride record | Clicked button | Ride record deleted. Shows user a flash message that confirms the record has been deleted | Pass |
+| Cancel Button on Modal | Button closes modal and returns to ride page | Clicked button | Modal disappears and user is back to ride page | Pass |
+
+#### Add A Ride Page
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Site Graphic & Text Logo | Link directs the user back to the home page | Clicked title | Home page reloads | Pass |
+| Navigation Links | Links direct user to appropriate page | Clicked each link | Each link takes user to correct page | Pass |
+| Footer links | Each link opens into a new tab | Click each link | Each website loads in a new tab | Pass |
+| Park dropdown list | Displays all added park records in a drop down list | Clicked on dropdown | List of existing park records shown | Pass |
+| Text Inputs | Field not allowed to be left empty or with whitespace added | Enter five spaces | Form accepts whitespaces (except on Ride location input) as long as it meet the minimum character allowance and adds record | Fail |
+| Add Ride Button | Changes colour when hovered over | Hovered on button | Colour changes to lighter blue | Pass |
+| Add Ride Button | Submits valid entered information on form, adds record to database and takes user to ride page | Added all form information and clicked on Add Ride button | User taken to ride page where the record is added and displayed on a card | Pass |
+
+#### Edit A Ride Page
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Site Graphic & Text Logo | Link directs the user back to the home page | Clicked title | Home page reloads | Pass |
+| Navigation Links | Links direct user to appropriate page | Clicked each link | Each link takes user to correct page | Pass |
+| Footer links | Each link opens into a new tab | Click each link | Each website loads in a new tab | Pass |
+| Pre-populated fields | All fields pre-populated with existing information | Clicked edit on ride record, form loads | All fields in form are pre-populated except for the description field | Fail |
+| Text Inputs | Field not allowed to be left empty or with whitespace added | Enter five spaces | Form accepts whitespaces as long as it meet the minimum character allowance and updates record | Fail |
+| Submit Edit Button | Changes colour when hovered over | Hovered on button | Colour changes to lighter blue | Pass |
+| Submit Edit Button | Submits valid entered information on form, updates database and takes user to ride page | Checked all form information and edited each input, and clicked on Submit Edit button | User taken to ride page where the record is updated and new information visible on ride card | Pass |
 
 #### Restaurant Page
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Site Mini Logo's | Link directs the user back to the home page | Clicked title | Home page reloads | Pass |
+| Site Graphic & Text Logo | Link directs the user back to the home page | Clicked title | Home page reloads | Pass |
 | Navigation Links | Links direct user to appropriate page | Clicked each link | Each link takes user to correct page | Pass |
-| Book In Button | Takes user to booking in page | Clicked on booking in button | Booking in page is loaded | Pass |
-| Book In Button Hover Effect | Button turns to a darker shade of teal when user hovers over it | Hover over booking in button | Button shows correct colour when hovering over it | Pass |
-| Laser By Stephania Logo/Button | Opens Laser by Stephania booking page in a new tab | Clicked on logo/button | A new tab opens and loads the correct page | Pass |
-| Social Media Icons | Opens a new tab to each social media account for the studio | Clicked on each icon | A new tab opens and loads the correct pages | Pass |
+| Footer links | Each link opens into a new tab | Click each link | Each website loads in a new tab | Pass |
+| Add Restaurant Button | Button loads new page with a form to enter restaurant information | Clicked button | Button directs to add restaurant page with form | Pass |
+| Card Tabs | Each tab displays appropriate information when clicked on | Clicked each tab | Correct information shown below tabs | Pass |
+| Edit Button | Button loads new page with a form to edit restaurant information | Clicked button | Button directs to edit restaurant page with form | Pass |
+| Delete Button | Button triggers a modal to ask user for confirmation to delete | Clicked button | Modal pops up in centre of the screen asking user "Are you sure you want to delete this restaurant? This action cannot be undone, all information will be lost!" with delete and cancel button | Pass |
+| Delete Button on Modal | Button delete's restaurant record | Clicked button | Restaurant record deleted. Shows user a flash message that confirms the record has been deleted | Pass |
+| Cancel Button on Modal | Button closes modal and returns to restaurant page | Clicked button | Modal disappears and user is back to restaurant page | Pass |
 
+#### Add A Restaurant Page
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Site Graphic & Text Logo | Link directs the user back to the home page | Clicked title | Home page reloads | Pass |
+| Navigation Links | Links direct user to appropriate page | Clicked each link | Each link takes user to correct page | Pass |
+| Footer links | Each link opens into a new tab | Click each link | Each website loads in a new tab | Pass |
+| Park dropdown list | Displays all added park records in a drop down list | Clicked on dropdown | List of existing park records shown | Pass |
+| Text Inputs | Field not allowed to be left empty or with whitespace added | Enter five spaces | Form accepts whitespaces (except on Restaurant name and location input) as long as it meet the minimum character allowance and adds record | Fail |
+| Checkbox Inputs | Not ticking a box shows an error | Leave checkboxes blank | Form adds record | Fail |
+| Add Restaurant Button | Changes colour when hovered over | Hovered on button | Colour changes to lighter blue | Pass |
+| Add Restaurant Button | Submits valid entered information on form, adds record to database and takes user to restaurant page | Added all form information and clicked on Add Restaurant button | User taken to restaurant page where the record is added and displayed on a card | Pass |
+
+#### Edit A Restaurant Page
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Site Graphic & Text Logo | Link directs the user back to the home page | Clicked title | Home page reloads | Pass |
+| Navigation Links | Links direct user to appropriate page | Clicked each link | Each link takes user to correct page | Pass |
+| Footer links | Each link opens into a new tab | Click each link | Each website loads in a new tab | Pass |
+| Pre-populated fields | All fields pre-populated with existing information | Clicked edit on restaurant record, form loads | All fields in form are pre-populated except for the description, dine in/quick service checkboxes and food type fields | Fail |
+| Text Inputs | Field not allowed to be left empty or with whitespace added | Enter five spaces | Form accepts whitespaces as long as it meet the minimum character allowance and updates record | Fail |
+| Submit Edit Button | Changes colour when hovered over | Hovered on button | Colour changes to lighter blue | Pass |
+| Submit Edit Button | Submits valid entered information on form, updates database and takes user to restaurant page | Checked all form information and edited each input, and clicked on Submit Edit button | User taken to restaurant page where the record is updated and new information visible on restaurant card | Pass |
 
 ## Validation Testing
 
