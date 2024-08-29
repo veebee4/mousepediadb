@@ -372,6 +372,12 @@ p.restaurant-checkboxes {
     flex-direction: column;
 }
 
+/* changing size of text on modal for park deletion */
+.modal-header-park {
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
 /* -------------------------------------------------------------------------------------------------------------------------------- Forms */
 
 .add_form {

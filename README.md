@@ -85,16 +85,16 @@ ___
 <h4>As a first time user, I want to be able to:</h4>
 
   - Understand the concept of the website and how to use it.
-  - Create an account.
+  - To view existing records, if any are available.
+  - Add records if they do not already exist.
 
 ### Returning Visitor Goals
 
 <h4>As a returning user, I want to be able to:</h4>
 
-  - Login to my account.
-  - To create, edit and delete records.
   - Find the existing Disney park information easily.
   - See which rides and restaurants are in each park.
+  - Edit and delete existing records.
 
 ___
 
