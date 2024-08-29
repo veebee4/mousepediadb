@@ -32,6 +32,12 @@ def add_park():
         transport_between_parks = request.form.get("transport_between_parks")
         image_url = request.form.get("image_url")
 
+        # Check if park name already exists
+        existing_park = Park.query.filter_by(park_name=park_name).first()
+        if existing_park:
+            flash("A park with this name already exists. Please choose a different name.", "danger")
+            return redirect(url_for("add_park"))
+
         park = Park(
             park_name=park_name,
             park_address=park_address,
