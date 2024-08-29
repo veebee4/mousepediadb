@@ -31,7 +31,7 @@ class Ride(db.Model):
     park_id = db.Column(db.Integer, db.ForeignKey("park.id"), nullable=False)
     ride_location = db.Column(db.String(50), nullable=False)
     ride_description = db.Column(db.Text, nullable=False)
-    park = db.relationship("Park", backref=db.backref("rides", lazy=True))
+    park = db.relationship("Park", backref=db.backref("rides", cascade="all, delete-orphan", lazy=True))
 
     def __repr__(self):
         # returns chosen fields from the above schema

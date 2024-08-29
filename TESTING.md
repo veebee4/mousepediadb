@@ -56,7 +56,7 @@ Visit the deployed website: [Mousepedia](https://mousepediadb-0e4030391623.herok
 | Find existing Disney Park information easily | The user can navigate to the appropriate page; The park records are revealed and replace the park picture when the user clicks on the park card, Ride & Restaurant information can be found by clicking through the tabs on the cards | [Card Reveal](documentation/testing/card-reveal.png) [Tabs Ride Card](/documentation/testing/tabs-ride-card.png) |
 | See which rides and restaurants are in each park | The tabs on the cards are clearly marked with appropriate titles, "Park" is the first one so the park that the record is allocated to will be the first piece of information displayed | See above |
 | Edit existing records | When a user views the records on the Parks, Rides or Restaurants pages, the card displaying the record has a clearly marked edit button underneath all the information, pressing this button directs the user to a pre-populated form containing the existing information | See above image for Edit button on Ride record [Edit Park Button](/documentation/testing/edit-park.png) [Edit Restaurant Button](/documentation/testing/edit-rest.png) |
-| Delete existing records | When a user views the records on the Parks, Rides or Restaurants pages, the card displaying the record has a clearly marked delete button underneath all the information, pressing this button will trigger a modal to confirm if they would like to delete the record and to let the user know that the action cannot be undone. The user is also informed when deleting a park only, that this will delete all ride/restaurant records associated with that park | :--- |
+| Delete existing records | When a user views the records on the Parks, Rides or Restaurants pages, the card displaying the record has a clearly marked delete button underneath all the information, pressing this button will trigger a modal to confirm if they would like to delete the record and to let the user know that the action cannot be undone. The user is also informed when deleting a park only, that this will delete all ride/restaurant records associated with that park | Above images show delete button also |
 
 ---
 
@@ -66,23 +66,26 @@ Visit the deployed website: [Mousepedia](https://mousepediadb-0e4030391623.herok
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Site Mini Logo's | Link directs the user back to the home page | Clicked title | Home page reloads | Pass |
+| Site Graphic & Text Logo | Link directs the user back to the home page | Clicked title | Home page reloads | Pass |
 | Navigation Links | Links direct user to appropriate page | Clicked each link | Each link takes user to correct page | Pass |
-| Book In Button | Takes user to booking in page | Clicked on booking in button | Booking in page is loaded | Pass |
-| Book In Button Hover Effect | Button turns to a darker shade of teal when user hovers over it | Hover over booking in button | Button shows correct colour when hovering over it | Pass |
-| Laser By Stephania Logo/Button | Opens Laser by Stephania booking page in a new tab | Clicked on logo/button | A new tab opens and loads the correct page | Pass |
-| Social Media Icons | Opens a new tab to each social media account for the studio | Clicked on each icon | A new tab opens and loads the correct pages | Pass |
+| Carousel Clickable | Takes user to parks page | Clicked on each image of each park record | Park page is loaded | Pass |
+| Footer links | Each link opens into a new tab | Click each link | Each website loads in a new tab | Pass |
 
-#### Ride Page
+#### Parks Page
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Site Mini Logo's | Link directs the user back to the home page | Clicked title | Home page reloads | Pass |
+| Site Graphic & Text Logo | Link directs the user back to the home page | Clicked title | Home page reloads | Pass |
 | Navigation Links | Links direct user to appropriate page | Clicked each link | Each link takes user to correct page | Pass |
-| Book In Button | Takes user to booking in page | Clicked on booking in button | Booking in page is loaded | Pass |
-| Book In Button Hover Effect | Button turns to a darker shade of teal when user hovers over it | Hover over booking in button | Button shows correct colour when hovering over it | Pass |
-| Laser By Stephania Logo/Button | Opens Laser by Stephania booking page in a new tab | Clicked on logo/button | A new tab opens and loads the correct page | Pass |
-| Social Media Icons | Opens a new tab to each social media account for the studio | Clicked on each icon | A new tab opens and loads the correct pages | Pass |
+| Footer links | Each link opens into a new tab | Click each link | Each website loads in a new tab | Pass |
+| Add Park Button | Button loads new page with a form to enter park information | Clicked button | Button directs to add park page with form | Pass |
+| Card Reveal Hint | Hint saying "Click Me!" Appears to encourage user to click to view park information | Hovered over card | A styled tooltip appears saying "Click Me!" | Pass |
+| Park Card Information Reveal | When card is clicked on, the park information is revealed | Clicked on each card | The card reveal replaces the front image with all the park information added on the add park form | Pass |
+| Park Card Reveal Close | On card reveal side, an 'X' appears in the top right corner to be able to close the information and return to the front of the card | Clicked on each card | The card reveal closes to reveal the front image again | Pass |
+| Edit Button | Button loads new page with a form to edit park information, which is pre-populated in the form | Clicked button | Button directs to edit park page with form, but one field has not pre-populated | Pass |
+| Delete Button | Button triggers a modal to ask user for confirmation to delete | Clicked button | Modal pops up in centre of the screen | Pass |
+| Delete Button on Modal | Button delete's park record and associated ride/restaurant records | Clicked button |  | Pass |
+| Cancel Button on Modal | Button closes modal and returns to park page | Clicked button | Modal disappears and user is back to park page | Pass |
 
 #### Restaurant Page
 
