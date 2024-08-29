@@ -52,6 +52,7 @@ def add_park():
             transport_between_parks=transport_between_parks,
             image_url=image_url,
         )
+
         db.session.add(park)
         db.session.commit()
         flash("Park added successfully!", "success")
@@ -116,7 +117,7 @@ def add_ride():
                 ride_location=ride_location,
                 ride_description=ride_description,
             )
-            
+
             db.session.add(ride)
             db.session.commit()
             flash("Ride added successfully!", "success")
@@ -173,10 +174,10 @@ def add_restaurant():
             # collects the selected service types (dine in/quick service)
             service_types = request.form.getlist("service_type")
 
-            # check if the park_id exists
-            park = Park.query.get(park_id)
-            if not park:
-                flash("Invalid park ID. Please select a valid park.", "error")
+            # Check if ride name already exists
+            existing_restaurant = Restaurant.query.filter_by(restaurant_name=restaurant_name).first()
+            if existing_restaurant:
+                flash("A restaurant with this name already exists. Please choose a different name.", "danger")
                 return redirect(url_for("add_restaurant"))
 
             restaurant = Restaurant(
