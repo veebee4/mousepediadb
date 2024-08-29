@@ -73,7 +73,7 @@
                 <div class="input-field col s12">
                     <i class="fa-solid fa-utensils blue-text text-darken-4 prefix"></i>
                     <input id="num_restaurants" name="num_restaurants" type="number" class="validate" 
-                    value="{{ park.num_restaurants }}" required>
+                    value="{{ park.num_restaurants }}" min="0" required>
                     <label for="num_restaurants">How many restaurants are at this park?</label>
                 </div>
             </div>
@@ -82,7 +82,7 @@
                 <div class="input-field col s12">
                     <i class="fa-solid fa-rocket blue-text text-darken-4 prefix"></i>
                     <input id="num_rides" name="num_rides" type="number" class="validate" 
-                    value="{{ park.num_rides }}" required>
+                    value="{{ park.num_rides }}" min="0" required>
                     <label for="num_rides">How many rides are at this park?</label>
                 </div>
             </div>
