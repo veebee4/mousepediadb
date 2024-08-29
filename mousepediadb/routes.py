@@ -99,16 +99,15 @@ def rides():
 @app.route("/add_ride", methods=["GET", "POST"])
 def add_ride():
     if request.method == "POST":
-        try:
             ride_name = request.form.get("ride_name")
             park_id = request.form.get("park_id")
             ride_location = request.form.get("ride_location")
             ride_description = request.form.get("ride_description")
 
-            # Check if the park_id exists
-            park = Park.query.get(park_id)
-            if not park:
-                flash("Invalid park ID. Please select a valid park.", "error")
+            # Check if ride name already exists
+            existing_ride = Ride.query.filter_by(ride_name=ride_name).first()
+            if existing_ride:
+                flash("A ride with this name already exists. Please choose a different name.", "danger")
                 return redirect(url_for("add_ride"))
 
             ride = Ride(
@@ -117,14 +116,12 @@ def add_ride():
                 ride_location=ride_location,
                 ride_description=ride_description,
             )
+            
             db.session.add(ride)
             db.session.commit()
             flash("Ride added successfully!", "success")
             return redirect(url_for("rides"))
 
-        except Exception as e:
-            db.session.rollback()
-            return redirect(url_for("add_ride"))
     parks = Park.query.all()
     return render_template("add_ride.html", parks=parks)
 
