@@ -87,8 +87,8 @@
                 <div class="input-field col s12">
                     <i class="fa-solid fa-pizza-slice blue-text text-darken-4 prefix"></i>
                     <textarea id="food_type" name="food_type" minlength="5" maxlength="500" 
-                    class="materialize-textarea validate" value="{{ restaurant.food_type }}" 
-                    required pattern=".*\S+.*"></textarea>
+                    class="materialize-textarea validate" required 
+                    pattern=".*\S+.*">{{ restaurant.food_type }}</textarea>
                     <label for="food_type">Food Type</label>
                 </div>
             </div>

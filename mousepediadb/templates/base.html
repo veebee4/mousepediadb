@@ -6,7 +6,7 @@
     <meta name="description" content="Mousepedia, a customisable collection of information about the Disney parks in Florida, USA">
     <title>Mousepedia</title>
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
 </head>
@@ -17,7 +17,7 @@
             <div class="nav-wrapper">
                 <a href="{{ url_for('home') }}">
                   <img src="{{ url_for('static', filename='images/mousepedia-logo.png') }}" 
-                  id="nav-logo">
+                  id="nav-logo" alt="mousepedia logo">
                 </a>
                 <a href="{{ url_for('home') }}" class="brand-logo white-text text-align-center">
                   Mousepedia
