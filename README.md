@@ -14,18 +14,18 @@ Link to deployed site - [Mousepedia](https://mousepediadb-0e4030391623.herokuapp
 
 - [Mousepedia](#mousepedia)
   - [CONTENTS](#contents)
-  - [Site Objectives](#site-objectives)
+- [Project Goals](#project-goals)
 - [User Experience/UX](#user-experienceux)
   - [Target Audience](#target-audience)
   - [User Stories](#user-stories)
     - [New Visitor Goals](#new-visitor-goals)
-    - [Existing Visitor Goals](#existing-visitor-goals)
+    - [Returning Visitor Goals](#returning-visitor-goals)
 - [Design Choices](#design-choices)
   - [Colour Scheme](#colour-scheme)
   - [Typography](#typography)
   - [Logo and Favicon](#logo-and-favicon)
-- [Database Schema & User Journey](#database-schema--user-journey)
   - [Wireframes](#wireframes)
+- [Database Schema & User Journey](#database-schema--user-journey)
   - [Flow Diagram](#flow-diagram)
   - [Database Plan](#database-plan)
 - [Features](#features)
@@ -35,9 +35,6 @@ Link to deployed site - [Mousepedia](https://mousepediadb-0e4030391623.herokuapp
 - [Programming Languages, Frameworks and Libraries Used](#programming-languages-frameworks-and-libraries-used)
 - [Defensive Programming](#defensive-programming)
 - [Testing](#testing)
-  - [Manual Testing](#manual-testing)
-  - [User](#user)
-  - [Bugs](#bugs)
   - [Lighthouse](#lighthouse)
   - [Validation Testing](#validation-testing)
     - [HTML & CSS](#html--css)
@@ -161,11 +158,11 @@ Here is a diagram showing the possible flow/user journey through the site.
 
 ![Site Flow Diagram](documentation/images/flowchart.png)
 
-## Database Schema
+## Database plan
 
 The database schema/plan is fairly simple, but it shows the information that is stored within the database, the type of data and if it is logged as a Primary or Foreign key where applicable.
 
-![Original Database plan](documentation/images/database-diagram.png)
+![Database plan](documentation/images/database-diagram.png)
 
 # Features
 
@@ -183,8 +180,11 @@ This website consists of 11 pages, all of which are extended from the base page.
 - Edit Restaurant page
 - 404 Error Page
 
-### General features across all pages
+### General features 
+
+    I used the below elements throughout the project:
   - Favicon: Created at [Favicon.io](https://favicon.io/), I chose the image of the castle to represent the parks, which are most known for the Cinderella Castle.
+  ![Castle Favicon](documentation/images/favicon-feature.png)
   - Navbar & Footer: Features on all pages, the nav bar is comprised of an image logo with text title which is a clickable link back to the homepage and four interactive links; Home, Parks, Rides and Restaurants, the background of each link will change to a darker colour when hovered over and the current page is the same colour but constant to show the user what page they are on and where they are hovering over with the cursor.
   The footer has a small amount of text about the site, along with some useful links and copyright year and information.
 
@@ -257,8 +257,8 @@ This website consists of 11 pages, all of which are extended from the base page.
 
 I have kept accessibility in mind whilst building the project, to make sure it is accessible as possible.
   - Using semantic HTML.
-  - Providing information for screen readers where there are icons used and no text.
   - Ensuring that there is a sufficient colour contrast throughout the site.
+
 ___
 
 # Technologies Used
@@ -269,7 +269,7 @@ Here are the technologies used to build this project:
 - [Github](https://github.com) To host and store the data for the site.
 - [Git](https://git-scm.com/) The git command was used for version control via the terminal in Gitpod, to commit to Git and Push to GitHub.
 - [PEP8 Validator](https://pep8ci.herokuapp.com/) Used to check python code for errors
-- [PostgreSQL](https://www.postgresql.org/) Code Institute PostgreSQL Database Server was used to store PostgreSQL database.
+- [PostgreSQL](https://www.postgresql.org/) PostgreSQL Database Server was used to store PostgreSQL database.
 - [Heroku](https://id.heroku.com/) Used to deploy the project
 - [Google Fonts](https://fonts.google.com/) Used by importing the fonts Graduate & Englebert, into the style.css file which has been used on all pages within the project.
 - [Font Awesome](https://fontawesome.com/) Font Awesome was used to add icons for aesthetic purposes.
@@ -403,6 +403,15 @@ If you have successfully created the Procfile you will see the Heroku logo next 
   exit()
   ```
 
+  The above are general instructions, but there is an alternative that I had to add-in to be able to complete this command to create the tables in the database as the above code would raises error working outside of application context after inputting db.create_all.
+
+  ```bash
+  from mousepediadb import app, db
+  app.app_context().push()
+  db.create_all()
+  exit()
+  ```
+
 8. Now that the relational database has been set up and the tables created, we can now click open app and the mousepedia application should now open in a new tab.
 
 ___
@@ -417,10 +426,8 @@ To create my 404 error page and route, I followed [this](https://www.youtube.com
 To add flash messages for feedback to the user, I used [this](https://flask.palletsprojects.com/en/2.3.x/patterns/flashing/) documentation.
 In order to get the nav links to show as active, I used [this](https://craftcms.stackexchange.com/questions/4234/how-to-add-active-class-to-homepage-nav-list-item) stack exchange question.
 To make colour gradient stretch the whole page, I used [this](https://stackoverflow.com/questions/16841323/making-gradient-background-fill-page-with-css) tutorial.
-
-Once complete, the readme file was passed through a spelling and grammar check via [Grammarly](https://www.grammarly.com/)
-
-___
+I found [this](https://stackoverflow.com/questions/34122949/working-outside-of-application-context-flask) tutorial when inputting the command db.create_all() in the python shell, as it was raising an error "working outside of application context".
+I used [this](https://stackoverflow.com/questions/5117479/wtforms-how-to-prepopulate-a-textarea-field) stackover flow to pre-populate a text area field.
 
 ## Media
 
