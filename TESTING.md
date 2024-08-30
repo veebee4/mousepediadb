@@ -191,6 +191,15 @@ Visit the deployed website: [Mousepedia](https://mousepediadb-0e4030391623.herok
 | Submit Edit Button | Changes colour when hovered over | Hovered on button | Colour changes to lighter blue | Pass |
 | Submit Edit Button | Submits valid entered information on form, updates database and takes user to restaurant page | Checked all form information and edited each input, and clicked on Submit Edit button | User taken to restaurant page where the record is updated and new information visible on restaurant card | Pass |
 
+#### 404 Error Page
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| 404 Error Page | Loads if a user tries to go to a page that does not exist | Typed an incorrect page at the end of the website address | 404 page loads | Pass |
+| Site Graphic & Text Logo | Link directs the user back to the home page | Clicked title | Home page reloads | Pass |
+| Navigation Links | Links direct user to appropriate page | Clicked each link | Each link takes user to correct page | Pass |
+| Footer links | Each link opens into a new tab | Click each link | Each website loads in a new tab | Pass |
+
 ## Validation Testing
 
 ### HTML & CSS
