@@ -56,8 +56,7 @@
                     <i class="fa-solid fa-pencil blue-text text-darken-4 prefix"></i>
                     <textarea id="restaurant_description" name="restaurant_description" minlength="5" 
                     maxlength="500" class="materialize-textarea validate" 
-                    value="{{ restaurant.restaurant_description }}" 
-                    required pattern=".*\S+.*"></textarea>
+                    required pattern=".*\S+.*">{{ restaurant.restaurant_description }}</textarea>
                     <label for="restaurant_description">Description</label>
                 </div>
             </div>
