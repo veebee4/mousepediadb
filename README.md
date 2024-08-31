@@ -4,11 +4,11 @@
 
 ### All things Disney...
 
-![Responsive Screenshot]()
+![Responsive Screenshot](documentation/images/responsive-devices.png)
 
 Mousepedia was created for my 3rd Milestone project for Code Institute's Level 5 Diploma in Web Application Development.
 
-Link to deployed site - [Mousepedia](https://mousepediadb-0e4030391623.herokuapp.com/parks)
+Link to deployed site - [Mousepedia](https://mousepediadb-0e4030391623.herokuapp.com)
 
 ## CONTENTS
 
@@ -35,16 +35,11 @@ Link to deployed site - [Mousepedia](https://mousepediadb-0e4030391623.herokuapp
 - [Programming Languages, Frameworks and Libraries Used](#programming-languages-frameworks-and-libraries-used)
 - [Defensive Programming](#defensive-programming)
 - [Testing](#testing)
-  - [Lighthouse](#lighthouse)
-  - [Validation Testing](#validation-testing)
-    - [HTML & CSS](#html--css)
-  - [Python Testing](#python-testing)
   - [Deployment](#deployment)
     - [Github Deployment](#github-deployment)
     - [Creating a Fork or Copying](#creating-a-fork-or-copying)
     - [Clone](#clone)
     - [Repository deployment via Heroku](#repository-deployment-via-heroku)
-    - [Deployment of the app](#deployment-of-the-app)
   - [Credits](#credits)
   - [Media](#media)
   - [Acknowledgments and Thanks](#acknowledgments-and-thanks)
@@ -251,7 +246,7 @@ This website consists of 11 pages, all of which are extended from the base page.
 - Add features to showcase all of the Disney parks globally, and other Disney properties, including all information about shopping areas such as Disney Springs and all information for Disney Hotels.
 - Add a feature to leave a review for any park/ride/restaurant record.
 - Add feature to include picture of ride/restaurant.
-- Add feature to upload your own pictures to appear on the front end record displays.
+- Add feature to upload your own pictures to appear on the front end record displays for parks, rides and restaurants.
 
 ## Accessibility
 
@@ -296,6 +291,10 @@ When a user clicks the delete button on a record, a modal pops up asking "Are yo
 ![Delete Modal Fullscreen](documentation/images/delete-modal-parks.png)
 ![Delete Modal Restaurant & Ride](documentation/images/delete-modal-ride-rest.png)
 ___
+
+# Testing
+
+For all testing see [TESTING.md](TESTING.md)
 
 ## Deployment
 

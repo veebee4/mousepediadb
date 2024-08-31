@@ -1,8 +1,8 @@
 # Mousepedia - Testing
 
-![Mousepedia shown on a variety of screen sizes]()
+![Mousepedia shown on a variety of screen sizes](/documentation/images/responsive-devices.png)
 
-Visit the deployed website: [Mousepedia](https://mousepediadb-0e4030391623.herokuapp.com/)
+Visit the deployed website: [Mousepedia](https://mousepediadb-0e4030391623.herokuapp.com)
 
 # CONTENTS
 
@@ -30,8 +30,8 @@ Visit the deployed website: [Mousepedia](https://mousepediadb-0e4030391623.herok
     * [Known Bugs](#no-bugs)
 
 
-<!-- As each section or Function/Model was built during this project, I was testing for functionality and styling issues that may have arisen (see table below), which were corrected or fixed before continuing. I also had friends test the site by signing up, adding and deleting comments using various devices on varying platforms (IOS, Android, Mobile, Tablet etc) and reporting back any issues they encountered with functionality or styling.   I carried out testing throughout the project, by using Chrome developer tools I was able to troubleshoot as the project was being built.
-  All pages have been viewed in the Chrome developer tools to ensure each page is responsive on different device and screen sizes. -->
+As each section or Function/Model was built during this project, I was testing for functionality and styling issues, which were corrected or fixed as I was going along with some tidying up being carried out towards the end of the project. By using Chrome developer tools I was able to troubleshoot as the project was being built.
+All pages have been viewed in the Chrome developer tools to ensure each page is responsive on different device and screen sizes.
 
 ## Manual Testing
 
@@ -68,7 +68,7 @@ Visit the deployed website: [Mousepedia](https://mousepediadb-0e4030391623.herok
 | --- | --- | --- | --- | --- |
 | Site Graphic & Text Logo | Link directs the user back to the home page | Clicked title | Home page reloads | Pass |
 | Navigation Links | Links direct user to appropriate page | Clicked each link | Each link takes user to correct page | Pass |
-| Carousel Clickable | Takes user to parks page | Clicked on each image of each park record | Park page is loaded | Pass |
+| Carousel Clickable Image | Takes user to parks page | Clicked on each image of each park record | Park page is loaded | Pass |
 | Footer links | Each link opens into a new tab | Click each link | Each website loads in a new tab | Pass |
 
 #### Parks Page
@@ -94,9 +94,12 @@ Visit the deployed website: [Mousepedia](https://mousepediadb-0e4030391623.herok
 | Site Graphic & Text Logo | Link directs the user back to the home page | Clicked title | Home page reloads | Pass |
 | Navigation Links | Links direct user to appropriate page | Clicked each link | Each link takes user to correct page | Pass |
 | Footer links | Each link opens into a new tab | Click each link | Each website loads in a new tab | Pass |
-| Text Inputs | Field not allowed to be left empty or with whitespace added | Enter five spaces | Form accepts whitespaces as long as it meet the minimum character allowance and adds the record | Fail |
+| Text Inputs | Field not allowed to be left with only whitespace added | Enter five spaces | Form displays error when only spaces are entered "Please match requested format", it will not let the user go any further than the form page and will not submit the record | Pass |
+| Text Inputs | Field not allowed to be left empty | Leave inputs blank | Form displays error "Please fill out this field", when input is left blank it will not let the user go any further than the form page and will not submit the record | Pass |
 | Date & Time Pickers | Clicking on line of input triggers the date/time picker | Clicked on line | Date/Time picker opens | Pass |
 | Number Inputs | Inputting a negative number shows an error message | Entered -1 on form | Error appears stating "Value must be greater than or equal to 0" | Pass |
+| Image URL field | Will accept a website URL | Entered URL | Picture is displayed on park record card | Pass |
+| Image URL field | Displays a placeholder image if this field is left blank | Left field blank pressed add park button | Placeholder picture (default-image) is displayed on park record card | Pass |
 | Add Park Submit Button | Changes colour when hovered over | Hovered on button | Colour changes to lighter blue | Pass |
 | Add Park Submit Button | Submits valid entered information on form, adds to database and takes user to parks page | Entered all form information and clicked on Add Park button | User taken to parks page where the record is added and displayed on a card | Pass |
 
@@ -108,7 +111,8 @@ Visit the deployed website: [Mousepedia](https://mousepediadb-0e4030391623.herok
 | Navigation Links | Links direct user to appropriate page | Clicked each link | Each link takes user to correct page | Pass |
 | Footer links | Each link opens into a new tab | Click each link | Each website loads in a new tab | Pass |
 | Pre-populated fields | All fields pre-populated with existing information | Clicked edit on park record, form loads | All fields in form are pre-populated except for the entertainment field | Fail |
-| Text Inputs | Field not allowed to be left empty or with whitespace added | Enter five spaces | Form accepts whitespaces as long as it meet the minimum character allowance and updates record | Fail |
+| Text Inputs | Field not allowed to be left with only whitespace added | Enter five spaces | Form displays error when only spaces are entered "Please match requested format", it will not let the user go any further than the form page and will not submit the record | Pass |
+| Text Inputs | Field not allowed to be left empty | Leave inputs blank | Form displays error "Please fill out this field", when input is left blank it will not let the user go any further than the form page and will not submit the record | Pass |
 | Date & Time Pickers | Clicking on line of input triggers the date/time picker | Clicked on line | Date/Time picker opens | Pass |
 | Number Inputs | Inputting a negative number shows an error message | Entered -1 on form | Error appears stating "Value must be greater than or equal to 0" | Pass |
 | Submit Edit Button | Changes colour when hovered over | Hovered on button | Colour changes to lighter blue | Pass |
@@ -136,7 +140,9 @@ Visit the deployed website: [Mousepedia](https://mousepediadb-0e4030391623.herok
 | Navigation Links | Links direct user to appropriate page | Clicked each link | Each link takes user to correct page | Pass |
 | Footer links | Each link opens into a new tab | Click each link | Each website loads in a new tab | Pass |
 | Park dropdown list | Displays all added park records in a drop down list | Clicked on dropdown | List of existing park records shown | Pass |
-| Text Inputs | Field not allowed to be left empty or with whitespace added | Enter five spaces | Form accepts whitespaces (except on Ride location input) as long as it meet the minimum character allowance and adds record | Fail |
+| Park dropdown list | Will not allow user to add record if park not selected in dropdown list | Left dropdown on "Select a Park" default display and pressed add ride button | Form does not proceed any further and leaves user on ride page | Pass |
+| Text Inputs | Field not allowed to be left with only whitespace added | Enter five spaces | Form displays error when only spaces are entered "Please match requested format", it will not let the user go any further than the form page and will not submit the record | Pass |
+| Text Inputs | Field not allowed to be left empty | Leave inputs blank | Form displays error "Please fill out this field", when input is left blank it will not let the user go any further than the form page and will not submit the record | Pass |
 | Add Ride Button | Changes colour when hovered over | Hovered on button | Colour changes to lighter blue | Pass |
 | Add Ride Button | Submits valid entered information on form, adds record to database and takes user to ride page | Added all form information and clicked on Add Ride button | User taken to ride page where the record is added and displayed on a card | Pass |
 
@@ -147,8 +153,11 @@ Visit the deployed website: [Mousepedia](https://mousepediadb-0e4030391623.herok
 | Site Graphic & Text Logo | Link directs the user back to the home page | Clicked title | Home page reloads | Pass |
 | Navigation Links | Links direct user to appropriate page | Clicked each link | Each link takes user to correct page | Pass |
 | Footer links | Each link opens into a new tab | Click each link | Each website loads in a new tab | Pass |
-| Pre-populated fields | All fields pre-populated with existing information | Clicked edit on ride record, form loads | All fields in form are pre-populated except for the description field | Fail |
-| Text Inputs | Field not allowed to be left empty or with whitespace added | Enter five spaces | Form accepts whitespaces as long as it meet the minimum character allowance and updates record | Fail |
+| Pre-populated fields | All fields pre-populated with existing information | Clicked edit on ride record, form loads | All fields in form are pre-populated | Pass |
+| Park dropdown list | Defaults to pre-populated information as above but can still use dropdown to change park from drop down list | Clicked on dropdown | List of existing park records shown | Pass |
+| Park dropdown list | Will not allow user to add record if park not selected in dropdown list | Left dropdown on "Select a Park" default display and pressed submit edit button | Form does not proceed any further and leaves user on ride page | Pass |
+| Text Inputs | Field not allowed to be left with only whitespace added | Enter five spaces | Form displays error when only spaces are entered "Please match requested format", it will not let the user go any further than the form page and will not submit the record | Pass |
+| Text Inputs | Field not allowed to be left empty | Leave inputs blank | Form displays error "Please fill out this field", when input is left blank it will not let the user go any further than the form page and will not submit the record | Pass |
 | Submit Edit Button | Changes colour when hovered over | Hovered on button | Colour changes to lighter blue | Pass |
 | Submit Edit Button | Submits valid entered information on form, updates database and takes user to ride page | Checked all form information and edited each input, and clicked on Submit Edit button | User taken to ride page where the record is updated and new information visible on ride card | Pass |
 
@@ -174,7 +183,8 @@ Visit the deployed website: [Mousepedia](https://mousepediadb-0e4030391623.herok
 | Navigation Links | Links direct user to appropriate page | Clicked each link | Each link takes user to correct page | Pass |
 | Footer links | Each link opens into a new tab | Click each link | Each website loads in a new tab | Pass |
 | Park dropdown list | Displays all added park records in a drop down list | Clicked on dropdown | List of existing park records shown | Pass |
-| Text Inputs | Field not allowed to be left empty or with whitespace added | Enter five spaces | Form accepts whitespaces (except on Restaurant name and location input) as long as it meet the minimum character allowance and adds record | Fail |
+| Text Inputs | Field not allowed to be left with only whitespace added | Enter five spaces | Form displays error when only spaces are entered "Please match requested format", it will not let the user go any further than the form page and will not submit the record | Pass |
+| Text Inputs | Field not allowed to be left empty | Leave inputs blank | Form displays error "Please fill out this field", when input is left blank it will not let the user go any further than the form page and will not submit the record | Pass |
 | Checkbox Inputs | Not ticking a box shows an error | Leave checkboxes blank | Form adds record | Fail |
 | Add Restaurant Button | Changes colour when hovered over | Hovered on button | Colour changes to lighter blue | Pass |
 | Add Restaurant Button | Submits valid entered information on form, adds record to database and takes user to restaurant page | Added all form information and clicked on Add Restaurant button | User taken to restaurant page where the record is added and displayed on a card | Pass |
@@ -186,8 +196,11 @@ Visit the deployed website: [Mousepedia](https://mousepediadb-0e4030391623.herok
 | Site Graphic & Text Logo | Link directs the user back to the home page | Clicked title | Home page reloads | Pass |
 | Navigation Links | Links direct user to appropriate page | Clicked each link | Each link takes user to correct page | Pass |
 | Footer links | Each link opens into a new tab | Click each link | Each website loads in a new tab | Pass |
-| Pre-populated fields | All fields pre-populated with existing information | Clicked edit on restaurant record, form loads | All fields in form are pre-populated except for the description, dine in/quick service checkboxes and food type fields | Fail |
-| Text Inputs | Field not allowed to be left empty or with whitespace added | Enter five spaces | Form accepts whitespaces as long as it meet the minimum character allowance and updates record | Fail |
+| Pre-populated fields | All fields pre-populated with existing information | Clicked edit on restaurant record, form loads | All fields in form are pre-populated except for dine in/quick service checkboxes | Fail |
+| Park dropdown list | Defaults to pre-populated information as above but can still use dropdown to change park from drop down list | Clicked on dropdown | List of existing park records shown | Pass |
+| Park dropdown list | Will not allow user to add record if park not selected in dropdown list | Left dropdown on "Select a Park" default display and pressed submit edit button | Form does not proceed any further and leaves user on restaurant page | Pass |
+| Text Inputs | Field not allowed to be left with only whitespace added | Enter five spaces | Form displays error when only spaces are entered "Please match requested format", it will not let the user go any further than the form page and will not submit the record | Pass |
+| Text Inputs | Field not allowed to be left empty | Leave inputs blank | Form displays error "Please fill out this field", when input is left blank it will not let the user go any further than the form page and will not submit the record | Pass |
 | Submit Edit Button | Changes colour when hovered over | Hovered on button | Colour changes to lighter blue | Pass |
 | Submit Edit Button | Submits valid entered information on form, updates database and takes user to restaurant page | Checked all form information and edited each input, and clicked on Submit Edit button | User taken to restaurant page where the record is updated and new information visible on restaurant card | Pass |
 
@@ -224,16 +237,15 @@ Visit the deployed website: [Mousepedia](https://mousepediadb-0e4030391623.herok
 
 ## Python Testing
 
-<!-- Python pep8 validation was done via [Code Institute's Python Linter](https://pep8ci.herokuapp.com/)
-
-The only errors recieved here were where some lines of text exceeded the limit of 79 characters, but these have now been rectified.
+Python PEP8 validation was done via [Code Institute's Python Linter](https://pep8ci.herokuapp.com/)
 
 Python Files Tested:
 
-- models
-- forms
-- views
-- urls -->
+- models.py - Some lines found with more than 79 characters, this has been rectified so no errors are now showing.
+- routes.py - Some lines found with more than 79 characters, this has been rectified so no errors are now showing.
+- __init__.py - No errors found.
+- app.py - No errors found.
+- env.py - No errors found.
 
 ## Lighthouse
   The Google Page-speed Services/Lighthouse was used to assess the accessibiity of the project to ensure the site met expected accessible standards on desktop and mobile. From this result, I can see that the performance on my website could be better and this could be improved upon on future releases - the project scored highly in all other areas.

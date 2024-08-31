@@ -12,8 +12,8 @@ def home():
 
 @app.route("/parks")
 def parks():
-        parks = Park.query.order_by(Park.park_name).all()
-        return render_template("parks.html", parks=parks)
+    parks = Park.query.order_by(Park.park_name).all()
+    return render_template("parks.html", parks=parks)
 
 
 @app.route("/add_park", methods=["GET", "POST"])
@@ -23,8 +23,8 @@ def add_park():
         park_address = request.form.get("park_address")
         park_description = request.form.get("park_description")
         date_opened = request.form.get("date_opened")
-        time_open = request.form.get("time_open")  
-        time_closed = request.form.get("time_closed")  
+        time_open = request.form.get("time_open")
+        time_closed = request.form.get("time_closed")
         num_restaurants = request.form.get("num_restaurants")
         num_rides = request.form.get("num_rides")
         entertainment = request.form.get("entertainment")
@@ -35,7 +35,9 @@ def add_park():
         # Check if park name already exists
         existing_park = Park.query.filter_by(park_name=park_name).first()
         if existing_park:
-            flash("A park with this name already exists. Please choose a different name.", "danger")
+            flash
+            ("A park with this name already exists.
+                Please choose a different name.","danger")
             return redirect(url_for("add_park"))
 
         park = Park(
@@ -68,13 +70,14 @@ def edit_park(park_id):
         park.park_address = request.form.get("park_address")
         park.park_description = request.form.get("park_description")
         park.date_opened = request.form.get("date_opened")
-        park.time_open = request.form.get("time_open")  
-        park.time_closed = request.form.get("time_closed")  
+        park.time_open = request.form.get("time_open")
+        park.time_closed = request.form.get("time_closed")
         park.num_restaurants = request.form.get("num_restaurants")
         park.num_rides = request.form.get("num_rides")
         park.entertainment = request.form.get("entertainment")
         park.special_features = request.form.get("special_features")
-        park.transport_between_parks = request.form.get("transport_between_parks")
+        park.transport_between_parks = request.form.get
+        ("transport_between_parks")
         park.image_url = request.form.get("image_url")
         db.session.commit()
         flash("Park edited successfully!", "success")
@@ -87,7 +90,9 @@ def delete_park(park_id):
     park = Park.query.get_or_404(park_id)
     db.session.delete(park)
     db.session.commit()
-    flash("Park and associated ride/restaurant records deleted successfully!", "success")
+    flash
+    ("Park and associated ride/restaurant records deleted successfully!",
+        "success")
     return redirect(url_for("parks"))
 
 
@@ -100,16 +105,18 @@ def rides():
 @app.route("/add_ride", methods=["GET", "POST"])
 def add_ride():
     if request.method == "POST":
-            ride_name = request.form.get("ride_name")
-            park_id = request.form.get("park_id")
-            ride_location = request.form.get("ride_location")
-            ride_description = request.form.get("ride_description")
+        ride_name = request.form.get("ride_name")
+        park_id = request.form.get("park_id")
+        ride_location = request.form.get("ride_location")
+        ride_description = request.form.get("ride_description")
 
-            # Check if ride name already exists
-            existing_ride = Ride.query.filter_by(ride_name=ride_name).first()
-            if existing_ride:
-                flash("A ride with this name already exists. Please choose a different name.", "danger")
-                return redirect(url_for("add_ride"))
+        # Check if ride name already exists
+        existing_ride = Ride.query.filter_by(ride_name=ride_name).first()
+        if existing_ride:
+            flash
+            ("A ride with this name already exists.
+                Please choose a different name.", "danger")
+            return redirect(url_for("add_ride"))
 
             ride = Ride(
                 park_id=park_id,
@@ -163,22 +170,25 @@ def restaurants():
 @app.route("/add_restaurant", methods=["GET", "POST"])
 def add_restaurant():
     if request.method == "POST":
-            restaurant_name = request.form.get("restaurant_name")
-            park_id = request.form.get("park_id")
-            restaurant_location = request.form.get("restaurant_location")
-            restaurant_description = request.form.get("restaurant_description")
-            dine_in = request.form.get("dine_in")
-            quick_service = request.form.get("quick_service")
-            food_type = request.form.get("food_type")
+        restaurant_name = request.form.get("restaurant_name")
+        park_id = request.form.get("park_id")
+        restaurant_location = request.form.get("restaurant_location")
+        restaurant_description = request.form.get("restaurant_description")
+        dine_in = request.form.get("dine_in")
+        quick_service = request.form.get("quick_service")
+        food_type = request.form.get("food_type")
 
-            # collects the selected service types (dine in/quick service)
-            service_types = request.form.getlist("service_type")
+        # collects the selected service types (dine in/quick service)
+        service_types = request.form.getlist("service_type")
 
-            # Check if ride name already exists
-            existing_restaurant = Restaurant.query.filter_by(restaurant_name=restaurant_name).first()
-            if existing_restaurant:
-                flash("A restaurant with this name already exists. Please choose a different name.", "danger")
-                return redirect(url_for("add_restaurant"))
+        # Check if ride name already exists
+        existing_restaurant = Restaurant.query.filter_by
+        (restaurant_name=restaurant_name).first()
+        if existing_restaurant:
+            flash
+            ("A restaurant with this name already exists.
+                Please choose a different name.", "danger")
+            return redirect(url_for("add_restaurant"))
 
             restaurant = Restaurant(
                 park_id=park_id,
@@ -190,7 +200,7 @@ def add_restaurant():
                 food_type=food_type,
             )
 
-             # save the selected service types
+            # save the selected service types
             restaurant.dine_in = 'dine_in' in service_types
             restaurant.quick_service = 'quick_service' in service_types
 
@@ -210,15 +220,16 @@ def edit_restaurant(restaurant_id):
     if request.method == "POST":
         restaurant.park_id = request.form.get("park_id")
         restaurant.restaurant_name = request.form.get("restaurant_name")
-        restaurant.restaurant_description = request.form.get("restaurant_description")
-        restaurant.restaurant_location = request.form.get("restaurant_location")
+        restaurant.restaurant_description = request.form.get
+        ("restaurant_description")
+        restaurant.restaurant_location = request.form.get
+        ("restaurant_location")
         restaurant.dine_in = request.form.get("dine_in")
         restaurant.quick_service = request.form.get("quick_service")
         restaurant.food_type = request.form.get("food_type")
 
         # collect the selected service types
         service_types = request.form.getlist("service_type")
-        
         # Update the service types
         restaurant.dine_in = 'dine_in' in service_types
         restaurant.quick_service = 'quick_service' in service_types
@@ -228,7 +239,8 @@ def edit_restaurant(restaurant_id):
         return redirect(url_for("restaurants"))
 
     parks = Park.query.all()
-    return render_template("edit_restaurant.html", restaurant=restaurant, parks=parks)
+    return render_template
+    ("edit_restaurant.html", restaurant=restaurant, parks=parks)
 
 
 @app.route("/delete_restaurant/<int:restaurant_id>")

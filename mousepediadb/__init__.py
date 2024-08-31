@@ -2,6 +2,7 @@
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from mousepediadb import routes
 
 
 # checking if env.py file exists for environment settings
@@ -23,6 +24,3 @@ else:
 
 # assigning SQLAlchemy class instance to variable & migrate to update models
 db = SQLAlchemy(app)
-
-
-from mousepediadb import routes
