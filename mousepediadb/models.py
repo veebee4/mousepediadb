@@ -15,7 +15,7 @@ class Restaurant(db.Model):
     restaurant_description = db.Column(db.Text, nullable=False)
     park = db.relationship(
         "Park", backref=db.backref
-        ("rides", cascade="all, delete-orphan", lazy=True))
+        ("restaurants", cascade="all, delete-orphan", lazy=True))
 
     def __repr__(self):
         # to represent itself in the form of a string
