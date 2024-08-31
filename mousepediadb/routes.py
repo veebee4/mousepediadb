@@ -35,8 +35,7 @@ def add_park():
         # Check if park name already exists
         existing_park = Park.query.filter_by(park_name=park_name).first()
         if existing_park:
-            flash(
-                "A park with this name already exists. Please choose a different name.", "danger")
+            flash("A park with this name already exists. Please choose a different name.", "danger")
             return redirect(url_for("add_park"))
 
         park = Park(
@@ -75,8 +74,7 @@ def edit_park(park_id):
         park.num_rides = request.form.get("num_rides")
         park.entertainment = request.form.get("entertainment")
         park.special_features = request.form.get("special_features")
-        park.transport_between_parks = request.form.get
-        ("transport_between_parks")
+        park.transport_between_parks = request.form.get("transport_between_parks")
         park.image_url = request.form.get("image_url")
         db.session.commit()
         flash("Park edited successfully!", "success")
@@ -112,22 +110,23 @@ def add_ride():
         # Check if ride name already exists
         existing_ride = Ride.query.filter_by(ride_name=ride_name).first()
         if existing_ride:
-            flash
-            ("A ride with this name already exists. Please choose a different name.", "danger")
+            flash("A ride with this name already exists. Please choose a different name.", "danger")
             return redirect(url_for("add_ride"))
 
-            ride = Ride(
-                park_id=park_id,
-                ride_name=ride_name,
-                ride_location=ride_location,
-                ride_description=ride_description,
-            )
+        # Create the Ride object and add to the database
+        ride = Ride(
+            park_id=park_id,
+            ride_name=ride_name,
+            ride_location=ride_location,
+            ride_description=ride_description,
+        )
 
-            db.session.add(ride)
-            db.session.commit()
-            flash("Ride added successfully!", "success")
-            return redirect(url_for("rides"))
+        db.session.add(ride)
+        db.session.commit()
+        flash("Ride added successfully!", "success")
+        return redirect(url_for("rides"))
 
+    # Render the add_ride.html template with available parks for selection
     parks = Park.query.all()
     return render_template("add_ride.html", parks=parks)
 
@@ -182,8 +181,7 @@ def add_restaurant():
         # Check if ride name already exists
         existing_restaurant = Restaurant.query.filter_by(restaurant_name=restaurant_name).first()
         if existing_restaurant:
-            flash
-            ("A restaurant with this name already exists. Please choose a different name.", "danger")
+            flash("A restaurant with this name already exists. Please choose a different name.", "danger")
             return redirect(url_for("add_restaurant"))
 
             restaurant = Restaurant(

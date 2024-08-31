@@ -452,5 +452,5 @@ I would like to acknowledge the following people for helping me to complete this
   - My spouse who has provided support at home and while doing the project.
   - My Code Institute Mentor Jubril Akolade, for providing helpful tips and guidance.
   - My College Tutor, Rachel Furlong for always being so helpful and providing great guidance.
-  - Code Institute Tutor Support; Roman, Oisin, Holly and Roo who provided me with help a long the way.
+  - Code Institute Tutor Support; Roman, Oisin, and John who provided me with help a long the way.
 
