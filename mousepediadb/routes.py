@@ -35,9 +35,8 @@ def add_park():
         # Check if park name already exists
         existing_park = Park.query.filter_by(park_name=park_name).first()
         if existing_park:
-            flash
-            ("A park with this name already exists.
-                Please choose a different name.","danger")
+            flash(
+                "A park with this name already exists. Please choose a different name.", "danger")
             return redirect(url_for("add_park"))
 
         park = Park(
@@ -114,8 +113,7 @@ def add_ride():
         existing_ride = Ride.query.filter_by(ride_name=ride_name).first()
         if existing_ride:
             flash
-            ("A ride with this name already exists.
-                Please choose a different name.", "danger")
+            ("A ride with this name already exists. Please choose a different name.", "danger")
             return redirect(url_for("add_ride"))
 
             ride = Ride(
@@ -182,12 +180,10 @@ def add_restaurant():
         service_types = request.form.getlist("service_type")
 
         # Check if ride name already exists
-        existing_restaurant = Restaurant.query.filter_by
-        (restaurant_name=restaurant_name).first()
+        existing_restaurant = Restaurant.query.filter_by(restaurant_name=restaurant_name).first()
         if existing_restaurant:
             flash
-            ("A restaurant with this name already exists.
-                Please choose a different name.", "danger")
+            ("A restaurant with this name already exists. Please choose a different name.", "danger")
             return redirect(url_for("add_restaurant"))
 
             restaurant = Restaurant(
@@ -239,8 +235,7 @@ def edit_restaurant(restaurant_id):
         return redirect(url_for("restaurants"))
 
     parks = Park.query.all()
-    return render_template
-    ("edit_restaurant.html", restaurant=restaurant, parks=parks)
+    return render_template("edit_restaurant.html", restaurant=restaurant, parks=parks)
 
 
 @app.route("/delete_restaurant/<int:restaurant_id>")
