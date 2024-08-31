@@ -2,7 +2,7 @@
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from mousepediadb import routes
+#from mousepediadb import routes
 
 
 # checking if env.py file exists for environment settings
