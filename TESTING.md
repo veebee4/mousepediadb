@@ -230,12 +230,12 @@ All pages have been viewed in the Chrome developer tools to ensure each page is 
 * restaurants.html - Passed with no errors - [Result](/documentation/testing/validators/restaurant-page-html-validator.png)
 * add_park.html - Passed with errors due to jinja templating - [Result](documentation/testing/validators/add-park-html-validator.png)
 * add_ride.html - Passed with errors due to jinja templating - [Result](documentation/testing/validators/add-ride-html-validator.png)
-* add_restaurant.html - Passed, all errors relate to jinja templating & pattern attribute see [Known Bugs](#known-bugs) for more details - [Result](documentation/testing/validators/add-rest-html-validator.png)
-* edit_park.html - Passed, all errors relate to jinja templating & pattern attribute see [Known Bugs](#known-bugs) for more details - [Result](documentation/testing/validators/edit-park-html-validator.png)
-* edit_ride.html - Passed, only errors showing are to do with jinja templating - [Result](documentation/testing/validators/edit-ride-html-validator.png)
-* edit_restaurant.html - Passed, all errors relate to jinja templating & pattern attribute see [Known Bugs](#known-bugs) for more details - [Result](/documentation/testing/validators/edit-rest-html-validator.png)
+* add_restaurant.html - Passed, all errors relate to jinja templating - [Result](documentation/testing/validators/add-rest-html-validator.png)
+* edit_park.html - Passed, all errors relate to jinja templating - [Result](documentation/testing/validators/edit-park-html-validator.png)
+* edit_ride.html - Passed, all errors relate to jinja templating - [Result](documentation/testing/validators/edit-ride-html-validator.png)
+* edit_restaurant.html - Passed, all errors relate to jinja templating - [Result](/documentation/testing/validators/edit-rest-html-validator.png)
 * 404.html - Passed with errors due to jinja templating - [Result](documentation/testing/validators/404-html-validator.png)
-* style.css - Passed - [Result](documentation/testing/validators/css-validator.png)  
+* style.css - Passed with no errors - [Result](documentation/testing/validators/css-validator.png)  
 
 ### JavaScript Validator
 
