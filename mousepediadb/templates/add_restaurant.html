@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-hat-wizard blue-text text-darken-4 prefix"></i>
-                    <select name="park_id" required>
+                    <select name="park_id" id="park_id" required>
                       <option value="" disabled selected>Select A Park</option>
                       {% for park in parks %}
                       <option value="{{ park.id }}">{{ park.park_name }}</option>
@@ -64,14 +64,14 @@
                     <p class="restaurant-checkboxes">
                         <label class="dine_in_label">
                             <input type="checkbox" name="service_type" 
-                            value="dine_in" class="validate" {% if 'dine_in' in services %}checked{% endif %}/>
+                            value="dine_in" class="validate" {% if 'dine_in' in services %}checked{% endif %}>
                             <span class="service-label">Dine In</span>
                         </label>
                     </p>
                     <p class="restaurant-checkboxes">
                         <label class="quick_service_label">
                             <input type="checkbox" name="service_type" 
-                            value="quick_service" class="validate" {% if 'quick_service' in services %}checked{% endif %} />
+                            value="quick_service" class="validate" {% if 'quick_service' in services %}checked{% endif %}>
                             <span class="service-label">Quick Service</span>
                         </label>
                     </p>               

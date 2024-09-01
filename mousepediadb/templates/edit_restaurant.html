@@ -15,8 +15,7 @@
 <!-- Form to edit a restaurant in the database -->
 <div class="container add_form">
     <div class="row">
-        <form class="col s12" method="POST" 
-        action="{{ url_for('edit_restaurant', restaurant_id=restaurant.id) }}">
+        <form class="col s12" method="POST" action="{{ url_for('edit_restaurant', restaurant_id=restaurant.id) }}">
             <!-- park_id -->
             <div class="input-field col s12">
                 <i class="fa-solid fa-hat-wizard blue-text text-darken-4 prefix"></i>
@@ -28,7 +27,6 @@
                     {% endfor %}
                 </select>
                 <label for="park_id">Park</label>
-                </div>
             </div>
             <!-- restaurant_name -->
             <div class="row">
@@ -67,14 +65,14 @@
                             <p class="restaurant-checkboxes">
                                 <label class="dine_in_label">
                                     <input type="checkbox" name="service_type" 
-                                    value="dine_in" {% if 'dine_in' in services %}checked{% endif %}/>
+                                    value="dine_in" {% if 'dine_in' in services %}checked{% endif %}>
                                     <span>Dine In</span>
                                 </label>
                             </p>
                             <p class="restaurant-checkboxes">
                                 <label class="quick_service_label">
                                     <input type="checkbox" name="service_type" 
-                                    value="quick_service" {% if 'quick_service' in services %}checked{% endif %} />
+                                    value="quick_service" {% if 'quick_service' in services %}checked{% endif %}>
                                     <span>Quick Service</span>
                                 </label>
                             </p>
@@ -101,5 +99,4 @@
         </form>
     </div>
 </div>
-
 {% endblock %}

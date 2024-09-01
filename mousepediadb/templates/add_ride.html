@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-hat-wizard blue-text text-darken-4 prefix"></i>
-                    <select name="park_id" required>
+                    <select name="park_id" id="park_id" required>
                       <option value="" disabled selected>Select A Park</option>
                       {% for park in parks %}
                       <option value="{{ park.id }}">{{ park.park_name }}</option>

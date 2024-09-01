@@ -218,22 +218,22 @@ All pages have been viewed in the Chrome developer tools to ensure each page is 
 ### HTML & CSS
 [W3C](https://validator.w3.org/) was used to validate all HTML & CSS code.
 
-* home.html - Passed - [Result]()
+* home.html - Passed with errors due to jinja templating - [Result](documentation/testing/validators/home-page-html-validator.png)
 * parks.html - Passed - [Result]()
-* rides.html - Passed - [Result]()
-* restaurants.html - Passed - [Result]()
-* add_park.html - Passed - [Result]()
-* add_ride.html - Passed - [Result]()
-* add_restaurant.html - Passed - [Result]()
-* edit_park.html - Passed - [Result]()
-* edit_ride.html - Passed - [Result]()
-* edit_restaurant.html - Passed - [Result]()
-* style.css - Passed - [Result]()  
+* rides.html - Passed with no errors - [Result](documentation/testing/validators/ride-page-html-validator.png)
+* restaurants.html - Passed with no errors - [Result](/documentation/testing/validators/restaurant-page-html-validator.png)
+* add_park.html - Passed with errors due to jinja templating - [Result](documentation/testing/validators/add-park-html-validator.png)
+* add_ride.html - Passed with errors due to jinja templating - [Result](documentation/testing/validators/add-ride-html-validator.png)
+* add_restaurant.html - Passed, all errors relate to jinja templating & pattern attribute see [Known Bugs](#known-bugs) for more details - [Result](documentation/testing/validators/add-rest-html-validator.png)
+* edit_park.html - Passed, all errors relate to jinja templating & pattern attribute see [Known Bugs](#known-bugs) for more details - [Result](documentation/testing/validators/edit-park-html-validator.png)
+* edit_ride.html - Passed, only errors showing are to do with jinja templating - [Result](documentation/testing/validators/edit-ride-html-validator.png)
+* edit_restaurant.html - Passed, all errors relate to jinja templating & pattern attribute see [Known Bugs](#known-bugs) for more details - [Result](/documentation/testing/validators/edit-rest-html-validator.png)
+* style.css - Passed - [Result](documentation/testing/validators/css-validator.png)  
 
 ### JavaScript Validator
 
 [jshint](https://jshint.com/) was used to validate the Javascript within the project - Passed with 8 warnings but only regarding 'let' being available in ES6 and an undefined variable 'M' but this variable represents Materialize's framework. No errors with the actual code.
-![JavaScript Validator Results](documentation/testing/jshint-validator.png)
+![JavaScript Validator Results](/documentation/testing/validators/jshint-validator.png)
 
 ## Python Testing
 

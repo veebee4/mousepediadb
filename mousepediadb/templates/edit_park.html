@@ -48,7 +48,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fa-solid fa-calendar-days blue-text text-darken-4 prefix"></i>
-                    <input type="text" name="date_opened" class="datepicker validate" 
+                    <input type="text" name="date_opened" id="date_opened" class="datepicker validate" 
                     value="{{ park.date_opened }}" required>
                     <label for="date_opened">Date Opened</label>
                 </div>
@@ -57,13 +57,13 @@
             <div class="row">
                 <div class="input-field col s6">
                     <i class="fa-solid fa-clock blue-text text-darken-4 prefix"></i>
-                    <input type="text" class="timepicker validate" name="time_open" 
+                    <input type="text" class="timepicker validate" id="time_open" name="time_open" 
                     value="{{ park.time_open }}" required>
                     <label for="time_open">Time park opens</label>
                 </div>
                 <div class="input-field col s6">
                     <i class="fa-solid fa-clock blue-text text-darken-4 prefix"></i>
-                    <input type="text" class="timepicker validate" name="time_closed" 
+                    <input type="text" class="timepicker validate" id="time_closed" name="time_closed" 
                     value="{{ park.time_closed}}" required>
                     <label for="time_closed">Time park closes</label>
                 </div>
@@ -122,6 +122,8 @@
                     <i class="fa-solid fa-image blue-text text-darken-4 prefix"></i>
                     <input type="text" name="image_url" id="image_url" value="{{ park.image_url }}" >
                     <label for="image_url">Image URL</label>
+                </div>
+            </div>
             <!-- Submit button for form -->
             <div class="row">
                 <div class="col s12 center-align">
