@@ -171,40 +171,39 @@ def add_restaurant():
         park_id = request.form.get("park_id")
         restaurant_location = request.form.get("restaurant_location")
         restaurant_description = request.form.get("restaurant_description")
-        dine_in = request.form.get("dine_in")
-        quick_service = request.form.get("quick_service")
         food_type = request.form.get("food_type")
 
         # collects the selected service types (dine in/quick service)
         service_types = request.form.getlist("service_type")
 
-        # Check if ride name already exists
+        # Check if restaurant name already exists
         existing_restaurant = Restaurant.query.filter_by(restaurant_name=restaurant_name).first()
         if existing_restaurant:
-            flash("A restaurant with this name already exists. Please choose a different name.", "danger")
+            flash(
+                "A restaurant with this name already exists. Please choose a different name.",
+                "danger"
+            )
             return redirect(url_for("add_restaurant"))
 
-            restaurant = Restaurant(
-                park_id=park_id,
-                restaurant_name=restaurant_name,
-                restaurant_location=restaurant_location,
-                restaurant_description=restaurant_description,
-                dine_in=dine_in,
-                quick_service=quick_service,
-                food_type=food_type,
-            )
+        restaurant = Restaurant(
+            park_id=park_id,
+            restaurant_name=restaurant_name,
+            restaurant_location=restaurant_location,
+            restaurant_description=restaurant_description,
+            food_type=food_type,
+            dine_in='dine_in' in service_types,  # Check if dine_in is selected
+            quick_service='quick_service' in service_types  # Check if quick_service is selected
+        )
 
-            # save the selected service types
-            restaurant.dine_in = 'dine_in' in service_types
-            restaurant.quick_service = 'quick_service' in service_types
+        db.session.add(restaurant)
+        db.session.commit()
+        flash("Restaurant added successfully!", "success")
+        return redirect(url_for("restaurants"))
 
-            db.session.add(restaurant)
-            db.session.commit()
-            flash("Restaurant added successfully!", "success")
-            return redirect(url_for("restaurants"))
-
+    # Fetch the parks to display in a dropdown on the add restaurant form
     parks = Park.query.all()
     return render_template("add_restaurant.html", parks=parks)
+
 
 
 @app.route("/edit_restaurant/<int:restaurant_id>", methods=["GET", "POST"])
@@ -214,16 +213,13 @@ def edit_restaurant(restaurant_id):
     if request.method == "POST":
         restaurant.park_id = request.form.get("park_id")
         restaurant.restaurant_name = request.form.get("restaurant_name")
-        restaurant.restaurant_description = request.form.get
-        ("restaurant_description")
-        restaurant.restaurant_location = request.form.get
-        ("restaurant_location")
-        restaurant.dine_in = request.form.get("dine_in")
-        restaurant.quick_service = request.form.get("quick_service")
+        restaurant.restaurant_description = request.form.get("restaurant_description")
+        restaurant.restaurant_location = request.form.get("restaurant_location")
         restaurant.food_type = request.form.get("food_type")
 
         # collect the selected service types
         service_types = request.form.getlist("service_type")
+
         # Update the service types
         restaurant.dine_in = 'dine_in' in service_types
         restaurant.quick_service = 'quick_service' in service_types
@@ -232,8 +228,10 @@ def edit_restaurant(restaurant_id):
         flash("Restaurant edited successfully!", "success")
         return redirect(url_for("restaurants"))
 
+    # Fetch the parks to display in a dropdown on the edit restaurant form
     parks = Park.query.all()
     return render_template("edit_restaurant.html", restaurant=restaurant, parks=parks)
+
 
 
 @app.route("/delete_restaurant/<int:restaurant_id>")
