@@ -16,7 +16,7 @@
     {% for park in parks %}
     <a class="carousel-item" href="{{ url_for('parks') }}">
       <img src="{{ park.image_url if park.image_url else url_for('static', filename='images/default_image.jpg') }}" 
-      class="park-image">{{ park.park_name }}
+      class="park-image" alt="Disney Park Image">{{ park.park_name }}
     </a>
     {% else %}
     <!-- Message appears if no records exist -->

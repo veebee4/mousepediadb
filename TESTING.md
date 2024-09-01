@@ -185,7 +185,7 @@ All pages have been viewed in the Chrome developer tools to ensure each page is 
 | Park dropdown list | Displays all added park records in a drop down list | Clicked on dropdown | List of existing park records shown | Pass |
 | Text Inputs | Field not allowed to be left with only whitespace added | Enter five spaces | Form displays error when only spaces are entered "Please match requested format", it will not let the user go any further than the form page and will not submit the record | Pass |
 | Text Inputs | Field not allowed to be left empty | Leave inputs blank | Form displays error "Please fill out this field", when input is left blank it will not let the user go any further than the form page and will not submit the record | Pass |
-| Checkbox Inputs | Not ticking a box shows an error | Leave checkboxes blank | Form adds record | Fail |
+| Checkbox Inputs | Not ticking a box shows an error | Leave checkboxes blank | Form adds record - Detailed in [Known Bugs](#known-bugs) | Fail |
 | Add Restaurant Button | Changes colour when hovered over | Hovered on button | Colour changes to lighter blue | Pass |
 | Add Restaurant Button | Submits valid entered information on form, adds record to database and takes user to restaurant page | Added all form information and clicked on Add Restaurant button | User taken to restaurant page where the record is added and displayed on a card | Pass |
 
@@ -196,7 +196,7 @@ All pages have been viewed in the Chrome developer tools to ensure each page is 
 | Site Graphic & Text Logo | Link directs the user back to the home page | Clicked title | Home page reloads | Pass |
 | Navigation Links | Links direct user to appropriate page | Clicked each link | Each link takes user to correct page | Pass |
 | Footer links | Each link opens into a new tab | Click each link | Each website loads in a new tab | Pass |
-| Pre-populated fields | All fields pre-populated with existing information | Clicked edit on restaurant record, form loads | All fields in form are pre-populated except for dine in/quick service checkboxes | Fail |
+| Pre-populated fields | All fields pre-populated with existing information | Clicked edit on restaurant record, form loads | All fields in form are pre-populated except for dine in/quick service checkboxes - Detailed in [Known Bugs](#known-bugs) | Fail |
 | Park dropdown list | Defaults to pre-populated information as above but can still use dropdown to change park from drop down list | Clicked on dropdown | List of existing park records shown | Pass |
 | Park dropdown list | Will not allow user to add record if park not selected in dropdown list | Left dropdown on "Select a Park" default display and pressed submit edit button | Form does not proceed any further and leaves user on restaurant page | Pass |
 | Text Inputs | Field not allowed to be left with only whitespace added | Enter five spaces | Form displays error when only spaces are entered "Please match requested format", it will not let the user go any further than the form page and will not submit the record | Pass |
@@ -232,7 +232,7 @@ All pages have been viewed in the Chrome developer tools to ensure each page is 
 
 ### JavaScript Validator
 
-[jshint](https://jshint.com/) was used to validate the Javascript within the project - Passed with no warnings/errors.
+[jshint](https://jshint.com/) was used to validate the Javascript within the project - Passed with 8 warnings but only regarding 'let' being available in ES6 and an undefined variable 'M' but this variable represents Materialize's framework. No errors with the actual code.
 ![JavaScript Validator Results](documentation/testing/jshint-validator.png)
 
 ## Python Testing
@@ -297,3 +297,5 @@ the `cascase="all, delete"` from the db.relationship rows for ride and restauran
 | 3 | Cards with tabs have scroll bars when the screen size is made smaller. Ideally I would not have wanted this and would have done more research into changing it, but could not be done due to time constraints | |
 | 4 | Clock hands on Timepicker and numbers on Datepicker have default styling | I would have liked to be able to style these properly to match the colour scheme but due to having trouble getting this done and time constraints, they have been left as their default colour |
 | 5 | When the page scroll bar goes up to the top, it makes the nav bar go darker on that small section ![Scrollbar on Nav](/documentation/testing/nav-links-scrollbar.png) | If I had more time, I would have looked into trying to resolve this, if possible |
+| 6 | The checkboxes on the restaurant form do not validate and if left blank will still add the information to the form | Due to time constraints, I could not figure out this issue out in time |
+| 7 | The checkboxes on the edit restaurant form do not pre-populate | Due to time constraints, I could not come to a resolution on this |
