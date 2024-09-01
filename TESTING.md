@@ -96,6 +96,7 @@ All pages have been viewed in the Chrome developer tools to ensure each page is 
 | Footer links | Each link opens into a new tab | Click each link | Each website loads in a new tab | Pass |
 | Text Inputs | Field not allowed to be left with only whitespace added | Enter five spaces | Form displays error when only spaces are entered "Please match requested format", it will not let the user go any further than the form page and will not submit the record | Pass |
 | Text Inputs | Field not allowed to be left empty | Leave inputs blank | Form displays error "Please fill out this field", when input is left blank it will not let the user go any further than the form page and will not submit the record | Pass |
+| Text Areas | Field not allowed to be left empty | Leave inputs blank | Form allowed to update with whitespace in textareas - Details in [Known Bugs](#known-bugs) | Fail |
 | Date & Time Pickers | Clicking on line of input triggers the date/time picker | Clicked on line | Date/Time picker opens | Pass |
 | Number Inputs | Inputting a negative number shows an error message | Entered -1 on form | Error appears stating "Value must be greater than or equal to 0" | Pass |
 | Image URL field | Will accept a website URL | Entered URL | Picture is displayed on park record card | Pass |
@@ -113,6 +114,7 @@ All pages have been viewed in the Chrome developer tools to ensure each page is 
 | Pre-populated fields | All fields pre-populated with existing information | Clicked edit on park record, form loads | All fields in form are pre-populated | Pass |
 | Text Inputs | Field not allowed to be left with only whitespace added | Enter five spaces | Form displays error when only spaces are entered "Please match requested format", it will not let the user go any further than the form page and will not submit the record | Pass |
 | Text Inputs | Field not allowed to be left empty | Leave inputs blank | Form displays error "Please fill out this field", when input is left blank it will not let the user go any further than the form page and will not submit the record | Pass |
+| Text Areas | Field not allowed to be left empty | Leave inputs blank | Form allowed to update with whitespace in textareas - Details in [Known Bugs](#known-bugs) | Fail |
 | Date & Time Pickers | Clicking on line of input triggers the date/time picker | Clicked on line | Date/Time picker opens | Pass |
 | Number Inputs | Inputting a negative number shows an error message | Entered -1 on form | Error appears stating "Value must be greater than or equal to 0" | Pass |
 | Submit Edit Button | Changes colour when hovered over | Hovered on button | Colour changes to lighter blue | Pass |
@@ -143,6 +145,7 @@ All pages have been viewed in the Chrome developer tools to ensure each page is 
 | Park dropdown list | Will not allow user to add record if park not selected in dropdown list | Left dropdown on "Select a Park" default display and pressed add ride button | Form does not proceed any further and leaves user on ride page | Pass |
 | Text Inputs | Field not allowed to be left with only whitespace added | Enter five spaces | Form displays error when only spaces are entered "Please match requested format", it will not let the user go any further than the form page and will not submit the record | Pass |
 | Text Inputs | Field not allowed to be left empty | Leave inputs blank | Form displays error "Please fill out this field", when input is left blank it will not let the user go any further than the form page and will not submit the record | Pass |
+| Text Areas | Field not allowed to be left empty | Leave inputs blank | Form allowed to update with whitespace in textareas - Details in [Known Bugs](#known-bugs) | Fail |
 | Add Ride Button | Changes colour when hovered over | Hovered on button | Colour changes to lighter blue | Pass |
 | Add Ride Button | Submits valid entered information on form, adds record to database and takes user to ride page | Added all form information and clicked on Add Ride button | User taken to ride page where the record is added and displayed on a card | Pass |
 
@@ -158,6 +161,7 @@ All pages have been viewed in the Chrome developer tools to ensure each page is 
 | Park dropdown list | Will not allow user to add record if park not selected in dropdown list | Left dropdown on "Select a Park" default display and pressed submit edit button | Form does not proceed any further and leaves user on ride page | Pass |
 | Text Inputs | Field not allowed to be left with only whitespace added | Enter five spaces | Form displays error when only spaces are entered "Please match requested format", it will not let the user go any further than the form page and will not submit the record | Pass |
 | Text Inputs | Field not allowed to be left empty | Leave inputs blank | Form displays error "Please fill out this field", when input is left blank it will not let the user go any further than the form page and will not submit the record | Pass |
+| Text Areas | Field not allowed to be left empty | Leave inputs blank | Form allowed to update with whitespace in textareas - Details in [Known Bugs](#known-bugs) | Fail |
 | Submit Edit Button | Changes colour when hovered over | Hovered on button | Colour changes to lighter blue | Pass |
 | Submit Edit Button | Submits valid entered information on form, updates database and takes user to ride page | Checked all form information and edited each input, and clicked on Submit Edit button | User taken to ride page where the record is updated and new information visible on ride card | Pass |
 
@@ -186,6 +190,7 @@ All pages have been viewed in the Chrome developer tools to ensure each page is 
 | Text Inputs | Field not allowed to be left with only whitespace added | Enter five spaces | Form displays error when only spaces are entered "Please match requested format", it will not let the user go any further than the form page and will not submit the record | Pass |
 | Text Inputs | Field not allowed to be left empty | Leave inputs blank | Form displays error "Please fill out this field", when input is left blank it will not let the user go any further than the form page and will not submit the record | Pass |
 | Checkbox Inputs | Not ticking a box shows an error | Leave checkboxes blank | Form adds record - Detailed in [Known Bugs](#known-bugs) | Fail |
+| Text Areas | Field not allowed to be left empty | Leave inputs blank | Form allowed to update with whitespace in textareas - Details in [Known Bugs](#known-bugs) | Fail |
 | Add Restaurant Button | Changes colour when hovered over | Hovered on button | Colour changes to lighter blue | Pass |
 | Add Restaurant Button | Submits valid entered information on form, adds record to database and takes user to restaurant page | Added all form information and clicked on Add Restaurant button | User taken to restaurant page where the record is added and displayed on a card | Pass |
 
@@ -201,6 +206,7 @@ All pages have been viewed in the Chrome developer tools to ensure each page is 
 | Park dropdown list | Will not allow user to add record if park not selected in dropdown list | Left dropdown on "Select a Park" default display and pressed submit edit button | Form does not proceed any further and leaves user on restaurant page | Pass |
 | Text Inputs | Field not allowed to be left with only whitespace added | Enter five spaces | Form displays error when only spaces are entered "Please match requested format", it will not let the user go any further than the form page and will not submit the record | Pass |
 | Text Inputs | Field not allowed to be left empty | Leave inputs blank | Form displays error "Please fill out this field", when input is left blank it will not let the user go any further than the form page and will not submit the record | Pass |
+| Text Areas | Field not allowed to be left empty | Leave inputs blank | Form allowed to update with whitespace in textareas - Details in [Known Bugs](#known-bugs) | Fail |
 | Submit Edit Button | Changes colour when hovered over | Hovered on button | Colour changes to lighter blue | Pass |
 | Submit Edit Button | Submits valid entered information on form, updates database and takes user to restaurant page | Checked all form information and edited each input, and clicked on Submit Edit button | User taken to restaurant page where the record is updated and new information visible on restaurant card | Pass |
 
@@ -242,9 +248,10 @@ Python PEP8 validation was done via [Code Institute's Python Linter](https://pep
 
 Python Files Tested:
 
-- models.py - Some lines found with more than 79 characters, this has been rectified so no errors are now showing.
-- routes.py - Some lines found with more than 79 characters, this has been rectified so no errors are now showing.
-- __init__.py - No errors found.
+- app.py - No errors [Result](documentation/testing/validators/app-python-linter.png)
+- models.py - No errors [Result](documentation/testing/validators/models-python-linter.png)
+- routes.py - Passed but mentioned some lines are too long for the 79 character limit, this has now been fixed [Result](documentation/testing/validators/routes-python-linter.png)
+- __init__.py - Error: E402 module level import not at top of file - This is necessary for the file to work [Result](documentation/testing/validators/init-python-linter.png)
 
 ## Lighthouse
   The Google Page-speed Services/Lighthouse was used to assess the accessibiity of the project to ensure the site met expected accessible standards on desktop and mobile. From this result, I can see that the performance on my website could be better and this could be improved upon on future releases - the project scored highly in all other areas.
@@ -288,4 +295,4 @@ Python Files Tested:
 | 5 | When the page scroll bar goes up to the top, it makes the nav bar go darker on that small section ![Scrollbar on Nav](/documentation/testing/nav-links-scrollbar.png) | If I had more time, I would have looked into trying to resolve this, if possible |
 | 6 | The checkboxes on the restaurant form do not validate and if left blank will still add the information to the form | Due to time constraints, I could not figure out this issue out in time |
 | 7 | The checkboxes on the edit restaurant form do not pre-populate | Due to time constraints, I could not come to a resolution on this |
-| 8 | When running my code through the html validator it warned that the pattern attribute is not allowed in text areas | After doing some research, I found [this](https://stackoverflow.com/questions/36224496/how-to-prevent-a-user-from-just-typing-spaces-in-a-textarea) Stack Overflow and tried to use Javascript and the trim() function to remedy this but it did not seem to work, so reverted back to the pattern attribute to atleast get the form to work properly and not accept whitespace on the textareas, with more time I would have corrected this issue |
+| 8 | When running my code through the html validator it warned that the pattern attribute is not allowed in text areas | After doing some research, I found [this](https://stackoverflow.com/questions/36224496/how-to-prevent-a-user-from-just-typing-spaces-in-a-textarea) Stack Overflow and tried to use Javascript and the trim() function to remedy this but it did not seem to work with more time I would have corrected this issue |

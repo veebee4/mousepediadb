@@ -53,7 +53,7 @@
                     <i class="fa-solid fa-pencil blue-text text-darken-4 prefix"></i>
                     <textarea id="restaurant_description" name="restaurant_description" minlength="5" 
                     maxlength="500" class="materialize-textarea" 
-                    required pattern=".*\S+.*">{{ restaurant.restaurant_description }}</textarea>
+                    required>{{ restaurant.restaurant_description }}</textarea>
                     <label for="restaurant_description">Description</label>
                 </div>
             </div>
@@ -83,8 +83,7 @@
                 <div class="input-field col s12">
                     <i class="fa-solid fa-pizza-slice blue-text text-darken-4 prefix"></i>
                     <textarea id="food_type" name="food_type" minlength="5" maxlength="500" 
-                    class="materialize-textarea" required 
-                    pattern=".*\S+.*">{{ restaurant.food_type }}</textarea>
+                    class="materialize-textarea" required>{{ restaurant.food_type }}</textarea>
                     <label for="food_type">Food Type</label>
                 </div>
             </div>
