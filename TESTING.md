@@ -254,29 +254,49 @@ Python Files Tested:
 - __init__.py - Error: E402 module level import not at top of file - This is necessary for the file to work [Result](documentation/testing/validators/init-python-linter.png)
 
 ## Lighthouse
-  The Google Page-speed Services/Lighthouse was used to assess the accessibiity of the project to ensure the site met expected accessible standards on desktop and mobile. From this result, I can see that the performance on my website could be better and this could be improved upon on future releases - the project scored highly in all other areas.
+  The Google Page-speed Services/Lighthouse was used to assess the accessibiity of the project to ensure the site met expected accessible standards on desktop and mobile. From these results, I can see that the performance on my website does quite well on desktop pages but could definitely be better on mobiles - this would be improved upon on future releases.
 
-  RESULTS
-  Park page
-  ![Desktop](documentation/testing/validators/lighthouse/desktop-park-page-lighthouse.png) ![Mobile](documentation/testing/validators/lighthouse/mobile-park-page-lighthouse.png)
-  Add Park page
-  ![Desktop](documentation/testing/validators/lighthouse/desktop-add-park-page-lighthouse.png) ![Mobile](documentation/testing/validators/lighthouse/mobile-add-park-page-lighthouse.png)
-  Edit Park page
-  ![Desktop](documentation/testing/validators/lighthouse/desktop-edit-park-page-lighthouse.png) ![Mobile](documentation/testing/validators/lighthouse/mobile-edit-park-page-lighthouse.png)
-  Ride page
-  ![Desktop](documentation/testing/validators/lighthouse/desktop-ride-page-lighthouse.png) ![Mobile](documentation/testing/validators/lighthouse/mobile-ride-page-lighthouse.png)
-  Add Ride page
-  ![Desktop](documentation/testing/validators/lighthouse/desktop-add-ride-page-lighthouse.png) ![Mobile](documentation/testing/validators/lighthouse/mobile-add-ride-page-lighthouse.png)
-  Edit Ride page
-  ![Desktop](documentation/testing/validators/lighthouse/desktop-edit-ride-page-lighthouse.png) ![Mobile](documentation/testing/validators/lighthouse/mobile-edit-ride-page-lighthouse.png)
-  Restaurant page
-  ![Desktop](documentation/testing/validators/lighthouse/desktop-rest-page-lighthouse.png) ![Mobile](documentation/testing/validators/lighthouse/mobile-rest-page-lighthouse.png)
-  Add Restaurant page
-  ![Desktop](documentation/testing/validators/lighthouse/desktop-add-rest-page-lighthouse.png) ![Mobile](documentation/testing/validators/lighthouse/mobile-add-rest-page-lighthouse.png)
-  Edit Restaurant page
-  ![Desktop](documentation/testing/validators/lighthouse/desktop-edit-rest-page-lighthouse.png) ![Mobile](documentation/testing/validators/lighthouse/mobile-edit-rest-page-lighthouse.png)
-  404 Error Page
-  ![Desktop](documentation/testing/validators/lighthouse/desktop-error-page-lighthouse.png) ![Mobile](documentation/testing/validators/lighthouse/mobile-error-page-lighthouse.png)
+  ### RESULTS
+
+  #### Park page
+  [Desktop](documentation/testing/validators/lighthouse/desktop-park-page-lighthouse.png) /
+  [Mobile](documentation/testing/validators/lighthouse/mobile-park-page-lighthouse.png)
+
+  #### Add Park page
+  [Desktop](documentation/testing/validators/lighthouse/desktop-add-park-page-lighthouse.png) /
+  [Mobile](documentation/testing/validators/lighthouse/mobile-add-park-page-lighthouse.png)
+
+  #### Edit Park page
+  [Desktop](documentation/testing/validators/lighthouse/desktop-edit-park-page-lighthouse.png) /
+  [Mobile](documentation/testing/validators/lighthouse/mobile-edit-park-page-lighthouse.png)
+
+  #### Ride page
+  [Desktop](documentation/testing/validators/lighthouse/desktop-ride-page-lighthouse.png) /
+  [Mobile](documentation/testing/validators/lighthouse/mobile-ride-page-lighthouse.png)
+
+  #### Add Ride page
+  [Desktop](documentation/testing/validators/lighthouse/desktop-add-ride-page-lighthouse.png) /
+  [Mobile](documentation/testing/validators/lighthouse/mobile-add-ride-page-lighthouse.png)
+
+  #### Edit Ride page
+  [Desktop](documentation/testing/validators/lighthouse/desktop-edit-ride-page-lighthouse.png) /
+  [Mobile](documentation/testing/validators/lighthouse/mobile-edit-ride-page-lighthouse.png)
+
+  #### Restaurant page
+  [Desktop](documentation/testing/validators/lighthouse/desktop-rest-page-lighthouse.png) /
+  [Mobile](documentation/testing/validators/lighthouse/mobile-rest-page-lighthouse.png)
+
+  #### Add Restaurant page
+  [Desktop](documentation/testing/validators/lighthouse/desktop-add-rest-page-lighthouse.png) /
+  [Mobile](documentation/testing/validators/lighthouse/mobile-add-rest-page-lighthouse.png)
+
+  #### Edit Restaurant page
+  [Desktop](documentation/testing/validators/lighthouse/desktop-edit-rest-page-lighthouse.png) /
+  [Mobile](documentation/testing/validators/lighthouse/mobile-edit-rest-page-lighthouse.png)
+
+  #### 404 Error Page
+  [Desktop](documentation/testing/validators/lighthouse/desktop-error-page-lighthouse.png) /
+  [Mobile](documentation/testing/validators/lighthouse/mobile-error-page-lighthouse.png)
 
 - #### Browser Testing
 
