@@ -6,12 +6,14 @@ from mousepediadb.models import Park, Restaurant, Ride
 
 @app.route("/")
 def home():
+    # fetch all park records to display
     parks = Park.query.order_by(Park.park_name).all()
     return render_template("home.html", parks=parks)
 
 
 @app.route("/parks")
 def parks():
+    # fetch all park records to display
     parks = Park.query.order_by(Park.park_name).all()
     return render_template("parks.html", parks=parks)
 
@@ -35,9 +37,13 @@ def add_park():
         # Check if park name already exists
         existing_park = Park.query.filter_by(park_name=park_name).first()
         if existing_park:
-            flash("A park with this name already exists. Please choose a different name.", "danger")
+            flash(
+                "A park with this name already exists."
+                "Please choose a different name.", "danger"
+                )
             return redirect(url_for("add_park"))
 
+        # Create the Park object and add to the database
         park = Park(
             park_name=park_name,
             park_address=park_address,
@@ -74,8 +80,11 @@ def edit_park(park_id):
         park.num_rides = request.form.get("num_rides")
         park.entertainment = request.form.get("entertainment")
         park.special_features = request.form.get("special_features")
-        park.transport_between_parks = request.form.get("transport_between_parks")
+        park.transport_between_parks = (
+            request.form.get("transport_between_parks")
+            )
         park.image_url = request.form.get("image_url")
+
         db.session.commit()
         flash("Park edited successfully!", "success")
         return redirect(url_for("parks"))
@@ -95,6 +104,7 @@ def delete_park(park_id):
 
 @app.route("/rides")
 def rides():
+    # fetch all ride records to display
     rides = Ride.query.order_by(Ride.ride_name).all()
     return render_template("rides.html", rides=rides)
 
@@ -110,7 +120,10 @@ def add_ride():
         # Check if ride name already exists
         existing_ride = Ride.query.filter_by(ride_name=ride_name).first()
         if existing_ride:
-            flash("A ride with this name already exists. Please choose a different name.", "danger")
+            flash(
+                "A ride with this name already exists."
+                "Please choose a different name.", "danger"
+                )
             return redirect(url_for("add_ride"))
 
         # Create the Ride object and add to the database
@@ -126,7 +139,7 @@ def add_ride():
         flash("Ride added successfully!", "success")
         return redirect(url_for("rides"))
 
-    # Render the add_ride.html template with available parks for selection
+    # Fetch the parks to display in a dropdown on the add ride form
     parks = Park.query.all()
     return render_template("add_ride.html", parks=parks)
 
@@ -145,6 +158,7 @@ def edit_ride(ride_id):
         flash("Ride edited successfully!", "success")
         return redirect(url_for("rides"))
 
+    # Fetch the parks to display in a dropdown on the edit ride form
     parks = Park.query.all()
     return render_template("edit_ride.html", ride=ride, parks=parks)
 
@@ -160,6 +174,7 @@ def delete_ride(ride_id):
 
 @app.route("/restaurants")
 def restaurants():
+    # fetch all restaurant records to display
     restaurants = Restaurant.query.order_by(Restaurant.restaurant_name).all()
     return render_template("restaurants.html", restaurants=restaurants)
 
@@ -177,22 +192,27 @@ def add_restaurant():
         service_types = request.form.getlist("service_type")
 
         # Check if restaurant name already exists
-        existing_restaurant = Restaurant.query.filter_by(restaurant_name=restaurant_name).first()
+        existing_restaurant = (
+            Restaurant.query
+            .filter_by(restaurant_name=restaurant_name)
+            .first()
+            )
         if existing_restaurant:
             flash(
-                "A restaurant with this name already exists. Please choose a different name.",
-                "danger"
+                "A restaurant with this name already exists."
+                "Please choose a different name.", "danger"
             )
             return redirect(url_for("add_restaurant"))
 
+        # Create the Restaurant object and add to the database
         restaurant = Restaurant(
             park_id=park_id,
             restaurant_name=restaurant_name,
             restaurant_location=restaurant_location,
             restaurant_description=restaurant_description,
             food_type=food_type,
-            dine_in='dine_in' in service_types,  # Check if dine_in is selected
-            quick_service='quick_service' in service_types  # Check if quick_service is selected
+            dine_in='dine_in' in service_types,
+            quick_service='quick_service' in service_types
         )
 
         db.session.add(restaurant)
@@ -205,7 +225,6 @@ def add_restaurant():
     return render_template("add_restaurant.html", parks=parks)
 
 
-
 @app.route("/edit_restaurant/<int:restaurant_id>", methods=["GET", "POST"])
 def edit_restaurant(restaurant_id):
     restaurant = Restaurant.query.get_or_404(restaurant_id)
@@ -213,8 +232,12 @@ def edit_restaurant(restaurant_id):
     if request.method == "POST":
         restaurant.park_id = request.form.get("park_id")
         restaurant.restaurant_name = request.form.get("restaurant_name")
-        restaurant.restaurant_description = request.form.get("restaurant_description")
-        restaurant.restaurant_location = request.form.get("restaurant_location")
+        restaurant.restaurant_description = (
+            request.form.get("restaurant_description")
+            )
+        restaurant.restaurant_location = (
+            request.form.get("restaurant_location")
+            )
         restaurant.food_type = request.form.get("food_type")
 
         # collect the selected service types
@@ -230,8 +253,9 @@ def edit_restaurant(restaurant_id):
 
     # Fetch the parks to display in a dropdown on the edit restaurant form
     parks = Park.query.all()
-    return render_template("edit_restaurant.html", restaurant=restaurant, parks=parks)
-
+    return render_template(
+        "edit_restaurant.html", restaurant=restaurant, parks=parks
+        )
 
 
 @app.route("/delete_restaurant/<int:restaurant_id>")
